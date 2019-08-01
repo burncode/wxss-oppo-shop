@@ -1,0 +1,97 @@
+<!--<view class="oppo-logo">
+  <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/oppo-logo.png"  />
+</view>
+<view class="guize-btn" bindtap="showGuize">活动规则</view>
+<view class="warrant-content"
+      style="background:url('http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/warr-bg.png');background-size:100%;">
+  <view class="star-pic">
+    <image src="{{starPic}}"  />
+  </view>
+  <view class="warrant-info"
+        style="background:url('http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/warr-info-bg.png');background-size:100%;">
+    <view class="my-info">
+      <view class="head-pic">
+        <image src="{{headImage}}"  />
+      </view>
+      <view class="my-name">{{nickName}}</view>
+    </view>
+    <view class="my-comment">
+      <view class="top-icon">
+        <image class="po-icon-l" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/top-point.png" />
+      </view>
+      <view class="comment-detail">{{comment}}</view>
+      <view class="bottom-icon">
+        <image class="po-icon-r" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/bot-point.png" />
+      </view>
+    </view>
+    <view class="my-rank-score">
+      <view class="my-score">
+        <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/rank-1.png" />
+        <view class="text">我的口碑影响力</view>
+        <view class="score-num">{{myScore}}</view>
+      </view>
+      <view class="my-rank">
+        <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/rank-2.png" />
+        <view class="text">我的排名</view>
+        <view class="rank-num">{{myRank}}</view>
+        <view class="tips">（今日在全国R11s用户中的排行）</view>
+      </view>
+    </view>
+  </view>
+  <view class="intro-box">
+    <view class="title">将此页面分享给好友即可</view>
+    <view class="intro-item">
+      <view class="item-index">1</view>
+      <view class="text">成功激活延保（半年）服务</view>
+    </view>
+    <view class="intro-item">
+      <view class="item-index">2</view>
+      <view class="text">邀请好友为你增加口碑影响力,影响力排名前十即可获得惊喜好礼</view>
+    </view>
+    <button class="share-btn" open-type="share">分享领延保</button>
+  </view>
+</view>
+<view class="dialog-box" wx:if="{{errMsg}}">
+  <view class="dialog-content">
+    <view class="close" bindtap="closeDialog">
+      <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/close.png"/>
+    </view>
+    <view class="dialog-text">{{errMsg}}</view>
+  </view>
+</view>
+<view class="dialog-box" wx:if="{{errMsg==imeiUsed}}">
+  <view class="dialog-content">
+    <view class="close" bindtap="closeDialog">
+      <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/close.png"/>
+    </view>
+    <view class="dialog-text">已经领取过了，不要贪心哦~去看看我的口碑吧</view>
+    <view class="enterMyArr" bindtap="enterMyArr">查看我的口碑</view>
+  </view>
+</view>
+<view class="dialog-box" wx:if="{{errMsg==imeiUnused[0]||errMsg==imeiUnused[1]}}">
+  <view class="dialog-content">
+    <view class="close" bindtap="closeDialog">
+      <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/close.png"/>
+    </view>
+    <view class="dialog-text">很抱歉，您的IMEI号不在此次活动范围，详情请咨询店内的伙伴。</view>
+    <view class="enterIntro" bindtap="enterIntro">了解R11s</view>
+  </view>
+</view>
+<view class="dialog-box" wx:if="{{guize}}">
+  <view class="dialog-content">
+    <view class="close" bindtap="closeDialog">
+      <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/close.png"  />
+    </view>
+    <view class="dialog-image">
+      <image class="guize-pic" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/guize.png"
+             mode="widthFix"  />
+    </view>
+  </view>
+</view>-->
+<view class="dialog-box">
+  <view class="dialog-content">
+    <view class="dialog-text">
+      哎呀，来晚了…活动已结束！
+    </view>
+  </view>
+</view>

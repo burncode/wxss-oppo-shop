@@ -1,0 +1,15 @@
+<!--components/ad-list/ad-list.wxml-->
+<template name="adList">
+  <view class="ad-list">
+    <view class="ad-list-box">
+      <swiper indicatorDots="{{imgUrls.length == 1 ? false : indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicatorColor="{{indicatorColor}}" indicatorActiveColor="{{indicatorActiveColor}}">
+        <block wx:for="{{imgUrls}}" wx:key="key" wx:for-item="item">
+          <swiper-item>
+             <image src="{{item.img}}" class="slide-image" data-appid='{{item.appId}}' data-pagePath='{{item.pagePath}}' catchtap='goto'/> 
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="holder"></view>
+  </view>
+</template>

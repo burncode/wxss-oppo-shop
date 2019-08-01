@@ -1,0 +1,189 @@
+page {
+    font-family: 'SimHei';
+}
+.activity-page{
+    background: #ebebeb;
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+.talk-top{
+    width: 88rpx;
+    /*height:42rpx;*/
+    margin-left: 330rpx;
+    margin-top: 50rpx;
+    margin-bottom: 20rpx;
+}
+.talk-1,.talk-2,.talk-3,.talk-4{
+    width: 750rpx;
+    height:160rpx;
+    margin-top: 20rpx;
+    opacity: 0;
+}
+.show-1{
+
+    animation:move .6s linear 1;
+    -webkit-animation:move .6s linear 1;
+    animation-fill-mode: forwards;
+}
+@keyframes move {
+    0% {
+        opacity: 0;
+
+    }
+    50%{
+        opacity: 0;
+        margin-top: 10rpx;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@-webkit-keyframes move {
+    0% {
+        opacity: 0;
+
+    }
+    50%{
+        opacity: 0;
+        margin-top: 10rpx;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+.talk-bottom{
+    width: 750rpx;
+    height: 100rpx;
+    position: absolute;
+    left:0;
+    bottom:0;
+}
+.enter-btn{
+    width: 344rpx;
+    height:85rpx;
+    line-height:85rpx;
+    color: #fff;
+    position: absolute;
+    left:200rpx;
+    background: -webkit-linear-gradient(left, #ee7435 , #dc3065);     /* 背景色渐变 */
+    border-radius: 50rpx;
+    text-align: center;
+    bottom:208rpx;
+}
+.activity-exp{
+    position: absolute;
+    width: 250rpx;
+    text-align: center;
+    bottom:125rpx;
+    font-size: 26rpx;
+    color: #817f7f;
+    text-decoration:underline;
+    left:50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    height:80rpx;
+    line-height:80rpx;
+}
+.activity-exp-box{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+.musk{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.71);
+}
+.exp{
+    width: 688rpx;
+    height:967rpx;
+    position: absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.exp-img{
+    width: 688rpx;
+    height:967rpx;
+}
+.close-btn{
+    width:50rpx;
+    height:50rpx;
+    position: absolute;
+    right:70rpx;
+    top:70rpx;
+}
+.close-btn image{
+    width:20rpx;
+    height:20rpx;
+    margin: 15rpx;
+}
+
+/*活动结束*/
+.activity-end{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index: 99999;
+}
+.activity-end .musk{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.31);
+}
+.activity-end .end-box{
+    width:380rpx;
+    height:250rpx;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    border-radius: 15rpx;
+}
+.activity-end .end-box .end-text{
+    font-family: "Microsoft YaHei";
+    color: #fff;
+    font-size: 30rpx;
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-weight: lighter;
+    margin-top: 60rpx;
+    line-height:40rpx;
+}
+.activity-end .end-box .count-num{
+    font-family: "Microsoft YaHei";
+    color: #fff;
+    font-size: 30rpx;
+    width: 100%;
+    text-align: center;
+    display: block;
+}

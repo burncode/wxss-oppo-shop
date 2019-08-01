@@ -1,0 +1,72 @@
+<!--<view class="oppo-logo">
+  <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/oppo-logo.png"  />
+</view>
+<view class="guize-btn" bindtap="showGuize">活动规则</view>
+<view class="warrant-content"
+      style="background:url('http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/warr-bg.png');background-size:100%;">
+  <view class="star-pic">
+    <image src="{{starPic}}"  />
+  </view>
+  <view class="warrant-info"
+        style="background:url('http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/warr-info-bg.png');background-size:100%;">
+    <view class="my-info">
+      <view class="head-pic">
+        <image src="{{headImage}}"  />
+      </view>
+      <view class="my-name">{{nickName}}</view>
+    </view>
+    <view class="my-comment">
+      <view class="top-icon">
+        <image class="po-icon-l" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/top-point.png" />
+      </view>
+      <view class="comment-detail">{{comment}}</view>
+      <view class="bottom-icon">
+        <image class="po-icon-r" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/bot-point.png" />
+      </view>
+    </view>
+    <view class="my-rank-score">
+      <view class="my-score">
+        <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/rank-1.png" />
+        <view class="text">TA的口碑影响力</view>
+        <view class="score-num">{{myScore}}</view>
+      </view>
+      <view class="my-rank">
+        <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/rank-2.png" />
+        <view class="text">TA的排名</view>
+        <view class="rank-num">{{myRank}}</view>
+        <view class="tips">（今日在全国R11s用户中的排行）</view>
+      </view>
+    </view>
+  </view>
+  <view class="intro-box">
+    <button class="share-btn" bindtap="voteAct">为TA助力赢好礼</button>
+    <view class="vote-tips">点击即有机会获得神秘奖品，并为好友增加口碑影响力。</view>
+  </view>
+</view>
+<view class="dialog-box" wx:if="{{errMsg}}">
+  <view class="dialog-content">
+    <view class="close" bindtap="closeDialog">
+      <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/close.png"/>
+    </view>
+    <view class="dialog-text">{{errMsg}}</view>
+  </view>
+</view>
+<view class="dialog-box" wx:if="{{guize}}">
+  <view class="dialog-content">
+    <view class="close" bindtap="closeDialog">
+      <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/close.png"  />
+    </view>
+    <view class="dialog-image">
+      <image class="guize-pic" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/guize.png"
+             mode="widthFix"  />
+    </view>
+  </view>
+</view>-->
+<view class="dialog-box">
+  <view class="dialog-content">
+    <view class="dialog-text">
+    哎呀，来晚了…
+      活动已结束！
+    </view>
+  </view>
+</view>

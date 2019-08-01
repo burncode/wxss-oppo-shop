@@ -1,0 +1,13 @@
+<!--pages/pay-success/pay-success.wxml-->
+<view class='container'>
+  <view class='top flex flex-center'>
+    <icon type='success' color='#008E5B' size='50'></icon>
+  </view>
+  <view class='content'>
+    <view class='des flex flex-center'>购买成功</view>
+    <view class='price flex flex-center'>¥35.50</view>
+  </view>
+  <view class='bottom-btn'>
+    <view class='btn' bindtap='confirm'>完成</view>
+  </view>
+</view>

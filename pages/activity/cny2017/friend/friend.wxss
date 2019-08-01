@@ -1,0 +1,243 @@
+/* pages/activity/cny2017/friend/friend.wxss */
+page{
+    height: 100%;
+}
+
+.logo{position: absolute;right: 90rpx;top: 0;width:184rpx;height: 85rpx; }
+.container{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, #a00631 0%, #512c5e 100%);
+    overflow: hidden;
+    text-align: center;
+}
+
+.avatarInfo{
+    padding: 5% 0 0 0;
+}
+.avatarInfo .avatar{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 100%;
+    border: 2px solid #f3cf9d;
+}
+.avatarInfo .avatarTxt{
+    font-size: 28rpx;color: #f3cf9d;
+    padding: 10rpx 80rpx 0; 
+}
+
+.card{
+    width: 706rpx;
+    height: 690rpx;
+    position: absolute;
+    left: 50%;
+    margin-left: -353rpx;
+    bottom: 0;
+    transform: scale(0.85) translateY(-10%);
+}
+.cardFront{
+    background-image: linear-gradient(0deg, #b81e30 0%, #cb3e4e 100%);width: 100%;height: 100%;position: relative;
+    overflow: hidden;
+    border-radius: 10rpx;
+    box-shadow: 5rpx 28rpx 10rpx rgba(100, 5, 17, 0.5);
+}
+.cardTop{
+    background-image: linear-gradient(0deg, #e4485a 0%, #dc4a5b 100%);
+    width: 1400rpx;
+    height: 1400rpx;
+    border-radius: 1400rpx;
+    position: absolute;
+    left: 50%;
+    margin-left: -700rpx;
+    top: -1200rpx;
+    transform-origin: center 1200rpx;
+}
+.btnOpen{
+    position: absolute;
+    left: 50%;
+    width: 146rpx;
+    height: 146rpx;
+    line-height: 146rpx;
+    border-radius: 146rpx;
+    margin-left: -73rpx;
+    bottom: -73rpx;
+    background: #f3cf9d;
+}
+.btnOpen image{width: 57rpx;height: 69rpx;vertical-align: middle;}
+.hand{width: 86rpx; height: 92rpx;position: absolute;left: 330rpx;top: 240rpx;}
+.title{display: block;font-size: 28rpx;color: #f3cf9d;padding-top: 150rpx;text-align: center;}
+
+.cardBack{position: absolute;left: 0;top: -230rpx;width: 100%;opacity: 0}
+.cardBack image{width: 100%;position: absolute;left: 0;top: 0}
+.cardBack .back{height: 238rpx;}
+.cardBack .pic{height: 552rpx;top: -90rpx;
+    transform: rotate(-10deg) scale(0.95)
+}
+.cardBack .shadow{height: 209rpx;top: 170rpx;}
+
+.openView{position: absolute;left: 0;top: 0;width: 100%;text-align: center;opacity: 0}
+.sound{width: 154rpx;height: 154rpx;margin: 40rpx auto;position: relative}
+.sound .item{background: #f3cf9d;width: 154rpx;height: 154rpx;border-radius: 154rpx;position: absolute;left: 0;top: 0;
+    
+
+}
+.sound .item:nth-child(1){animation: soundItemAni 2s 0s infinite linear both}
+.sound .item:nth-child(2){animation: soundItemAni 2s 1s infinite linear both}
+@keyframes soundItemAni{
+    0%{transform: scale(1);opacity: 1}
+    100%{transform: scale(1.2);opacity: 0}
+}
+
+.sound .btnSound{background: #f3cf9d;width: 154rpx;height: 154rpx;border-radius: 154rpx;line-height: 154rpx;position: relative}
+.sound .btnArrow{
+    width: 40rpx;
+    height: 47rpx;
+    vertical-align: middle;
+    margin: 0 0 0 2px;
+}
+.giftList{width: 644rpx;margin: 0 auto;}
+.giftList .line{width: 100%;height: 2rpx;}
+.giftList .listInfo{padding: 20rpx 0;height: 120rpx;}
+.giftList .listItem{color: #f3cf9d;font-size: 28rpx;line-height: 38rpx;}
+
+.btns{text-align: center;font-size: 0; margin-top: 30rpx;}
+.btns image{width: 292rpx; height: 81rpx;display: inline-block;margin: 0 20rpx;}
+
+.noOpenAni .hand{
+    animation: handAni 0.5s 0s infinite linear both;
+}
+
+
+.openAni .hand{
+    animation: hideAni 0.5s 0s linear both;
+}
+.openAni .btnOpen{
+    animation: btnAni 1s 0s linear both;
+}
+.openAni .cardTop{
+    animation: cardTopAni 0.5s 1s linear both;
+}
+.openAni .cardBack{
+    animation: cardBackAni 0.5s 1.8s linear both;
+}
+.openAni{
+    animation: cardOpenAni 1s 1s linear both;
+}
+.openAni .openView{
+    animation: showAni 1s 2s linear both;
+}
+.isSelf,
+.isSelf .cardTop,
+.isSelf .cardBack,
+.isSelf .openView{animation:none;opacity: 1}
+.isSelf{
+    transform: scale(1) translateY(10%)
+}
+
+@keyframes showAni{
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+@keyframes hideAni{
+    0%{opacity: 1}
+    100%{opacity: 0}
+}
+@keyframes handAni{
+    0%{transform: scale(1)}
+    50%{transform: scale(1.1)}
+    100%{transform: scale(1)}
+}
+@keyframes btnAni{
+    80%{transform: rotateY(2turn);opacity: 1}
+    100%{transform: rotateY(2turn);opacity: 0}
+}
+@keyframes cardTopAni{
+    0%{transform: rotateX(0deg)}
+    100%{transform:rotateX(90deg)}
+}
+@keyframes cardOpenAni{
+    0%{transform: scale(0.85) translateY(-10%);}
+    100%{transform: scale(1) translateY(10%);}
+}
+@keyframes cardBackAni{
+    0%{transform: translateY(230rpx); opacity: 0}
+    100%{transform: translateY(0); opacity: 1}
+}
+
+
+
+
+/** loading */
+.loading{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-133deg, #333474 0%, #d2243a 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.loading .box{position: absolute;text-align: center;top: 50%;left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+}
+.loading .box .icon{width: 118rpx;height: 88rpx;display: block;margin: 0 auto 10rpx;}
+.loading .box .num{font-size: 22rpx;color: #f3cf9d;}
+.icons{position: absolute;right: 10rpx;top: 10rpx;}
+.icons .iconItem{position: absolute;left: 0;top: 0;background-size: 100% 100%;}
+.loadingItem1{background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAABVCAYAAAA7QqZyAAAE70lEQVRogcXafcieUxzA8c9zsxeiMSYM85LJMI3UtiZ7vGXJ69Yaygx5S20SmUxG7A9/0MwIhVAz8c/8IYZJ09oIY/lnSpKF2aywtWbzx3lu7ud+rpdzvdzXvnXV81znd879ve/rus75Xeecvn3rF2uYM7ApNrjVQ5EkTsZaTImt0KTgAXgFo7AktlKTggtw/sDfF+CymEpNCY7FI13nnkBfXsWmBBfjkK5zkzA7r2ITgifgxpSyx3BgVuUmBG/AsJSyU3FzVuUmBC/PKX8YB6UVNiE4Lqd8LO5OK+y14EiMiYh7QOgfh9BrwTswIiJuNO5PKsh8goQvcA1uE7qFQ/EjfsBX+AYb8Qt+xx7hfpqIm3B7hFybBViGLbGCo7ECl3SdHz9wXJpQZzeGF5Dq5GAswl2dJ9Mu8XCsSpDLo6xcm1txSueJNMFFmFrxw8owDI92nkgSPEy4H/YXc3B2+58kwZmGjptN0sLjnf90E53t9pDLMY1kwXXY0KhOMktIf0iWNSiSxjRMSRNcoavD3A98gQ1pgruxvEGZbn7CLOzJGoufx86IxmbjTryNbdXdbEK/MJxmJgtb8XpEg/3Cl5mFIzFBGINfxbfC+BzDTuHBmIzN7ZN9OS/uE/F1TsM7cIz0X3vkQDuTBo7xOEpIPP7Cd/gYK/Frd+W8bGYj1mB6RswoXIs3Usp3Yf3AUZiYfPDpiJhbynx4DDGCq3TcEylMx0mVbRKIEdyLpTkxfXLezsoSm/K/jD9yYuYWaC+a2Ab/FLqNLI5XPMHNpcg3XiZc7ixqv8xFBDcLD0wWV+GI8jpDKXrP5HU5I4SpjtooKrgGX+bE1HqZyzx1eb/i2Ti3RLuJlBFcKSQSWdT2K5YR3CVkL1lcJyQJlSnbsS4Xkto0DhcSiMqUFdwivBZkMa9k24OoMjTlPSwX4sQK7aOa4JdCt5PVduVfserg/lxOeeUEoqrgO8J8YRrjcFGVD6gquAfP5MRU6hPryN9eEtKxNK4WJkNLUYfgH0JCm8ZIoeMuRV0Z8FLsyygv/VJVl+BmvJ9R3n4nLkyd7xBP5ZSXeljqFPxC9ozY9eLWTAZRRbAl9HEv4Hv8JkyBpDFaWHMpRN7URxLDhEWa+4TVyiLMk59kDKKoYL/wdjehYL02Fwvrx1mjzyBiL/EIIXv5UHm59uc9WbRCHkfjU8wXsccggtmYERucJ9je53JeFaMEHooNzBI8Dp8IknUzVeRsWJrgGKwWJHtFf0xQkuABwtz0abXqDOX0mKAkwQclrwXXzbExQd2CZypwAzdBt+By1RelY/k7JqhT8Er/b/5qgiFLDkl0Ci7skUga38YEtQUnDxxNsjYmqC04t4ciSWwWmTC0hPF1Zk91hvJmbGBL6Fpiti/VxV5hq2gULc3fezErV//RUjwrrsI+HTs6YmjJfo+om5UKbthoCeu2TbAd9xSt1BIWlZtgvhIbNVr4uX6XIbyI18pUbAl7AHvJRzK2gObRGmggb5GwLJ8Ls/1ZKwKZtIQ9KqvrMupgnZD47qjSSHssXix7+qwobwqz/NurNtQW/Ez+sn8MO4X7bY64TUG5dOaD9yo4b9LFezgLz1Yy6qJT8B9hrXeh+G+/D+8KmfgMYZarVtJ2Ho0RtiZfgXMM3ou/VRiuPsBbwkPWM/K2RhFmwI4QJpC2yZ7Rr51/ASn3wkG68Uu+AAAAAElFTkSuQmCC);}
+.loadingItem2{background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACc0lEQVRYhb3YW4hNURyA8d8whjBSLrk0iMQIRRmUWzSJFB5cHpRbXhQvSMolUR68iRehXF7wKJEkuUUeEUWRhhhRckmMy8Pep07HGWvvbe/z1eqcs9dlf2udtdZe/13XcXqbAL0xEZMwFiPQhEb0RU98w2d8Qhse4z6u4k3oBiXqq1zrg1bMwWyMQ9dAOz1iMWiO68Nv3MVxnMb3JDKDsBhLMBcNgZsnpQ7T47QHW3Gus8JdMBX7sVQ0/F9zEqmkCWdjmcZqBepxL07l9MQwDMVIjKr47Cs7y+I25uFjeUZdgglcjQGYgPFowSxRz9NwDQuUzaMuWUzwLm7sEFaJRnG+ip4GmItd5ReyylTjCo6lrLNdtFpzk2nARjzBlpR1u2FHXjIz8RBHMCZjGysx+H9k6rAP1zE6Yxsl6kX7WyaZBpzCzoz1q7GoZJWGrqJtfXlOEiVaSN+zvQWIQH/0TyMzS9nML4CmpDK9cEK++1Il/ZI2vln0XCqS7klkGqXfzDKRRGYD+hUtgm9JZFYXrhHxISTTLDr/1oLXIZnWQH6eBEdmSk00osjiR5K/qRa8JLyahtdABB4RlulTAxG4QVgmFLzlxUXCMp9qIHIPzwnLtBXv4mjpS0jmccEir3Cm9CMkc7dYF7ulCOIuiN4kFMFtnCy/EJJ5ipsFiHzBGvxMIwMHchb5jbV4VpmRROayeB/Iie04Xy0j6bFznf9f5r+wCQc7K5BUph0L8TajSLsoUDv8r0JpTvsPMA13UtTpEEUVE3EpVDht6PECM7ACt3S+7F+LRmE81ks4omnDW7HAuTgNxGQMEb0MeC96K/HXSknCH/zNaeuokd6zAAAAAElFTkSuQmCC)}
+.icons .iconItem1{width: 12rpx;height: 24rpx;}
+.icons .iconItem2{width: 8rpx;height: 16rpx;}
+.icons .iconItem3{width: 10rpx;height: 11rpx;}
+.icons .iconItem4{width: 6rpx;height: 8rpx;}
+
+.loadingActive .iconItem1{
+    animation: loadingIconAni 2s 0s infinite linear both;
+    -webkit-animation: loadingIconAni 3s 0s infinite linear both;
+}
+.loadingActive .iconItem2{
+    animation: loadingIconAni 2s 1s infinite linear both;
+    -webkit-animation: loadingIconAni 3s 1s infinite linear both;
+}
+.loadingActive .iconItem3{
+    animation: loadingIconAni 2s 0.6s infinite linear both;
+    -webkit-animation: loadingIconAni 2s 0.6s infinite linear both;
+}
+.loadingActive .iconItem4{
+    animation: loadingIconAni 2s 1.3s infinite linear both;
+    -webkit-animation: loadingIconAni 2s 1.3s infinite linear both;
+}
+
+@keyframes loadingIconAni{
+    0%{transform: translate(0,0) rotate(0deg);opacity: 1}
+    100%{transform: translate(140rpx,-200rpx) rotate(160deg);opacity: 0}
+}
+@-webkit-keyframes loadingIconAni{
+    0%{-webkit-transform: translate(0,0) rotate(0deg);opacity: 1}
+    100%{-webkit-transform: translate(140rpx,-200rpx) rotate(160deg);opacity: 0}
+}
+
+
+@media screen and (device-width:375px) and (min-height:720px){
+    .avatarInfo{
+        padding: 18% 0 0 0;
+    }
+    .card{height: 850rpx}
+    .giftList .listInfo{height: 240rpx}
+
+}
+
+@media screen and (device-width:360px) and (max-height:530px){
+    /* .cardBack .pic{} */
+    .card{height: 620rpx}
+    .btns{margin-top: 20rpx;}
+    .sound{margin: 20rpx auto}
+    .avatarInfo{padding-top: 3%}
+}
+
+/** 安卓 18:9 */
+@media screen and (width:360px) and (min-height:600px), screen and (width:412px) and (min-height:680px), screen and (width:393px) {
+    .avatarInfo {
+       padding-top: 100rpx;
+    }
+}

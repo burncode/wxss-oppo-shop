@@ -1,0 +1,289 @@
+.gift-content{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+.gift-content .ticket-icon{
+  width: 653rpx;
+  height: 272rpx;
+  margin-left:20rpx;
+  margin-top: 83rpx;
+}
+.gift-content .give-name{
+  width: 380rpx;
+  position: absolute;
+  top: 268rpx;
+  left: 326rpx;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 30rpx;
+  color: #ffffff;
+}
+.gift-box{
+  width: 684rpx;
+  height: 390rpx;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.gift-box .gift-info .gift-detail .gift-num{
+  font-size: 22rpx;
+  color: #6c6c6c;
+  margin-top: 4rpx;
+}
+.gift-box .gift-info .gift-detail .gift-name{
+  font-size: 27rpx;
+  color: #00bd7a;
+  font-weight: bolder;
+  margin-bottom: 4rpx;
+}
+.gift-box .gift-info .gift-detail{
+  width: 340rpx;
+  padding-left: 20rpx;
+  border-left: 1px solid #dcdcdc;
+  height: 130rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.gift-box .gift-info.no-award{
+  font-size: 42rpx;
+  color: #a2a2a2;
+  justify-content: center;
+}
+.gift-box .gift-info{
+  width: 530rpx;
+  height: 130rpx;
+  margin-left: 77rpx;
+  margin-top: 82rpx;  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gift-box .gift-info .gift-logo .logo{
+  width: 150rpx;
+  height: 63rpx;
+}
+.gift-box .gift-info .gift-logo .gz-btn{
+  width: 145rpx;
+  height: 38rpx;
+  border: 2rpx solid #20c68b;
+  color: #20c68b;
+  background: #fff;
+  border-radius: 50rpx;
+  font-size: 19.5rpx;
+  text-align: center;
+  line-height: 38rpx;
+}
+.gift-box .gift-info .gift-logo{
+  width: 150rpx;
+  height: 130rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.gift-box .vote-info .votes{
+  font-size: 36;
+  font-weight: bolder;
+  color: #00bd7a;
+  margin-left: 10rpx;
+}
+.gift-box .vote-info .vote-name{
+  font-size: 26rpx;
+  color: #646464;
+}
+.no-list{
+  width: 100%;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+  margin: 50rpx 0;
+}
+.gift-box .vote-info{
+  width: 530rpx;
+  height: 35rpx;
+  margin-top: 80rpx;
+  margin-left:  77rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homie-award{
+  width: 645rpx;
+  margin: 35rpx auto 0 auto;
+}
+.homie-award .award-list .info .award{
+  margin-left: 20rpx;
+  font-weight: bold;
+}
+.homie-award .award-list .info{
+  display: flex;
+}
+.homie-award .award-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  font-size: 24rpx;
+  height: 73rpx;
+  border-bottom: 1px dashed #68b586;
+}
+.homie-award image{
+  width: 645rpx;
+  height: 27rpx;
+}
+.enter-btn{
+  width: 595rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  margin: 37rpx auto;
+  background: #eefff5;
+  border-radius: 50rpx;
+  font-size: 36rpx;
+  color: #46bd71;
+  font-weight: bolder;
+  box-shadow: 0 0 30rpx rgba(0,0,0,.3);
+}
+.dialog-box{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background:rgba(0,0,0,.3);
+  z-index: 10;
+}
+.dialog-box .dialog-content{
+  width: 600rpx;
+  /*height: 403rpx;*/
+  background: #fff;
+  border-radius: 10rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+.dialog-box .dialog-content .close{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+}
+.dialog-box .dialog-content .close image{
+  width: 100%;
+  height: 100%;
+}
+.dialog-box .dialog-content .dialog-image image{
+  width: 100%;
+}
+.dialog-box .dialog-content .dialog-image{
+  width: 450rpx;
+  height: 550rpx;
+  overflow-y: scroll;
+  margin: 40rpx auto;
+  text-align: center;
+  font-size: 28rpx;
+  color: #5b5b5b;
+}
+.dialog-box .dialog-content .qqyy-pic{
+  width: 520rpx;
+  height: 550rpx;
+  margin: 40rpx;
+}
+.dialog-box .dialog-content .dialog-text text{
+  font-size: 22rpx;
+  color: #46bd71;
+  word-break: break-all;
+  display: block;
+  margin-bottom: 10rpx;
+}
+.dialog-box .dialog-content .dialog-text .title{
+  font-size: 22rpx;
+  margin-bottom: 20rpx;
+  color: #5d5d5d;
+  word-break: break-all;
+}
+.dialog-box .dialog-content .dialog-text{
+  width:90%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 90rpx 0;
+  font-size: 28rpx;
+  color: #5b5b5b;
+}
+
+
+
+.warranty-content{
+  width: 100%;
+  text-align: left;
+  margin: 0 auto;
+  max-height: 600rpx;
+  overflow-y: scroll;
+}
+.warranty-content .sm-title{
+  font-size: 30rpx;
+  color: #000;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+.warranty-content .rule-box .rule-tit{
+  width: 100%;
+  margin: 5rpx 0;
+}
+.warranty-content .rule-box{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 10rpx;
+  flex-wrap: wrap;
+}
+.warranty-content .rule-box .serial-num{
+  width: 35rpx;
+  height: 35rpx;
+  background: #ffca13;
+  text-align: center;
+  line-height: 35rpx;
+  color: #fff;
+  border-radius: 100%;
+  font-size: 26rpx;
+  margin-right: 25rpx;
+
+}
+.warranty-content .rule-box .rule-text-1{
+  width: 95%;
+  padding-left: 5%;
+  font-size: 24rpx;
+  color: #8b8b8b;
+  line-height: 35rpx;
+  margin-bottom: 5rpx;
+}
+.warranty-content .rule-box .rule-text{
+  flex:1;
+  font-size: 24rpx;
+  color: #8b8b8b;
+  line-height: 35rpx;
+}
+.aqiyi-slogan{
+  color: #00bd7a !important;
+  font-size: 26rpx;
+}
+.guize-btn{
+  width: 150rpx;
+  height:50rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: 40rpx;
+  background: #41a96f;
+  line-height: 50rpx;
+  border-radius: 0 50rpx 50rpx 0;
+}

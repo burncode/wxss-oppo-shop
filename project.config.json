@@ -1,0 +1,305 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.1",
+	"appid": "wxa9795213dd51a4b1",
+	"projectname": "oppo%E5%AE%98%E6%96%B9%2B(Git)",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "cny2017",
+					"pathName": "pages/activity/cny2017/home/home",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 0,
+					"name": "我的",
+					"pathName": "pages/nav/reserve/reserve-list/reserve-list",
+					"query": "orderId=30562"
+				},
+				{
+					"id": 2,
+					"name": "主页",
+					"pathName": "pages/index/index",
+					"query": "imei=867463030161857",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "商城",
+					"pathName": "pages/shop/shop",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/my-order/my-order",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "话费充值",
+					"pathName": "pages/nav/tel-recharge/tel-recharge",
+					"query": "action=0"
+				},
+				{
+					"id": -1,
+					"name": "流量充值",
+					"pathName": "pages/nav/flow-recharge/flow-recharge",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "商品详情",
+					"pathName": "pages/goods-details/goods-details",
+					"query": "id=3167"
+				},
+				{
+					"id": 7,
+					"name": "账号绑定",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "维修进度",
+					"pathName": "pages/nav/repair/repair/repair",
+					"query": ""
+				},
+				{
+					"id": 9,
+					"name": "配件查询",
+					"pathName": "pages/nav/parts/parts/parts",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "延长保",
+					"pathName": "pages/nav/extended-warranty/extended-warranty",
+					"query": ""
+				},
+				{
+					"id": 11,
+					"name": "碎屏保",
+					"pathName": "pages/nav/broken-screen-warranty/broken-screen-warranty",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "网点查询",
+					"pathName": "pages/nav/shop/shop",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "预约服务",
+					"pathName": "pages/nav/reserve/reserve/reserve",
+					"query": ""
+				},
+				{
+					"id": 14,
+					"name": "配件详情",
+					"pathName": "pages/nav/parts/parts-query/parts-query",
+					"query": "product=R11 Plus/R11 Plusk"
+				},
+				{
+					"id": 15,
+					"name": "填写手机信息",
+					"pathName": "pages/nav/phone-info/phone-info",
+					"query": "price=39.5&type=1001"
+				},
+				{
+					"id": 16,
+					"name": "维修进度详情",
+					"pathName": "pages/nav/repair/repair-query/repair-query",
+					"query": "key=13430392248"
+				},
+				{
+					"id": -1,
+					"name": "我的信息",
+					"pathName": "pages/my/info/info",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的地址列表",
+					"pathName": "pages/my/address/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "新增地址",
+					"pathName": "pages/my/address/add/add",
+					"query": ""
+				},
+				{
+					"id": 20,
+					"name": "订单详情",
+					"pathName": "pages/order/details/details",
+					"query": "goodsJson=[{\"entityId\":3942,\"num\":1}]&type=submit"
+				},
+				{
+					"id": -1,
+					"name": "我的优惠券",
+					"pathName": "pages/my/coupon/coupon",
+					"query": ""
+				},
+				{
+					"id": 22,
+					"name": "购物车",
+					"pathName": "pages/cart/cart",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "会员主页",
+					"pathName": "pages/my/member/index/index",
+					"query": ""
+				},
+				{
+					"id": 24,
+					"name": "会员积分-成长值",
+					"pathName": "pages/my/member/credits/credits",
+					"query": "action=1"
+				},
+				{
+					"id": 25,
+					"name": "预约成功",
+					"pathName": "pages/nav/inform/inform",
+					"query": "reserve_id=17103000004"
+				},
+				{
+					"id": 26,
+					"name": "支付成功",
+					"pathName": "pages/pay-success/pay-success",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "新年正当红",
+					"pathName": "pages/hd/r11s-ny/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cny2017-rule",
+					"pathName": "pages/activity/cny2017/rule/rule",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cny2017-make",
+					"pathName": "pages/activity/cny2017/make/make",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cny2017-result",
+					"pathName": "pages/activity/cny2017/result/result",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cny2017-gift",
+					"pathName": "pages/activity/cny2017/gift/gift",
+					"query": ""
+				},
+				{
+					"id": 33,
+					"name": "cny2017-friend",
+					"pathName": "pages/activity/cny2017/friend/friend",
+					"query": "sid=2100",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "cny2017-rank",
+					"pathName": "pages/activity/cny2017/rank/rank",
+					"query": ""
+				},
+				{
+					"id": 35,
+					"name": "主页",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 36,
+					"name": "门店优惠券",
+					"pathName": "pages/my/coupon/coupon-list/coupon-list",
+					"query": "code=YB04001&city=null&area=123456"
+				},
+				{
+					"id": 37,
+					"name": "webview",
+					"pathName": "pages/webview/index",
+					"query": "url=oppofindx.beats-digital.com/?hmsr=wxminiapp"
+				},
+				{
+					"id": 38,
+					"name": "115",
+					"pathName": "pages/hd/115/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "优惠券详情",
+					"pathName": "pages/my/coupon/coupon-details/coupon-details",
+					"query": "couponType=shops&couponId=5878313"
+				},
+				{
+					"id": -1,
+					"name": "地址修复",
+					"pathName": "pages/nav/shop2/shop",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "r15",
+					"pathName": "pages/hd/r15/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "答题",
+					"pathName": "pages/answer/activityIndex/activityIndex",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "505",
+					"pathName": "pages/hd/505/index",
+					"query": ""
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,45 @@
+<!--pages/nav/parts/parts-query/parts-query.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='header'>
+    <view class='model'>
+      我的机型<text class='no'>{{product}}</text>
+    </view>
+  </view>
+  <view class='tag flex'>
+    <view class='item parts'>零配件名称</view>
+    <view class='item price'>保外指导价</view>
+    <view class='item flex-item remark flex flex-right'>备注</view>
+  </view>
+  <view class='parts-list'>
+    <view class='parts-item flex flex-middle' wx:for='{{partsList}}' wx:key='key' wx:for-item="item">
+      <view class='icon'>
+        <image src='../../../../images/parts/{{item.icon}}.png'></image>
+      </view>
+      <view class='parts-info flex flex-item'>
+        <view class='parts-name'>{{item.name}}:</view>
+        <view class='parts-price'>¥{{item.price}}</view>
+        <view class='parts-remark flex flex-right flex-item line1'>{{item.remarks == null ? '' : item.remarks}}</view>
+      </view>
+    </view>     
+  </view>
+  <view class='explain'>
+    <view class='explain-item flex'>
+      <view class='seq'>1.</view>
+      <view class='text'>以上内容为更换零配件的参考价，其他零配件价格请咨询 OPPO 客服中心。</view>
+    </view>
+    <view class='explain-item flex'>
+      <view class='seq'>2.</view>
+      <view class='text'>对于保内机器不收取任何费用，对于保外机器维修仅收取零配件费用，不收取人工费。</view>
+    </view>
+    <view class='explain-item flex'>
+      <view class='seq'>3.</view>
+      <view class='text'>无论保内或保外维修，在OPPO客户服务中心进行检测、清洗、升级都不收取任何费用。</view>
+    </view>
+    <view class='explain-item flex'>
+      <view class='seq'>4.</view>
+      <view class='text'>付费维修的坏料将退回公司进行专业环保处理，如您需要请向工作人员领取（优惠活动机型除外）。</view>
+    </view>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

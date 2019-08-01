@@ -1,0 +1,50 @@
+<!--pages/nav/inform/inform.wxml-->
+<import src="../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='header'>
+    <view class='content flex flex-middle'>
+      <icon type='success' size='30' color='#008E5B'></icon>
+      <text>恭喜您，预约成功</text>
+    </view>
+  </view>
+  <view class='main'>
+    <view class='item flex'>
+      <view class='title'>预约号</view>
+      <view class='info flex-item'>{{orderDetail.reserve_id}}</view>
+    </view>
+    <view class='item flex'>
+      <view class='title'>预约人</view>
+      <view class='info flex-item'>{{orderDetail.name}}</view>
+    </view>
+    <view class='item flex'>
+      <view class='title'>手机号</view>
+      <view class='info flex-item'>{{orderDetail.mobile}}</view>
+    </view>
+    <view class='item flex'>
+      <view class='title'>预约时间</view>
+      <view class='info flex-item'>{{orderDetail.time}}</view>
+    </view>
+    <view class='item flex'>
+      <view class='title'>服务网点</view>
+      <view class='info flex-item'>{{orderDetail.service_name}}</view>
+    </view>
+  </view>
+  <view class='explain'>
+    <view class='explain-item flex'>
+      <view class='text'>温馨提示</view>
+    </view>
+    <view class='explain-item flex'>
+      <view class='seq'>1.</view>
+      <view class='text'>凭预约的手机号码在OPPO服务中心使用预约服务</view>
+    </view>
+    <view class='explain-item flex'>
+      <view class='seq'>2.</view>
+      <view class='text'>请您带手机有效期的购买凭证保修卡,准时到达预约的服务中心</view>
+    </view>
+    <view class='explain-item flex'>
+      <view class='seq'>3.</view>
+      <view class='text'>为了节省您的时间,请您提前做好手机重要资源的备份</view>
+    </view>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

@@ -1,0 +1,57 @@
+<!--pages/nav/warranty-service-desc/warranty-service-desc.wxml-->
+<view class='container'>
+  <view class='title flex flex-center'>《OPPO保障服务条款》</view>
+  <view class='block'>
+    <view class='content'>在您计划购买OPPO保障服务产品之前，请您全面仔细阅读本条款中的内容，保障服务产品内容已经明确了您享受的权益，您的付费购买行为，将被视为您已经了解并接受了本条款中的内容。本保障服务产品由东莞市永盛通信科技有限公司（以下简称本公司）提供。</view>
+  </view>
+  <view class='block'>
+    <view class='tit'>第一条 OPPO保障服务产品内容</view>
+    <view class='content'>OPPO“延长保”</view>
+    <view class='content'>OPPO手机延长保产品分为半年期和一年期两类。OPPO手机延长保指在国家“三包”规定一年联保外，延长半年或一年的主机保修时间。
+具体如下：</view>
+    <view class='content'>（1）在国家“三包”规定一年联保外，延长半年或一年的主机保修时间。延保期内仅对主机提供免费保修服务。</view>
+    <view class='content'>（2）更换后的损坏零部件或产品归本公司所有。</view>
+    <view class='content'>（3）延长保修服务期内不承担退换货责任。</view>
+    <view class='content'>（4）延长保修服务期内不针对外壳、充电器、数据线、耳机、可拆卸电池等附件及赠品进行承保。</view>
+  </view>
+  <view class='block'>
+    <view class='tit'>第二条不属于OPPO保障服务产品范围的内容</view>
+    <view class='content'>下列原因造成的损失、费用，本公司不负责赔偿：</view>
+    <view class='content'>（1）因战争、敌对行为、军事行为、武装冲突、罢工、骚乱、暴动、恐怖活动及自然灾害的不可抗力，包括：台风、洪水、地震、火山爆发以及海啸、核反应、核放射等。</view>
+    <view class='content'>（2）手机在外观上的瑕疵，如：脱漆、刮痕、褪色等。但与手机同时受损的情况不在此限。</view>
+    <view class='content'>（3）不影响手机基本使用功能的附件或耗材，包括但不限于耳机、存储卡、充电设备、数据线、书写笔等的磨损、损坏或丢失。</view>
+    <view class='content'>（4）手机设备的正常磨损、腐蚀、氧化、锈垢、耗损等或因积灰、冷凝、受冷、受热等渐变性原因导致的损失。</view>
+    <view class='content'>（5）属于“三包范围”内的置换、损失或费用。</view>
+    <view class='content'>（6）原装基础上添加的存储数据或商品部件的丢失。</view>
+    <view class='content'>（7）因手机意外受损导致的任何间接损失或附带损失（包括但不限于人身损害、无法使用、利润损失、数据损失、故障时间损失及误工费等）不承担任何责任。</view>
+    <view class='content'>（8）被保险人故意行为导致的手机损坏，或因保管不当导致的盗窃、遗失。</view>
+    <view class='content'>（9）交予非OPPO客户服务中心维修点进行拆机、维修。</view>
+    <view class='content'>（10）由于软件中毒导致的系统、软件问题，造成的产品功能故障。</view>
+    <view class='content'>（11）手机型号、IMEI号等与购买本保障服务产品时记载的不符、涂改、缺失或无法辨识的。</view>
+    <view class='content'>如发现用户通过故意损坏产品来达到欺诈、骗保的目的，则与该产品对应的OPPO保障服务内容自动终止。本公司不退还任何费用，同时保留追究该用户法律责任的权利。</view>
+  </view>
+  <view class='block'>
+    <view class='tit'>第三条 OPPO保障服务产品其他责任免除</view>
+    <view class='content'>由于下列原因造成的损失或者费用，本公司不承担赔偿责任：</view>
+    <view class='content'>（1）首年符合国家质检总局、国家工商总局、信息产业部颁布的《移动电话机商品修理更换退货责任规定》范围之内的故障的。</view>
+    <view class='content'>（2）无有效销售凭证的。</view>
+    <view class='content'>（3）消费者提出维修要求时不在保障期内的。</view>
+    <view class='content'>（4）消费者故意人为制造损坏结果，或者故意放大损坏结果的发生。</view>
+    <view class='content'>（5）消费者明知使用方式和使用环境可能造成手机的损坏，而未采取任何防范措施，或因轻信损害结果可以避免，导致损害结果的发生。</view>
+    <view class='content'>（6）不可抗力，自然灾害，相关人或任何机构、人员的故意行为造成的损失或者费用。</view>
+    <view class='content'>（7）消费者私自拆装手机或将手机送到非OPPO客户服务中心进行拆机、维修。</view>
+    <view class='content'>（8）产品型号、产品身份标识、顾客信息等在系统中记载的产品相关信息与实际修理的产品不符或者涂改的。</view>
+    <view class='content'>（9）参保商品造成的使用者或他人的人身伤害和财产损失，其他各种间接损失或者费用。</view>
+    <view class='content'>（10）非所销售产品对应保障责任范围内的其他保障责任、费用、损失。</view>
+  </view>
+  <view class='block'>
+    <view class='tit'>第四条 OPPO保障服务产品的退换货说明</view>
+    <view class='content'>OPPO保障服务除“三包”退机外不可申请退出、撤销或终止，同时OPPO手机保障服务产品需与用户购买的手机绑定，不得以任何方式予以转让。
+手机发生“三包”换货，延长保服务转移至用户更换的新手机上，延长保服务时间按照用户签收最新更换的手机之日起重新计算。
+手机发生“三包”退货，将为用户退还保费，同时保障服务责任终止。</view>
+  </view>
+  <view class='block'>
+    <view class='tit'>第五条 OPPO保障服务理赔说明</view>
+    <view class='content'>购买OPPO延长保保障服务的用户手机需要维修时，用户不需额外提供以上资料）。OPPO客户服务中心根据用户手机IMEI号从系统中查询用户手机是否符合使用保障服务产品的条件。符合条件则为用户免费维修。</view>
+  </view>
+</view>

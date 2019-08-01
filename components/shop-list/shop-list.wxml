@@ -1,0 +1,44 @@
+<!--components/shop-list/shop-list.wxml-->
+<template name="shopList">
+  <view class='shop-list'>
+    <view class='shop-item flex' wx:for="{{shopList}}" wx:key="key" wx:for-item="item">
+      <view class='seq' wx:if='{{type == "shop"}}'>
+        <text class='flex flex-middle flex-center'>{{index + 1}}</text>
+        <image class='icon' src='../../../images/icon/icon_site_seq.png'></image>
+      </view>
+      <view class='checkbox' wx:if='{{type == "reserve"}}'>
+        <view class='circle flex flex-middle flex-center' 
+          style='border:1px solid {{currentCheckboxIdn != index ? "#e5e5e5" : "#fff"}};background-color: {{item.site_num == "" ? "#e5e5e5" : ""}}'  
+          data-index="{{index}}" 
+          data-sid='{{item.sid}}' 
+          data-sitenum='{{item.site_num}}' bindtap='onShopSelected'>
+          <icon type='success' size='22' color='#008E5B' wx:if='{{currentCheckboxIdn == index}}'></icon>
+        </view>
+      </view>
+      <view class='shop-info flex-item'>
+        <view class='siteName shop-info-item'>
+          <text class='shop-info-text'>{{item.siteName}}</text>
+        </view>
+        <view class='address shop-info-item'>
+          <text>{{item.address}}</text>
+          <!-- <image class='icon' src='{{arrowPath}}'></image> -->
+        </view>
+        <view class='workingHours shop-info-item'>
+          <text>{{item.workingHours}}</text>
+        </view>
+        <view class='phone shop-info-item'>
+          <text>{{item.phone}}</text>
+        </view>
+        <view class='shop-info-item'>
+          <view class='open-map' catchtap='openLocation' 
+            data-index='{{index}}'
+            data-address='{{item.address}}' 
+            data-phone='{{item.phone}}' 
+            data-workingHours='{{item.workingHours}}' 
+            data-coordinate='{{item.coordinate}}'  
+            data-siteName='{{item.siteName}}'>地图导航</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,45 @@
+<!--pages/nav/shop/shop.wxml-->
+<import src="../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='header city-select'>
+    <form bindsubmit='getShop'>
+      <view class='form-item'>
+        <view class='input-block flex flex-middle'>
+          <input class='flex-item' type='text' name="shopname" placeholder='店名'></input>
+        </view>
+      </view>
+      <view class='form-item'>
+        <button class='btn btn-green' form-type="submit" hover-class='active'>查询</button>
+      </view>
+    </form>
+  </view>
+  <view class='shop'>
+    <view class='title'>门店</view>
+    <view style='text-align:center;' wx:if='{{shopList.length==0}}'>找不到门店,请重新搜索</view>
+    
+    <view class='shop-list' wx:else>
+      <view class='shop-item flex' wx:for="{{shopList}}" wx:key="key" wx:for-item="item">
+        <view class='seq'>
+          <text class='flex flex-middle flex-center'>{{index + 1}}</text>
+          <image class='icon' src='../../../images/icon/icon_site_seq.png'></image>
+        </view>
+        <view class='shop-info flex-item'>
+        <view class='siteName shop-info-item'>
+          <text class='shop-info-text'>{{item.name}}</text>
+        </view>
+          <view class='address shop-info-item'>
+            <text>{{item.province}}{{item.city}}{{item.area}}</text>
+          </view>
+          <view class='address shop-info-item'>
+            <text>{{item.street}}</text>
+          </view>
+          <view class='shop-info-item'>
+            <text class='open-map' catchtap='goLocation' data-name="{{item.name}}" data-street="{{item.street}}" data-lat="{{item.lat}}" data-lng="{{item.lng}}">当前定位</text>
+            <text style='margin-left:1em;' class='open-map' catchtap='reLocation' data-id="{{item.id}}" data-index="{{index}}">修复定位</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

@@ -1,0 +1,12 @@
+<!--pages/nav/extended-warranty/extended-warranty.wxml-->
+<import src="../../../components/explain-box/explain-box.wxml" />
+<import src="../../../components/errMsg/errMsg.wxml" /> 
+<view class='container'>
+  <template is='explainBox' data='{{title:"延长保",subTitle:"延长保修 半年/一年",content:"真诚服务，保障加倍。在国家“三包”规定的一年联保截止日次日零时起，延长主机半年/一年的保修服务。延保期内手机因主机问题导致的性能故障您可获得免费维修服务",iconUrl:"../../../images/nav/icon_nav_5.png",checked:checked,remark:"注：如出现人为故障损坏，延保服务自动终止"}}'></template>
+  <view class='bottom flex'>
+    <view class='btn-item flex-item' wx:for='{{phoneWarranty}}' wx:key='key' wx:for-item='item'>
+      <view class='btn-item-a btn {{index == 0 ? "btn-green" : "btn-red"}}' data-extensionid='{{item.id}}' data-type='{{item.warrantyExpiryDate == "ONE_YEAR" ? 1 : 0}}' data-price='{{item.warrantyPrice}}' bindtap='gotoPhoneInfo'>{{item.warrantyName}} ¥{{item.warrantyPrice}}</view>
+    </view> 
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

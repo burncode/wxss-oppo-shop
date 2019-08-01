@@ -1,0 +1,39 @@
+<!--pages/activity/cny2017/result/result.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'  catchlongtap='downCodePic'>
+     <canvas canvas-id='cnyPic' style='width:{{cavansWidth}}rpx;height:{{cavansHeight}}rpx;position: absolute;left:100000rpx;pointer-events: none'></canvas> 
+
+    <canvas canvas-id='codePic' style='width:{{canvasCodeWidth}}rpx;height:{{canvasCodeHeight}}rpx;position: absolute;left:100000rpx;top:0;pointer-events: none'></canvas>
+
+     <view class='avatarInfo'>
+        <image src='{{avatarTemp}}' class='avatar'></image>
+    </view>
+    <view class='resultCard'>
+        <view class='cardBack'>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/card_back.png' class='back'></image>
+            <image src='{{drawImgUrl}}' class='pic' mode='widthFix'></image>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/shadow.png' class='shadow'></image>
+        </view>
+        <view class='cardFront'>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/result_title.png' class='title'></image>
+            <view class='btns flex flex-center'>
+                <button open-type='share' plain = "true" hover-class = "none" class='pulse'>
+                    <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/btn_share.png?v=1' open-type='share'></image>
+                </button>
+                <!-- <navigator url='../gift/gift?shareImgName={{shareImgName}}&shareRecord={{shareRecord}}' hover-class='none'> -->
+                    <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/btn_get.png' class='pulse' bindtap='goGift'></image>
+                <!-- </navigator> -->
+            </view>
+            <view class='downTip flex flex-center flex-middle'>
+                <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/result_down.png' class='iconDown'></image>
+                <text>快长按保存，分享到朋友圈提升排位吧！</text>
+            </view>
+        </view>
+    </view>
+    <view class='btnBack' bindtap='goBack'>重新编辑</view> 
+    
+    <navigator url='../home/home' hover-class='none' open-type='navigateBack' delta = "5">
+        <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/btn_home.png' style = "position: absolute;left: 20rpx;top: 20rpx;width: 97rpx;height: 44rpx;"></image>
+    </navigator>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>  

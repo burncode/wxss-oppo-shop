@@ -1,0 +1,94 @@
+/* pages/me/me.wxss */
+/* 头部信息 */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.container{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.header{
+  position: relative;
+  height: 380rpx;
+  background-color: #fff;
+}
+.header .header-bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.header .user-info{
+  position: absolute;
+  width: 100%;
+  top: 100rpx;
+  z-index: 9;
+}
+.header .header-bg image{
+  width: 100%;
+  height: 200rpx;
+}
+.header .user-headUrl{
+  width: 140rpx;
+  height: 140rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 4rpx solid #fff;
+  overflow: hidden;
+}
+.header .user-headUrl image{
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.header .user-name{
+  margin-top: 15rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+}
+.header .oppo-member{
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #888;
+}
+/* 分割线 */
+.cutting-line{
+  height: 20rpx;
+  background-color: #f0f0f0;
+}
+/* 菜单栏 */
+.menu-list{
+  position: relative;
+  background-color: #fff;
+}
+.menu-list .menu-list-item{
+  position: relative;
+  padding: 30rpx 30rpx;
+}
+.menu-list .menu-list-item .icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.menu-list .menu-list-item .menu-name{
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.menu-list .menu-list-item::before{
+  content:" ";
+  position:absolute;
+  left:90rpx;
+  bottom:-1px;
+  right:0;
+  height:1px;
+  border-top:1rpx solid #e5e5e5;
+  color:#d9d9d9;
+}

@@ -1,0 +1,150 @@
+<!--components/coupon-list/coupon-list.wxml-->
+<template name="couponList">
+  <!-- 门店优惠券列表 -->
+  <view class='coupon' wx:if="{{type === 'shops'}}">
+    <view class='coupon-a flex' 
+      wx:for="{{couponList}}" wx:key="key" wx:for-item="item" 
+      data-id='{{item.id}}'
+      data-canEnter='{{item.canEnter}}'
+      data-canTaken='{{item.canTaken}}'
+      data-statuscode='{{item.statusCode}}'
+      bindtap='gotoDetails'>
+      <view class='coupon-left flex flex-item flex-middle'>
+        <view class='triangle-border-left'>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+        </view>
+        <view class='coverImg'>
+          <image class='coverImg-bg' src='../../../../images/coupon/pro-background-pic.png'></image>
+          <image class='cover' src='../../../../images/icon/icon_coupon_cover.png'></image>
+        </view>
+        <view class='info flex-item'>
+          <view class='name line2'>{{item.name}}</view>
+          <!-- <view class='shop-name line1'>广州海珠龙潭东环店</view> -->
+          <view class='time line1'>有效期:{{item.endTime}}</view>
+        </view>
+      </view>
+      <view class='coupon-right flex flex-middle flex-center'>
+        <view class='triangle-border-right'>
+          <view class='circular0'></view>
+          <view class='circular1'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+        </view>
+        <view class='coupon-btn {{item.statusCode === "TAKE_NOW" || item.statusCode === "USE_NOW" ? "" : "gray"}}'>{{item.statusText}}</view>
+        <view class='getCoupon' wx:if="{{item.statusCode === 'USE_NOW'}}">
+          <image src='../../../../images/icon/gone.png' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 个人中心优惠券列表 -->
+  <view class='coupon' wx:if="{{type === 'personal'}}">
+    <view class='coupon-a flex' 
+      wx:for="{{couponList}}" wx:key="key" wx:for-item="item" 
+      data-id='{{item.id}}'
+      data-status='{{couponStatus}}'
+      bindtap='gotoDetails'
+      hover-class='none'>
+      <view class='coupon-left flex flex-item flex-middle'>
+        <view class='triangle-border-left'>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+        </view>
+        <view class='coverImg'>
+          <image class='coverImg-bg' src='../../../images/coupon/pro-background-pic.png'></image>
+          <image class='cover' src='../../../images/icon/icon_coupon_cover.png'></image>
+        </view>
+        <view class='info flex-item'>
+          <view class='name line2'>{{item.coupon.name}}</view>
+          <view class='time line1'>有效期:{{item.coupon.endTime}}</view>
+        </view>
+      </view>
+      <view class='coupon-right flex flex-middle flex-center'>
+        <view class='triangle-border-right'>
+          <view class='circular0'></view>
+          <view class='circular1'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+          <view class='i'></view>
+        </view>
+        <view class='coupon-btn' wx:if="{{couponStatus === 'UNUSED'}}">立即使用</view>
+        <view class='coupon-btn {{couponStatus === "USED" ? "gray" : ""}}' wx:if="{{couponStatus === 'USED'}}">已使用</view>
+        <view class='coupon-btn {{couponStatus === "OVERDUE" ? "gray" : ""}}' wx:if="{{couponStatus === 'OVERDUE'}}">已过期</view>
+      </view>
+    </view>
+  </view>
+</template>

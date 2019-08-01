@@ -1,0 +1,10 @@
+<!--components/tel-input/tel-input.wxml-->
+<template name="telInput">
+  <view class='tel'>
+    <view class='tel-input'>
+      <input type='number' placeholder='输入手机号' value='13800138888' maxlength='11'></input>
+      <view class='tel-type'>默认号码(广东移动)</view>
+    </view>
+    <icon class='clear' type='clear' size='24' color='#CBCBCB'></icon>
+  </view>
+</template>

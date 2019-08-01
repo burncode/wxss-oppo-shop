@@ -1,0 +1,22 @@
+<!--pages/nav/repair/repair/repair.wxml-->
+<import src="../../../../components/logo/logo.wxml" />
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <!-- <template is='logo' data='{{logoUrl:"../../../../images/logo/oppo_logo.png"}}'></template> -->
+  <view class='header'>
+    <image src='http://wximg-oppo-cn.oss-cn-hangzhou.aliyuncs.com/vl/img/1ea91f5ab5f84a5d9a34f5d39c7269e4.jpg' mode='widthFix'></image>
+  </view>
+  <view class='form'>
+    <form>
+      <view class='input-block flex flex-middle'>
+        <input class='flex-item' type='number' placeholder='手机号/IMEI' confirm-type='search' bindinput='keyChange'></input>
+      </view>
+      <!-- <view class='input-block flex flex-middle'>
+        <input class='flex-item' type='number' placeholder='验证码'></input>
+        <view class='get-verification-code'>获取验证码</view>
+      </view> -->
+      <view class='btn btn-green {{key == "" ? "disabled" : ""}}' bindtap='{{key != "" ? "onQuery" : ""}}'>查询</view>
+    </form>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

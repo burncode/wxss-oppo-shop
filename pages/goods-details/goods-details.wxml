@@ -1,0 +1,148 @@
+<!--pages/goods-details/goods-details.wxml-->
+<import src="../../components/ad-list/ad-list.wxml" />
+<import src="../../components/errMsg/errMsg.wxml" />
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='container'>
+  <template is="adList" data="{{imgUrls:imgUrls,indicatorDots:'true',indicatorColor:'#808080',indicatorActiveColor:'#666',autoplay:true,interval:3000,duration:500}}"></template>
+  <view class='goods-content'>
+    <view class='goods-part'>
+      <view class='goods-name-price'>
+        <view class='goods-name line2'>{{goodsEntity.name
+}}</view>
+        <view class='goods-price'>¥{{goodsEntity.price
+}}</view>
+      </view>
+    </view>
+    <view class='goods-part spec-desc flex flex-middle' data-type='show' bindtap='onSpec' wx:if='{{goodsEntity.shopGoodsEntitySpecList.length != 0}}'>
+      <view class='goods-part-tit'>已选</view>
+      <view class='goods-part-info flex line1'>
+        <text wx:for='{{selectedSpecArr}}' wx:key='key' wx:for-item='item' style='margin-right: 10rpx;'>{{item.specValue}}</text>
+      </view>
+      <image class='icon' src='../../images/icon/icon_arrow.png'></image>
+    </view>
+  </view>
+  <view class='tags'>
+    <view class='tags-ul flex'>
+      <view class='tags-li {{ tagsCurrentIndex == 0 ? "active" : ""}} flex flex-item flex-center flex-middle' data-index='0' bindtap='onTags'>商品详情</view>
+      <view class='tags-li {{ tagsCurrentIndex == 1 ? "active" : ""}} flex flex-item flex-center flex-middle' data-index='1' bindtap='onTags' wx:if='{{goodsDetail.specIntroduction != ""}}'>产品规格</view>
+      <!-- <view class='tags-li {{ tagsCurrentIndex == 2 ? "active" : ""}} flex flex-item flex-center flex-middle' data-index='2' bindtap='onTags'>用户评价(5)</view> -->
+    </view>
+    <view class='tags-content'>
+      <view class='tags-content-item tags-goods-details' wx:if='{{tagsCurrentIndex == 0}}'>
+        <template is="wxParse" data="{{wxParseData:introduction.nodes}}"/>
+      </view>
+      <view class='tags-content-item tags-goods-spec' wx:if='{{tagsCurrentIndex == 1}}'>
+        <template is="wxParse" data="{{wxParseData:specIntroduction.nodes}}"/>
+      </view>
+      <view class='tags-content-item tags-goods-comment' wx:if='{{tagsCurrentIndex == 2}}'>
+        <view class='comment'>
+          <view class='comment-nav flex'>
+            <view class='comment-nav-item flex-item'>
+              <view class='comment-nav-item-a flex flex-center active'>全部评论</view>
+            </view>
+            <view class='comment-nav-item flex-item'>
+              <view class='comment-nav-item-a flex flex-center'>晒图(2)</view>
+            </view>
+            <view class='comment-nav-item flex-item'>
+              <view class='comment-nav-item-a flex flex-center'>追评(3)</view>
+            </view>
+          </view>
+          <view class='comment-list'>
+            <view class='comment-item flex'>
+              <view class='headUrl'>
+                <image src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1916352615,2695985303&fm=27&gp=0.jpg'></image>
+              </view>
+              <view class='comment-info flex-item'>
+                <view class='comment-info-header'>
+                  <view class='user-name line1'>小可爱</view>
+                  <view class='comment-time'>今天09:08</view>
+                </view>
+                <view class='comment-content'>很好用，拍照也和我买的OPPOR11plus的一样棒棒哒，尤其是外观太好看了，会好好保护它的，给OPPO比心哦！！！</view>
+                <view class='comment-img'></view>
+              </view>
+            </view>
+            <view class='comment-item flex'>
+              <view class='headUrl'>
+                <image src='https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=164788161,3370632039&fm=27&gp=0.jpg'></image>
+              </view>
+              <view class='comment-info flex-item'>
+                <view class='comment-info-header'>
+                  <view class='user-name line1'>忠实粉丝</view>
+                  <view class='comment-time'>今天08:58</view>
+                </view>
+                <view class='comment-content'>oppo的忠实粉丝了，我和老公用的都是oppo，性能各方面都挺好的！巴萨款的更是没得说，给老公买的，回来以后特别喜欢！大大的点赞</view>
+                <view class='comment-img flex'>
+                  <image src='https://www.opposhop.cn/archives/uploads/201710/2017100201104559d1d28943d3c.jpg'></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='bottom flex flex-middle'>
+    <view class='btn-item flex-item'>
+      <view class='btn-item-a add-cart flex flex-middle flex-center' bindtap='addCar'>加入购物车</view>
+    </view>
+    <view class='btn-item flex-item'>
+      <view class='btn-item-a buy flex flex-middle flex-center' bindtap='onPay'>立即购买</view>
+    </view>
+  </view>
+  <!-- 商品规格 -->
+  <view class='spec-box flex flex-bottom' style='{{specBox ? "" : "display:none"}}'>
+    <view class='spec-content'>
+      <view class='header flex'>
+        <view class='coverImg'>
+          <view class='cover-img'>
+            <image src='{{imgUrls[0].img}}'></image>
+          </view>
+        </view>
+        <view class='info flex-item'>
+          <view class='name'>{{goodsEntity.name
+}}</view>
+          <view class='price'>¥{{goodsEntity.price
+}}</view>
+        </view>
+      </view>
+      <view class='content'>
+        <view class='spec-list'>
+          <view class='spec-item flex' 
+              wx:for="{{goodsDetail.shopGoodsSpecList}}" 
+              wx:key='key' wx:for-item="item" wx:for-index='ind'>
+            <view class='title'>{{item.specName}}</view>
+            <view class='flex-item flex spec-item-content'>
+              <view class='spec-a {{itemSpec.selected ? "active" : ""}}' 
+                  wx:for="{{item.specValues}}" 
+                  wx:key='key' 
+                  wx:for-item="itemSpec" 
+                  wx:for-index='indSpec' 
+                  data-outerindex='{{ind}}'
+                  data-specindex='{{indSpec}}'
+                  data-specname='{{item.specName}}' 
+                  data-specvalue='{{itemSpec.specValue}}' bindtap='selectedSpec'>{{itemSpec.specValue}}</view>
+            </view>
+          </view>
+          <view class='spec-item count flex flex-middle'>
+            <view class='title flex flex-middle'>数量</view>
+            <view class='flex-item flex spec-item-content'>
+              <view class='counter-box flex'>
+                <view class='counter-btn minus'>
+                  <image src='../../images/icon/icon_minus.png' catchtap='onMinus'></image>
+                </view>
+                <input type='number' value='{{goodsNum}}' bindinput='onInputGoodsNum' bindblur='onBlurGoodsNum'></input>
+                <view class='counter-btn plus'>
+                  <image src='../../images/icon/icon_plus.png' catchtap='onPlus'></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='close' data-type='hide' bindtap='onSpec'>
+        <image src='../../images/icon/icon_close.png'></image>
+      </view>
+    </view>  
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

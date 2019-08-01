@@ -1,0 +1,63 @@
+/* pages/my/member/index/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #F5F6F5;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  /* height: 65%; */
+}
+.container swiper{
+  width: 100%;
+  height: 100%;
+}
+.container swiper swiper-item{
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch
+}
+.top {
+  padding: 60rpx 0 40rpx;
+}
+.card {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+.card text {
+  position: absolute;
+  right: 25rpx;
+  bottom: 35rpx;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 24rpx;
+}
+.card image {
+  width: 100%;
+}
+
+.bot .item{
+  padding: 30rpx 0;
+}
+.bot .icon {
+  display: block;
+  background: url(http://wx.oppo.cn/static/img/ucenter-icon.6bed.png) no-repeat;
+  background-size: 200%;
+  width: 50%;
+  padding-top: 50%;
+  margin: 0 auto;
+}
+.bot .credits {
+  background-position: 0 100%;
+}
+.bot .exper {
+  background-position: 100% 100%;
+}
+.bot .privilege {
+  background-position: 100% 0;
+}
+.bot .item .name{
+  margin-top: 20rpx;
+  color: #858585;
+  text-align: center;
+}

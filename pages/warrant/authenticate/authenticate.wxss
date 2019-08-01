@@ -1,0 +1,172 @@
+page{
+  background: #fff;
+}
+.oppo-logo{
+  width: 152rpx;
+  height: 70rpx;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 75rpx;
+}
+.oppo-logo image{
+  width: 100%;
+  height: 100%;
+}
+.auth-title{
+  width: 355rpx;
+  height: 73rpx;
+  margin-top: 284rpx;
+  margin-left: 196rpx;
+}
+.auth-title image{
+  width: 100%;
+  height: 100%;
+}
+.auth-form{
+  width: 532rpx;
+  margin-top: 80rpx;
+  margin-left: 108rpx;
+}
+.auth-form .auth-sub-list{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12rpx 0;
+  border-bottom: 3rpx solid #d5d5d5;
+  margin-top: 30rpx;
+}
+.auth-form .auth-sub-list .auth-sub-point{
+  font-family: microsoft yahei;
+  font-size: 26.31rpx;
+  width: 120rpx;
+}
+.auth-form .auth-sub-list .auth-sub-point-po{
+  font-size: 26rpx;
+}
+.auth-form .auth-sub-list input{
+  flex: 1;
+  font-size: 26rpx;
+}
+.auth-form .auth-sub-list .scan-btn{
+  width: 57rpx;
+  height: 57rpx;
+  border-radius: 100rpx;
+}
+.auth-form .auth-sub-list .scan-btn image{
+  width: 100%;
+  height: 100%;
+}
+.clause-box{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 38rpx;
+}
+.clause-box .radio-btn{
+  
+}
+.clause-box .radio-btn image{
+  width: 31rpx;
+  height: 31rpx;
+}
+.clause-box .clause-text{
+  margin-left: 12rpx;
+  font-size: 20.72rpx;
+  color: #989898;
+}
+.auth-sub-btn::after{
+  border: none;
+  background: none;
+}
+.auth-sub-btn{
+  border: none;
+  background: none;
+  width: 480rpx;
+  height: 124rpx;
+  margin: 35rpx auto 0 auto;
+  padding: 0;
+}
+.auth-sub-btn image{
+  width: 480rpx;
+  height: 124rpx;
+}
+
+.dialog-box{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background:rgba(0,0,0,.3);
+  z-index: 99999;
+}
+.dialog-box .dialog-content{
+  width: 650rpx;
+  padding: 60rpx 0;
+  background: #fff;
+  border-radius: 10rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+.dialog-box .dialog-content .close{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+}
+.dialog-box .dialog-content .close image{
+  width: 100%;
+  height: 100%;
+}
+.dialog-box .dialog-content .dialog-image{
+  width: 550rpx;
+  height: 550rpx;
+  overflow-y: scroll;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  color: #5b5b5b;
+}
+.dialog-box .dialog-content .dialog-text{
+  width: 550rpx;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  color: #5b5b5b;
+}
+.enterIntro,.enterMyArr{
+  width: 400rpx;
+  background: #20c68b;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  height: 60rpx;
+  border-radius: 50rpx;
+  line-height: 60rpx;
+  margin: 20rpx auto 0 auto;
+}
+.guize-pic{
+  width: 100%;
+  height: 1178rpx;
+}
+.guize-btn{
+  width: 150rpx;
+  height:50rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: 40rpx;
+  background: #41a96f;
+  line-height: 50rpx;
+  border-radius: 0 50rpx 50rpx 0;
+}

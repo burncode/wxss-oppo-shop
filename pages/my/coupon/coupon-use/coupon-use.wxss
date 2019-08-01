@@ -1,0 +1,75 @@
+/* pages/my/coupon/coupon-use/coupon-use.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 30rpx 50rpx 0;
+  background-color: #05b570;
+}
+.content{
+  width: 100%;
+  padding: 0 50rpx 50rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  /* position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%); */
+}
+.content .title{
+  padding: 60rpx 0 0rpx;
+  text-align: center;
+  color: #666;
+}
+.content .bar-code{
+  width: 100%;
+}
+.content .bar-code .bar-code-img{
+  width: 100%;
+  height: 200rpx;
+} 
+.content .bar-code .bar-code-img image{
+  width: 100%;
+  height: 100%;
+}
+.content .bar-code .bar-code-num{
+  padding: 0 0 30rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing:5rpx;
+}
+.content .qr-code{
+  width: 100%;
+}
+.content .qr-code .qr-code-img{
+  width: 420rpx;
+  height: 420rpx;
+  margin: 0 auto;  
+}
+.content .qr-code .qr-code-img image{
+  width: 100%;
+  height: 100%;
+}
+.close-btn{
+  margin-top: 25rpx;
+}
+.close-btn .btn{
+  width: 200rpx;
+  margin: 0 auto;
+  padding: 20rpx 0;
+  color: #fff;
+  background-color: #05b570;
+  border: 1rpx solid  #05b570;
+}
+
+.canvas-box{
+  position: fixed;
+  top:999999rpx;
+  left: 0
+}

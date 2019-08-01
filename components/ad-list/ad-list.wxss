@@ -1,0 +1,38 @@
+/* components/ad-list/ad-list.wxss */
+/*广告轮播图*/
+.ad-list{
+  position: relative;
+  /* background-color: #fff; */
+}
+.ad-list-box{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-position: 50%;
+  background-size: cover;
+  z-index: 9;
+}
+.ad-list .holder{
+  width: 100%;
+  position: relative;
+  padding-bottom: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+swiper{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+swiper-item navigator{
+  width: 100%;
+  height: 100%;
+}
+swiper-item image{
+  width: 100%;
+  height: 100%;
+  text-align:center;
+}

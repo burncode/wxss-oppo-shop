@@ -1,0 +1,31 @@
+/* pages/nav/reserve/reserve-list/reserve-list.wxss */
+@import '../../../../components/nothing/nothing.wxss';
+page{
+  background-color: #fff;
+}
+.list{
+  padding: 50rpx 30rpx;
+}
+.list .item{
+  margin-bottom: 30rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+.list .block {
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}
+.list .block .title{
+  color: #888888;
+  width: 160rpx;
+}
+.list .block .info{
+  line-height: 1.4
+}
+.check-detail{
+  color: #008E5B;
+  text-decoration: underline;
+}
+.cancel{
+  color: #008E5B;
+  text-decoration: underline;
+}

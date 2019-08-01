@@ -1,0 +1,101 @@
+<!--pages/nav/reserve/reserve/reserve.wxml-->
+<import src="../../../../components/shop-list/shop-list.wxml" />
+<import src="../../../../components/time-select-list/time-select-list.wxml" />
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <form bindsubmit='submit'>
+    <view class='reserve'>
+      <view class='reserve-item step1'>
+        <view class='select'>
+          <view class='title'>请选择省份/直辖市/自治区</view>
+          <view class='input-block flex flex-middle'>
+            <view class='picker flex-item'>
+              <picker bindchange="provinceChange" value="{{provinceIndex}}" range="{{province}}">
+                <view class="picker-text flex flex-middle">{{province[provinceIndex]}}</view>
+              </picker>
+            </view>
+            <image class='icon-arrow-down' src="../../../../images/icon/icon_arrow.png"></image>
+          </view>
+          <view class='input-block flex flex-middle'>
+            <view class='picker flex-item'>
+              <picker bindchange="cityChange" value="{{cityIndex}}" range="{{city}}">
+                <view class="picker-text flex flex-middle">{{city[cityIndex]}}</view>
+              </picker>
+            </view>
+            <image class='icon-arrow-down' src="../../../../images/icon/icon_arrow.png"></image>
+          </view>
+        </view>
+        <view class='shop' wx:if='{{!nothingShop}}'>
+          <view class='title'>请选择服务中心</view>
+          <template is='shopList' data='{{shopList:shop,arrowPath:"../../../../images/icon/icon_arrow.png",type:"reserve",currentCheckboxIdn:currentCheckboxIdn}}'></template>
+        </view>
+        <view class='nothing-shop' wx:if='{{nothingShop}}'>对不起,找不到对应的客服中心信息,请重新搜索</view>
+      </view>
+      <view class='reserve-item step2' style='display:{{showTimeBox ? "block" : "none"}}'>
+        <view class='day'>
+          <view class='title'>选择到服务中心的日期</view>
+          <view class='time-list flex'>
+            <view class='time-item' wx:for="{{date}}" wx:key="key" wx:for-item="item" wx:for-index="idx" data-index='{{idx}}' data-date='{{item.date}}' data-status='{{item.status}}' bindtap='onDateSelected'>
+              <view class='time-item-a {{currentDayIndex == idx ? "active" : ""}} {{item.status < 0 ? "disable" : ""}}'>
+                <view class='info'>
+                  <view class='time flex flex-center'>{{item.date}}</view>
+                  <view class='status flex flex-center'>{{item.week}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='hour'>
+          <view class='title'>选择到服务中心的时间</view>
+          <view class='time-list flex'>
+            <view class='time-item' wx:for="{{time}}" wx:key="key" wx:for-item="item" wx:for-index="idx" data-index='{{idx}}' data-time='{{item.time}}' data-status='{{item.status}}' bindtap='onTimeSelected'>
+              <view class='time-item-a {{currentHourIndex == idx ? "active" : ""}} {{item.status == 6 ? "disable" : ""}}'>
+                <view class='info'>
+                  <view class='time flex flex-center'>{{item.hour}}</view>
+                  <view class='status flex flex-center'>{{item.statusDes}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='reserve-item'>
+        <view class='form'>
+          <view class='form-item'>
+            <view class='title'>
+              <text>*</text>请填写联系信息
+            </view>
+            <view class='input-block flex flex-middle'>
+              <input class='flex-item' type='text' name="name" placeholder='请填写姓名'></input>
+            </view>
+            <view class='input-block flex flex-middle'>
+              <input class='flex-item' type='number' name="mobile" placeholder='请填写手机号'></input>
+            </view>
+          </view>
+          <view class='form-item'>
+            <view class='title'>
+              <text>*</text>请填写故障信息
+            </view>
+            <view class='input-block flex flex-middle'>
+              <view class='picker flex-item'>
+                <picker bindchange="problemChange" value="{{problemIndex}}" range="{{problem}}">
+                  <view class="picker-text flex flex-middle">{{problem[problemIndex]}}</view>
+                </picker>
+              </view>
+              <image class='icon-arrow-down' src="../../../../images/icon/icon_arrow.png"></image>  
+            </view>
+            <view class='input-block flex flex-middle'>
+              <textarea name="description" placeholder='故障描述'></textarea>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='bottom-btn flex'>
+      <navigator class='btn flex-item' url='../reserve-list/reserve-list'>我的预约</navigator>
+      <button class='btn btn-green flex-item' form-type="submit" hover-class="active">提交预约</button>
+    </view>
+  </form>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>
+

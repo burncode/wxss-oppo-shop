@@ -1,0 +1,38 @@
+<!--pages/my/address/list/list.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<import src="../../../../components/nothing/nothing.wxml" />
+<view class='container'>
+  <view class='list' wx:if='{{!nothing}}'>
+    <navigator wx:for="{{address}}" wx:key='key' wx:for-item='item' class='item' url='../add/add?type=edit&id={{item.id}}&isSelected=false&isDefault={{item.isDefault}}'>
+      <view class='content flex' bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}">
+        <view class='check flex flex-middle' data-index="{{index}}" 
+              data-id='{{item.id}}' 
+              data-isdefault='{{item.isDefault}}' 
+              data-recipientname='{{item.recipientName}}' 
+              data-phone='{{item.phone}}' 
+              data-province='{{item.province}}' 
+              data-city='{{item.city}}'
+              data-area='{{item.area}}' 
+              data-street='{{item.street}}'
+              catchtap='onSetDefault'>
+          <view class='circle' style='border:1px solid {{item.isDefault ? "#fff" : "#e5e5e5"}}'>
+            <icon color='#008E5B' size='20' type='success' wx:if='{{item.isDefault}}'></icon>
+          </view>
+        </view>
+        <view class='info flex-item'>
+          <view class='top flex'>
+            <view class='name'>{{item.recipientName}}</view>
+            <view class='phone'>{{item.phone}}</view>
+          </view>
+          <view class='address line2'>{{item.province + item.city + item.area + item.street}}</view>
+        </view>
+      </view>
+      <view class='delete flex flex-middle flex-center' data-id='{{item.id}}' catchtap='deleteAddress'>删除</view>
+    </navigator>
+  </view>
+  <template is='nothing' data='{{nothing:nothing,iconPath:"../../../../images/icon/icon_address_nothing.png",nothingText:"暂无地址,可点击下方按钮添加"}}'></template>
+  <view class='bottom-btn flex flex-middle'>
+    <navigator class='btn btn-green' url='../add/add?type=add&isSelected=false'>新增地址</navigator>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

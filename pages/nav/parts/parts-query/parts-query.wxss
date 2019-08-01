@@ -1,0 +1,59 @@
+/* pages/nav/parts/parts-query/parts-query.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.header{
+  position: relative;
+  padding: 0 30rpx;
+}
+.header .model{
+  color: #858585;
+  padding: 50rpx 0;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.header .model text{
+  margin-left: 5rpx;
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #000;
+}
+
+.tag{
+  font-size: 30rpx;
+  padding: 30rpx 30rpx 0;
+}
+.tag .parts{
+  width:300rpx; 
+}
+.tag .price{
+  width: 200rpx;
+}
+
+.parts-list{
+  padding: 30rpx;
+}
+.parts-list .parts-item{
+  padding: 12.5rpx 0;
+}
+.parts-list .parts-item .icon{
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #f0f0f0;
+}
+.parts-list .parts-item .icon image{
+  width: 100%;
+  height: 100%;
+}
+.parts-list .parts-item .parts-info{
+  margin-left: 15rpx;
+}
+.parts-list .parts-item .parts-info .parts-name{
+  width: 260rpx;
+}
+.parts-list .parts-item .parts-info .parts-price{
+  width: 200rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}

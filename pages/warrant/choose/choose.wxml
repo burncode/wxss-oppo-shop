@@ -1,0 +1,40 @@
+<!--<view class="oppo-logo">
+  <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/oppo-logo.png"  />
+</view>
+<view class="guize-btn" bindtap="showGuize">活动规则</view>
+<view class="praise-content"
+      style="background:url('http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/praise-bg.png');background-size:100%;">
+  <view class="praise-title">
+    <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/praise-title.png"  />
+  </view>
+  <view class="praise-list">
+    <view class="praise-item {{praiseActive == index?'active':''}}" wx:for="{{praiseName}}" id="{{index}}"
+          data-name="{{item.name}}" bindtap="selectPraise">{{item.name}}</view>
+  </view>
+  <view class="praise-input">
+    <textarea style="display:{{textareaShow}}" placeholder="请输入" placeholder-class="praise-input-po" maxlength="36"
+              bindinput="praiseInput" value="{{praiseText}}"  />
+    <view class="placeholder-ta" style="display:{{poShow}}"></view>
+    <view class="praise-input-tips">还可以输入{{canTypeNum}}字</view>
+  </view>
+  <view class="praise-sub-btn" bindtap="{{subPraise}}">提交</view>
+</view>
+<view class="dialog-box" wx:if="{{errMsg}}">
+  <view class="dialog-content">
+    <view class="close" bindtap="closeDialog">
+      <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/close.png"  />
+    </view>
+    <view class="dialog-text" wx:if="{{guize==false}}">{{errMsg}}</view>
+    <view class="dialog-image" wx:if="{{guize==true}}">
+      <image class="guize-pic" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/guize.png"
+             mode="widthFix"  />
+    </view>
+  </view>
+</view>-->
+<view class="dialog-box">
+  <view class="dialog-content">
+    <view class="dialog-text">
+      哎呀，来晚了…活动已结束！
+    </view>
+  </view>
+</view>

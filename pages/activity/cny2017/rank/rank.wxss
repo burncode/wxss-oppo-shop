@@ -1,0 +1,155 @@
+/* pages/activity/cny2017/rank/rank.wxss */
+page{
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, #c12135 0%, #512c5e 100%);
+    overflow: hidden;
+}
+.inner{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.rank{
+    background: #c5263e;
+    border-radius: 30rpx;
+    width: 76%;
+    height: 760rpx;
+    padding: 20rpx;
+    margin: 5% auto 0;
+    text-align: center;
+}
+.rankTitle{
+    width: 183rpx;
+    height: 42rpx;
+}
+.panel{
+    padding: 20rpx 0;
+}
+.panelItem{
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #f3cf9d;
+}
+.panelItem:nth-child(1){width: 20%}
+.panelItem:nth-child(2){width: 50%}
+.panelItem:nth-child(3){width: 30%;}
+
+.list{
+    height: 80%
+}
+.listItemInfo{
+    font-size: 33rpx;
+    color: #f3cf9d;
+    line-height: 1.5;
+    overflow: hidden;
+    margin: 28rpx 0;
+}
+.listItemInfo:nth-child(1){width: 20%}
+.listItemInfo:nth-child(2){width: 50%}
+.listItemInfo:nth-child(3){width: 30%}
+
+.listItemIcon{
+    width: 28rpx;
+    height: 26rpx;
+}
+.listItemTxt{
+    font-size: 33rpx;
+    color: #f3cf9d;
+    padding-left: 10rpx;
+}
+
+.self{text-align: center}
+.selfTitle{
+    width: 152rpx;
+    height: 40rpx;
+    margin: 30rpx auto;
+}
+.selfPanelInfo{
+    font-size: 30rpx;
+    color: #f3cf9d;
+    padding: 0 40rpx;
+    line-height: 1.5;
+}
+.selfPanelInfo:nth-child(2){
+    border-left:1px solid #f3cf9d;
+    border-right:1px solid #f3cf9d;
+}
+.selfIcon{
+    width: 32rpx;
+    height: 30rpx;
+}
+
+.btns{text-align: center; padding-top: 30rpx;}
+.btnGet,
+.btnRule{
+    width: 292rpx;
+    height: 81rpx;
+    margin: 0 20rpx;
+    /* -webkit-animation:pulse 1s .2s infinite ease both;
+            animation:pulse 1s .2s infinite ease both; */
+}
+
+/**
+    saveInfo
+*/
+.saveInfo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8)
+}
+.saveInfoBox{
+    position: absolute;
+    left: 50%;
+    width: 650rpx;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #c5263e;
+    border-radius: 30rpx;
+    margin-left: -325rpx;
+}
+.saveInfo .title{
+    font-size: 48rpx;color: #f3cf9d;text-align: center;padding: 100rpx 0 0 0;
+}
+.saveInfo .info{
+    font-size: 28rpx;color: #ffffff;text-align: center;padding: 20rpx 0 0 0;
+}
+.saveInfo .tip{
+    font-size: 25rpx;color: #ffffff;text-align: center;padding: 20rpx 0 10rpx 0;
+}
+.saveInfo .form{
+    padding: 40rpx 90rpx;
+    color: #ffffff;
+}
+.saveInfo .formItem{margin-top:45rpx;}
+.saveInfo .formItem .label{width: 100rpx;font-size: 30rpx;}
+.saveInfo .formItem .input{flex: 1;border: 1px solid #fff; margin-left: 10rpx;padding: 0 10rpx;}
+.saveInfo .formItem .input input{font-size: 28rpx;text-align: center}
+.saveInfo .btnSaveInfo{background: #f3cf9d;width: 330rpx;height: 60rpx;text-align: center;line-height: 60rpx;color: red;border-radius: 100rpx;font-size: 48rpx;margin: 40rpx auto 70rpx;padding: 12rpx 0;}
+
+
+@keyframes pulse{
+    0%{-webkit-transform:scale(1)}
+    50%{-webkit-transform:scale(1.1)}
+    100%{-webkit-transform:scale(1)}
+}
+@-webkit-keyframes pulse{
+    0%{-webkit-transform:scale(1)}
+    50%{-webkit-transform:scale(1.1)}
+    100%{-webkit-transform:scale(1)}
+}
+
+@media screen and (device-width:375px) and (min-height:720px){
+    .rank{
+        height: 1000rpx;
+        margin: 0 auto;
+    }
+}

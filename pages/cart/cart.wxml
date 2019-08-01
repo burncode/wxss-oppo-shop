@@ -1,0 +1,91 @@
+<!--pages/cart/cart.wxml-->
+<import src="../../components/errMsg/errMsg.wxml" />
+<import src="../../components/nothing/nothing.wxml" />
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>
+<view class='container'>
+  <view class='goods-list' wx:if='{{!nothing}}'>
+    <view class='goods-item' 
+        wx:for="{{cart}}" 
+        wx:key="key"
+        wx:for-item='item'
+        data-id='{{item.goodsId}}'>
+      <view class='content flex' bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}">
+        <view class='check flex flex-middle' data-index='{{index}}'
+              data-entityid='{{item.goodsEntityId}}'
+              data-num='{{item.goodsNum}}'
+              data-price='{{item.shopGoods.currentGoodsEntity.price}}'
+              catchtap='onSelectedItem'>
+          <view class='circle' style='border:1px solid {{item.isDefault ? "#fff" : "#e5e5e5"}}' >
+            <icon color='#008E5B' size='20' type='success' wx:if='{{item.selected}}'></icon>
+          </view>
+        </view>
+        <view class='goods-info flex flex-item'>
+          <view class='goods-cover' data-id='{{item.goodsId}}' catchtap='gotoDetails'>
+            <image src='{{item.shopGoods.coverImg}}'></image>
+          </view>
+          <view class='info flex-item'>
+            <view class='name p line2' data-id='{{item.goodsId}}' catchtap='gotoDetails'>{{item.shopGoods.currentGoodsEntity.name}}</view>
+            <view class='spec p line1'>
+              <text style='margin-right: 10rpx;' wx:for='{{item.shopGoods.currentGoodsEntity.shopGoodsEntitySpecList}}' wx:key='key' wx:for-item='specItem'>{{specItem.specValue}}</text>
+            </view>
+            <view class='price flex flex-middle flex-between p' style='margin-top:10rpx'>
+              <view class='left'>¥{{item.shopGoods.currentGoodsEntity.price}}</view>
+              <!-- <view class='right'>×{{item.goodsNum}}</view>    -->
+              <view class='counter-box flex'>
+                <view class='counter-btn minus'>
+                  <image src='../../images/icon/icon_minus.png' 
+                    data-id='{{item.id}}' 
+                    data-goodsid='{{item.goodsId}}' 
+                    data-goodsentityid='{{item.goodsEntityId}}' 
+                    data-goodsnum='{{item.goodsNum}}'    
+                    catchtap='onMinus'></image>
+                </view>
+                <view catchtap='onInputStopEvent'>
+                  <input type='number' confirm-type='done' value='{{item.goodsNum}}'
+                    data-id='{{item.id}}' 
+                    data-goodsid='{{item.goodsId}}' 
+                    data-goodsentityid='{{item.goodsEntityId}}' 
+                    data-goodsnum='{{item.goodsNum}}' 
+                    bindfocus='onFocusGoodsNum' 
+                    bindinput='onInputGoodsNum' 
+                    bindblur='onBlurGoodsNum'></input>
+                </view>
+                <view class='counter-btn plus'>
+                  <image src='../../images/icon/icon_plus.png' 
+                    data-id='{{item.id}}' 
+                    data-goodsid='{{item.goodsId}}' 
+                    data-goodsentityid='{{item.goodsEntityId}}' 
+                    data-goodsnum='{{item.goodsNum}}'
+                    catchtap='onPlus'></image>
+                </view>
+              </view>   
+            </view>
+            <!-- <view class='complimentary flex flex-middle flex-between p'>
+              <view class='left flex flex-item'>
+                <view class='tag'>赠品</view>
+                <view class='flex-item flex flex-middle line1'>运动蓝牙耳机QYT 白色</view>
+              </view>
+              <view class='right'>×1</view>
+            </view> -->
+          </view>
+        </view>
+      </view>
+      <view class='delete flex flex-middle flex-center' data-id='{{item.id}}' data-entityid='{{item.goodsEntityId}}' data-price='{{item.shopGoods.currentGoodsEntity.price}}' data-goodsnum='{{item.goodsNum}}' catchtap='delete'>删除</view>
+    </view>
+  </view>
+  <view class='bottom flex' wx:if='{{cart.length != 0}}'>
+    <view class='check-all flex flex-middle' catchtap='onSelectedAll'>
+      <view class='check'>
+        <view class='circle' style='border:1px solid {{goodJson.length == cart.length ? "#fff" : "#e5e5e5"}}'>
+          <icon color='#008E5B' size='20' type='success' wx:if='{{goodJson.length == cart.length}}'></icon>
+        </view>
+      </view>
+      <view class='text'>全选</view>
+    </view>
+    <view class='total flex flex-item flex-right flex-middle'>
+      <view class='price'>¥{{totalPrice}}</view>
+      <view class='btn btn-red' bindtap='onPay'>立即购买</view>
+    </view>
+  </view>
+  <template is='nothing' data='{{nothing:nothing,iconPath:"../../images/icon/icon_cart_nothing.png",nothingText:"购物车空空的"}}'></template>
+</view>

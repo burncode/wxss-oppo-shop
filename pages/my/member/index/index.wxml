@@ -1,0 +1,25 @@
+<!--pages/my/member/index/index.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='top' style='background-image:{{linearGradient[type]}}'>
+    <view class='card'>
+      <text>有效期至：{{gradeChangeTime}}</text>
+      <image src="{{card[type]}}" mode='widthFix' />
+    </view>
+  </view>
+  <view class='bot flex'>
+    <navigator class="item flex-item" url="../credits/credits?action=1">
+      <icon class="icon credits"></icon>
+      <view class='name'>我的积分</view>
+    </navigator>
+    <navigator class="item flex-item" url="../credits/credits?action=0">
+      <icon class="icon exper"></icon>
+      <view class='name'>我的成长值</view>
+    </navigator>
+    <navigator class="item  flex-item" url="../privilege/privilege?type={{type}}">
+      <icon class="icon privilege"></icon>
+      <view class='name'>我的权益</view>
+    </navigator>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

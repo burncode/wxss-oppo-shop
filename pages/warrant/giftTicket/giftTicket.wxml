@@ -1,0 +1,126 @@
+<!--<view class="guize-btn" bindtap="showGuize">活动规则</view>
+<view class="gift-content"
+      style="background:url('http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/praise-bg.png');background-size:100%;">
+  <image class="ticket-icon" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/ticket-icon.png"  />
+  <view class="give-name">{{nickName}} 送你</view>
+  <view class="gift-box"
+        style="background:url('http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/gift-bg.png');background-size:100%;">
+    <view class="gift-info" wx:if="{{awardname&&ticketnumber&&awardid}}">
+      <view class="gift-logo">
+        <image class="logo" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/{{giftType}}.jpg"  />
+        <view class="gz-btn" bindtap="openUse">使用规则</view>
+      </view>
+      <view class="gift-detail">
+        <view class="gift-name">{{awardname}}</view>
+        <view class="gift-num">卡号：{{ticketnumber}}</view>
+        <view class="gift-num aqiyi-slogan" wx:if="{{awardid==1}}">爱奇艺VIP会员 轻奢新主义</view>
+      </view>
+    </view>
+    <view class="gift-info no-award" wx:else>很抱歉，未中奖</view>
+    
+    <view class="vote-info">
+      <view class="vote-name">为  {{nickName}}  增加口碑影响力</view>
+      <view class="votes">{{addVotes}}</view>
+    </view>
+  </view>
+  <view class="homie-award">
+    <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/award-title.png"  />
+    <view class="award-list" wx:if="{{awardGroup.length!=0}}" wx:for="{{awardGroup}}">
+      <view class="name">{{item.nickName}}</view>
+      <view class="info">
+        已领取<view class="award">
+        {{item.awardname}}</view>
+      </view>
+    </view>
+    <view class="no-list" wx:if="{{awardGroup.length==0}}">暂时还没有朋友中奖~</view>
+  </view>
+  <view class="enter-btn" bindtap="enterIntro">了解R11s</view>
+</view>
+<view class="dialog-box" wx:if="{{useBoxShow==true}}">
+  <view class="dialog-content">
+    <view class="close" bindtap="closeDialog">
+      <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/close.png"/>
+    </view>
+    <view class="dialog-text" wx:if="{{awardid==1}}">
+      <view class="warranty-content">
+        <view class="sm-title">使用规则</view>
+        <view class="rule-box">
+          <view class="rule-tit">商家简介：</view>
+          <view class="rule-text-1">爱奇艺VIP黄金会员拥有会员免费片库、全站观看可跳过广告、全时段观看1080P超清视频、高速通道更流畅、专属尊贵会员标识、每月赠送点播观影券等尊贵特权。</view>
+        </view>
+        <view class="rule-box">
+         <view class="rule-tit">商家简介：</view>
+          <view class="rule-text-1">凭爱奇艺折扣券可至<text selectable="true">http://vip.bangdata.cn/i/dtoqa331b0/order</text>进行使用，该券购买爱奇艺VIP黄金会员可享受8折优惠。</view>
+        </view>
+        <view class="rule-box">
+          <view class="rule-tit">有效期：</view>
+          <view class="rule-text-1">兑换截止时间：2017年12月31日00:00 （过期无效）</view>
+        </view>
+        <view class="rule-box">
+          <view class="rule-tit">兑换流程：</view>
+          <view class="rule-text-1">1)兑换后获得券码，查询兑换记录.</view>
+          <view class="rule-text-1">2)复制券码，点击链接<text selectable="true">http://vip.bangdata.cn/i/dtoqa331b0/order </text>进入会员商品页面。</view>
+          <view class="rule-text-1">3)在页面内添加折扣券码，添加成功后选择需要购买的商品和支付方式。</view>
+          <view class="rule-text-1">4)支付时按照提示进行手机验证码登录，并按提示输入即将充值的爱奇艺账户手机号；</view>
+          <view class="rule-text-1">5)支付成功后返回页面；会员已充值至爱奇艺账户，用户可登录爱奇艺APP或PC端查看。</view>
+        </view>
+        <view class="rule-box">
+          <view class="rule-tit">温馨提示：</view>
+          <view class="rule-text-1">折扣券可进行月卡、季卡、半年卡、年卡中任意卡种的折扣购买。</view>
+          <view class="rule-text-1">每张折扣券只能添加并使用一次。</view>
+          <view class="rule-text-1">使用该折扣券购买的爱奇艺VIP黄金会员可在移动端和PC端的爱奇艺中享受会员权益。（不支持TV端）</view>
+          <view class="rule-text-1">适用范围仅限全国大陆。</view>
+        </view>
+      </view>
+    </view>
+    <view class="dialog-text" wx:if="{{awardid==3}}">
+      <view class="title">长按复制以下链接在浏览器打开领取哦～</view>
+      <text selectable="true">https://d.elong.com/a/2020003902</text>
+      <view class="title">如有疑问请咨询在线客服指导操作。
+24小时咨询热线：400-933-3333</view>
+    </view>
+    <view class="dialog-text" wx:if="{{awardid==2}}">
+      <view class="warranty-content">
+        <view class="sm-title">qq音乐豪华绿钻代金券使用规则</view>
+        <view class="rule-box">
+          <view class="serial-num">1</view>
+          <view class="rule-text">QQ音乐豪华绿钻抵扣券兑换码可通过参与OPPO相关活动获得。</view>
+        </view>
+        <view class="rule-box">
+          <view class="serial-num">2</view>
+          <view class="rule-text">获得豪华绿钻抵扣券以实际获得的兑换码为准，请凭兑换码后请到<text selectable="true">http://y.qq.com/m/act/key/index.html</text>进行兑换。</view>
+        </view>
+        <view class="rule-box">
+          <view class="serial-num">3</view>
+          <view class="rule-text">兑换绿钻豪华版抵扣券，可享有开通豪华绿钻时抵扣立减对应金额，仅支持微信支付、QQ钱包、Q币、银行卡等支付方式，暂不支持在手机QQ里使用苹果支付。</view>
+        </view>
+        <view class="rule-box">
+          <view class="serial-num">4</view>
+          <view class="rule-text">已通过手机话费开通豪华绿钻/付费音乐包的用户，需要关闭原来的手机支付方式，即可参与活动并使本次兑换/开通的豪华绿钻/付费音乐包到账。</view>
+        </view>
+        <view class="rule-box">
+          <view class="serial-num">5</view>
+          <view class="rule-text">腾讯在法律规定的范围内享有本规则的解释权。如有疑问，请咨询联系在线客服。</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="dialog-box" wx:if="{{guize}}">
+  <view class="dialog-content">
+    <view class="close" bindtap="closeDialog">
+      <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/close.png"  />
+    </view>
+    <view class="dialog-image">
+      <image class="guize-pic" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/guize.png"
+             mode="widthFix"  />
+    </view>
+  </view>
+</view>-->
+<view class="dialog-box">
+  <view class="dialog-content">
+    <view class="dialog-text">
+      哎呀，来晚了…活动已结束！
+    </view>
+  </view>
+</view>

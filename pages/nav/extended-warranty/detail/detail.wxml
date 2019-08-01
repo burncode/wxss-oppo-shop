@@ -1,0 +1,32 @@
+<!--pages/nav/extended-warranty/detail/detail.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='header'>
+    <view class='content flex flex-middle'>
+      <icon type='success' size='30' color='#008E5B'></icon>
+      <text>恭喜您，延保成功</text>
+    </view>
+  </view>
+  <view class='main'>
+    <view class='item flex'>
+      <view class='title'>手机串码</view>
+      <view class='info flex-item'>{{orderDetail.imei}}</view>
+    </view>
+    <view class='item flex'>
+      <view class='title'>姓名</view>
+      <view class='info flex-item'>{{orderDetail.userName == null ? '' : orderDetail.userName}}</view>
+    </view>
+    <view class='item flex'>
+      <view class='title'>手机号</view>
+      <view class='info flex-item'>{{orderDetail.userPhone}}</view>
+    </view>
+    <view class='item flex'>
+      <view class='title'>保证服务</view>
+      <view class='info flex-item'>{{orderDetail.warrantyName}}</view>
+    </view>
+  </view>
+  <view class='bottom-btn'>
+    <view class='btn' bindtap='gotoIndex'>返回</view>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

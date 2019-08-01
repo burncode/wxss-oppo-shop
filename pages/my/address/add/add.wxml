@@ -1,0 +1,53 @@
+<!--pages/my/address/add/add.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" /> 
+<view class='container'>
+  <form bindsubmit='submit'>
+    <view class='form-item'>
+      <view class='title'>
+        <text>*</text>收货人信息
+      </view>
+      <view class='input-block flex flex-middle'>
+        <input class='flex-item' type='text' name="recipientName" value='{{addrDetail.recipientName}}' placeholder='填写姓名'></input>
+      </view>
+      <view class='input-block flex flex-middle'>
+        <input class='flex-item' type='number' name="phone" value='{{addrDetail.phone}}' placeholder='填写手机号'></input>
+      </view>
+    </view>
+    <view class='form-item'>
+      <view class='title'>
+        <text>*</text>收货人地址
+      </view>
+      <view class='input-block flex flex-middle'>
+        <view class='picker flex-item'>
+          <picker bindchange="provinceChange" value="{{provinceIndex}}" range="{{province}}" range-key='{{"name"}}'>
+            <view class="picker-text flex flex-middle">{{province[provinceIndex].name}}</view>
+          </picker>
+        </view>
+        <image class='icon-arrow-down' src="../../../../images/icon/icon_arrow.png"></image>
+      </view>
+      <view class='input-block flex flex-middle'>
+        <view class='picker flex-item'>
+          <picker bindchange="cityChange" value="{{cityIndex}}" range="{{city}}" range-key='{{"name"}}'>
+            <view class="picker-text flex flex-middle">{{city[cityIndex].name}}</view>
+          </picker>
+        </view>
+        <image class='icon-arrow-down' src="../../../../images/icon/icon_arrow.png"></image>
+      </view>
+      <view class='input-block flex flex-middle'>
+        <view class='picker flex-item'>
+          <picker bindchange="areaChange" value="{{areaIndex}}" range="{{area}}" range-key='{{"name"}}'>
+            <view class="picker-text flex flex-middle">{{area[areaIndex].name}}</view>
+          </picker>
+        </view>
+        <image class='icon-arrow-down' src="../../../../images/icon/icon_arrow.png"></image>
+      </view>
+      <view class='input-block flex flex-middle'>
+        <input class='flex-item' type='text' name="street" value='{{addrDetail.street}}' placeholder='详细街道地址'></input>
+      </view>
+    </view>
+    <view class='form-item'>
+      <button class='btn btn-green' form-type="submit" hover-class='active'>{{type == 'add' ? '添加' : '保存'}}</button>
+    </view>
+  </form>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

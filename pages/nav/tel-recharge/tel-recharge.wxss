@@ -1,0 +1,10 @@
+/* pages/nav/tel-recharge/tel-recharge.wxss */
+@import "../../../components/tel-input/tel-input.wxss";
+@import "../../../components/price-list/price-list.wxss";
+page{
+  background-color: #fff;
+}
+.header{
+  position: relative;
+  padding: 0rpx 30rpx;
+}

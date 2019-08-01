@@ -1,0 +1,14 @@
+<!--pages/nav/extended-warranty/refund/refund.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <form bindsubmit='submit'>
+    <view class='block'>
+      <view class='title'><text>*</text>请填写手机检测码</view>
+      <input type='number' placeholder='手机检测码' name='detectNo'></input>
+    </view>
+    <view class='block'>
+      <button class='btn btn-green' form-type="submit">提交</button>
+    </view>
+  </form>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

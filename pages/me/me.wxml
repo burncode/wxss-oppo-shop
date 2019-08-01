@@ -1,0 +1,41 @@
+<!--pages/me/me.wxml-->
+<import src="../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='header'>
+    <view class='header-bg'>
+      <image src='../../images/banner/me_header_bg.png'></image>
+    </view>
+    <view class='user-info'>
+      <view class='user-headUrl flex flex-center flex-middle'>
+        <image src='{{userInfo.avatarUrl}}' mode='widthFix'></image>
+      </view>
+      <view class='user-name flex flex-center flex-middle'>{{userInfo.nickName}}</view>
+      <view class='oppo-member flex flex-center flex-middle'>{{member[type]}}</view>
+    </view>
+  </view>
+  <view class='cutting-line'></view>
+  <view class='menu-list'>
+    <navigator class='menu-list-item flex flex-middle' url='../my-order/my-order'>
+      <image class='icon' src='../../images/icon/icon_order.png'></image>
+      <view class='menu-name'>我的订单</view>
+    </navigator>
+     <navigator class='menu-list-item flex flex-middle' url='../my/address/list/list'>
+      <image class='icon' src='../../images/icon/icon_address.png'></image>
+      <view class='menu-name'>我的收货地址</view>
+    </navigator> 
+    <!-- 我的优惠券 -->
+    <navigator class='menu-list-item flex flex-middle' url='../my/coupon/coupon'>
+      <image class='icon' src='../../images/icon/icon_coupon.png'></image>
+      <view class='menu-name'>我的优惠券</view>
+    </navigator>  
+    <navigator class='menu-list-item flex flex-middle' url='../my/member/index/index'>
+      <image class='icon' src='../../images/icon/icon_member.png'></image>
+      <view class='menu-name'>OPPO会员</view>
+    </navigator>
+    <!-- <navigator class='menu-list-item flex flex-middle' url='../my/info/info'>
+      <image class='icon' src='../../images/icon/icon_setting.png'></image>
+      <view class='menu-name'>设置</view>
+    </navigator> -->
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

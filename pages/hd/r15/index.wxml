@@ -1,0 +1,17 @@
+<image src="http://imgfs.oppo.cn/static/r15/1.jpg" mode="widthFix" />
+<image src="http://imgfs.oppo.cn/static/r15/2.jpg" mode="widthFix" />
+<image src="http://imgfs.oppo.cn/static/r15/3.jpg" mode="widthFix" />
+<image src="http://imgfs.oppo.cn/static/r15/4.jpg" mode="widthFix" />
+<image src="http://imgfs.oppo.cn/static/r15/5.jpg" mode="widthFix" />
+<image src="http://imgfs.oppo.cn/static/r15/6.jpg" mode="widthFix" />
+<image src="http://imgfs.oppo.cn/static/r15/7.jpg" mode="widthFix" />
+<image src="http://imgfs.oppo.cn/static/r15/8.jpg" mode="widthFix" />
+<view class="shop">
+  <view class="item" wx:for="{{shopList}}">
+    <button data-index="{{index}}" catchtap="openMap">立即前往</button>
+    <icon />
+    <text>{{item.name}}</text>
+  </view>
+</view>
+
+<button id="gotoshop" catchtap="gotoShop" wx:if="{{shopList.length}}">前往附近门店</button>

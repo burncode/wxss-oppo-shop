@@ -1,0 +1,73 @@
+<!--pages/activity/cny2017/make/make.wxml-->
+
+<!-- <view class = "container">
+    <image src='../../../../images/activity/cny2017/card.png' bindtouchstart='testStart' bindtouchend='testEnd'></image> 
+    <text style='display:block;'>{{touchMsg}}</text>
+</view> -->
+
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container {{isRecord?"isRecord":""}}' >
+    <view class='inner'>
+        <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/make_title.png' class='makeTitle'></image>
+        <view class='avatarInfo'>
+            <image src='{{userInfo.avatarUrl}}' class='avatar'></image>
+            <text class="name">{{userInfo.nickName}}正在送出新年祝福</text>
+        </view>
+        <view class='make'>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/card.png' class='banner'></image>
+            <image class="cardIcon cardIconLeft {{(cardIconAni)?'cardIconAni':''}}" src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/card_icon.png'></image>
+            <image class="cardIcon cardIconRight {{(cardIconAni)?'cardIconAni':''}}" src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/card_icon.png'></image>
+            <view class='maskInput flex flex-middle'>
+                <view class='inputInfo'>
+                    <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/border.png' class='border'></image>
+                    <image src='{{wishPic.value}}' class='wishPic' wx:if = "{{wishPic}}" bindtap='openInput'></image>
+                    <input type='text' placeholder-style='color: #fdd171;font-size: 34rpx;' placeholder='请输入祝福语' maxlength='12' class='input' focus = '{{wishPic==null}}' bindblur='closeInput' wx:else></input> 
+                </view>
+                <image class='icon' src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/wish_icon.png?v=1' bindtap='changeWish' ></image>
+            </view>
+            <view class='timePanel'>
+                <view class='timeInfo flex flex-center flex-middle'>
+                    <image class='timeIcon' src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/time_icon.png'></image>
+                    <view class='recordHot' wx:if = "{{isRecord}}">
+                        <image class='hotIcon' src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/icon_hot.png'></image>
+                        <image class='hotIcon' src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/icon_hot.png'></image>
+                    </view>
+                    <text class='timeTxt' >{{recordTimeStr}}</text>
+                </view>
+            </view>
+            <view class='recordLines flex flex-center flex-middle'  wx:if = "{{isRecord}}">
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+                <view></view>
+            </view>
+        </view>
+        <view class='btns'>
+            <view class='btnItem btnRecord' bindtouchstart = "startRecord" bindtouchend = "stopRecord">
+                <view class='line noPointer'></view>
+                <image src='{{isRecord?"http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/icon_record_on.png":"http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/icon_record.png"}}' class='icon noPointer'></image>
+                <text class='name noPointer' wx:if = "{{!isRecord}}">长按录音</text>
+                <text class='name noPointer' wx:else>停止录音</text>
+            </view>
+            <view class='btnItem btnPlay' bindtap='playRecord'>
+                <view class='line'></view>
+                <image src='{{isPlay?"http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/icon_listen_off.png":"http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/icon_listen.png"}}' class='icon'></image>
+                <text class='name' >{{isPlay?'停止':'试听'}}</text>
+            </view>
+        </view>
+        <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/make_btn_create.png' class='btnCreate' catchtap='showResult'></image>
+        <view class='recordMask' wx:if = "{{isRecord}}"></view>
+    </view>
+    
+    <navigator url='../home/home' hover-class='none' open-type='navigateBack' delta = "5">
+        <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/btn_home.png' style = "position: absolute;left: 20rpx;top: 20rpx;width: 97rpx;height: 44rpx;"></image>
+    </navigator>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>  
+

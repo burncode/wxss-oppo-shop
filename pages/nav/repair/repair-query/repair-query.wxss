@@ -1,0 +1,59 @@
+/* pages/nav/repair/repair-query/repair-query.wxss */
+.repair{
+  padding: 100rpx 30rpx;
+  background-color: #fff;
+}
+.repair .title{
+  font-size: 40rpx;
+  font-weight: 500;
+  margin: 10rpx 0 30rpx;
+}
+/* 描述 */
+.repair .info{
+  line-height: 1.4;
+  padding: 10rpx 50rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+/* 记录列表 */
+.record-box{
+  position: relative;
+  padding: 0 20rpx;
+}
+.record-box .record-li{
+  position: relative;
+  height: 100rpx;
+  border-left: 4px solid #eee;
+}
+.record-box .record-li .content{
+  height: 100rpx;
+  padding-left: 30rpx;
+  font-size: 30rpx;
+}
+.record-box .record-li .content::after{
+  position: absolute;
+  top: 0rpx;
+  left: -7px;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #008E5B;
+}
+.record-box .record-li .content .formstatus{
+  width: 240rpx;
+}
+.repair .bottom-btn{
+  margin-top: 60rpx;
+  padding: 0 60rpx;
+}
+.repair .bottom-btn .item{
+  padding: 0 15rpx;
+  font-size: 26rpx;
+}
+.createtime{
+  font-size: 22rpx;
+  color: #888;
+  margin-top: 5rpx;
+  padding-left: 15rpx;
+}

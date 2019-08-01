@@ -1,0 +1,74 @@
+<!--pages/activity/cny2017/rank/rank.wxml-->
+<view class='container'>
+    <view class='inner'>
+        <view class='rank'>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/rank_title.png' class='rankTitle'></image>
+            <view class='panel flex flex-center'>
+                <view class='panelItem'>排名</view>
+                <view class='panelItem'>昵称</view>
+                <view class='panelItem'>好友领取量</view>
+            </view>
+            <view class='list'>
+                <scroll-view scroll-y = "true" style='height:100%'>
+                    <view class='listItem flex flex-center flex-middle' wx:for = "{{rankList}}" wx:key = "id">
+                        <view class='listItemInfo'>{{item.topnum}}</view>
+                        <view class='listItemInfo'>{{item.NickName}}</view>
+                        <view class='listItemInfo'>
+                            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/rank_icon.png' class='listItemIcon'></image>
+                            <text class='listItemTxt'>{{item.topcut}}</text>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+        <view class='self'>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/rank_self_title.png' class='selfTitle'></image>  
+            <view class='selfPanel flex flex-center flex-middle'>
+                <view class='selfPanelInfo'>No.{{selfRank.topnum}}</view>
+                <view class='selfPanelInfo'>{{selfRank.NickName}}</view>
+                <view class='selfPanelInfo'>
+                    <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/rank_icon.png' class='selfIcon'></image>
+                    {{selfRank.topcut}}
+                </view>
+            </view>
+        </view>
+        <view class='btns' wx:if = "{{!isEnd}}">
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/rank_get.png' class='btnGet' catchtap='btnGetClick'></image>  
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/rank_rule.png' class='btnRule' catchtap='btnRuleClick'></image>  
+        </view>
+    </view>
+    
+    <navigator url='../home/home' hover-class='none' open-type='navigateBack' delta = "0">
+        <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/btn_home.png' style = "position: absolute;left: 20rpx;top: 20rpx;width: 97rpx;height: 44rpx;"></image>
+    </navigator>
+</view>
+
+
+<view class='saveInfo' wx:if = "{{saveShow}}">
+    <view class='saveInfoBox'>
+        <view class='title'>恭喜你获得人气大奖</view>
+        <view class='info'>请填写以下信息，方便寄送奖品</view>
+        <view class='form'>
+            <view class='formItem flex flex-middle'>
+                <view class='label'>姓名：</view>
+                <view class='input'>
+                    <input placeholder='请输入你的真实姓名' bindinput='saveNameInput'></input>
+                </view>
+            </view>
+            <view class='formItem flex flex-middle'>
+                <view class='label'>手机：</view>
+                <view class='input'>
+                    <input placeholder='请输入11位手机号码' maxlength='11' type='number' bindinput='saveTelInput'></input>
+                </view>
+            </view>
+            <view class='formItem flex flex-middle'>
+                <view class='label'>地址：</view>
+                <view class='input'>
+                    <input placeholder='请按省、市、区填写地址' bindinput='saveAddressInput'></input>
+                </view>
+            </view>
+        </view>
+        <view class='tip'>请确保填写了真实且有效的信息，机会只有一次</view>
+        <view class='btnSaveInfo' catchtap='onSaveInfo'>提   交</view>
+    </view>
+</view>

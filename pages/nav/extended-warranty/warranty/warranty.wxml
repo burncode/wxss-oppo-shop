@@ -1,0 +1,15 @@
+<!--pages/nav/extended-warranty/warranty/warranty.wxml-->
+<import src="../../../../components/logo/logo.wxml" />
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <template is='logo' data='{{logoUrl:"../../../../images/logo/logo.svg"}}'></template> 
+  <view class='form'>
+    <form>
+      <view class='input-block flex flex-middle'>
+        <input class='flex-item' type='number' placeholder='手机号/IMEI' confirm-type='search' bindinput='keyChange'></input>
+      </view>
+      <view class='btn btn-green {{key == "" ? "disabled" : ""}}' bindtap='{{key != "" ? "onQuery" : ""}}'>查询</view>
+    </form>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

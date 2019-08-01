@@ -1,0 +1,68 @@
+page {
+  background: #fff;
+}
+
+image {
+  width: 100%;
+  vertical-align: top;
+}
+
+.shop {
+  padding: 10rpx 25rpx;
+}
+
+.item:first-child {
+  border-top: 0;
+}
+
+.item {
+  padding: 35rpx 20rpx;
+  border-top: 1rpx solid #d6d6d6;
+}
+
+.item icon {
+  background: url(http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/shop-location.png) no-repeat center;
+  width: 30rpx;
+  background-size: 100%;
+  margin-right: 20rpx;
+}
+
+.item icon, .item text, .item button {
+  display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  vertical-align: middle;
+  font-size: 28rpx;
+}
+
+button {
+  border-radius: 50rpx;
+  text-align: center;
+  position: static;
+  background: transparent;
+  padding: 0;
+  line-height: 57rpx !important;
+}
+
+button::after {
+  border: 0;
+}
+
+#gotoshop {
+  width: 220rpx;
+  height: 60rpx;
+  border: 1rpx solid #b70a2c;
+  color: #b70a2c;
+  font-size: 28rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 668rpx;
+}
+
+.item .open-map {
+  width: 200rpx;
+  border: 1rpx solid #46bd71;
+  color: #46bd71;
+  float: right;
+}

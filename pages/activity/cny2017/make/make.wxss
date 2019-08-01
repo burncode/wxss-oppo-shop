@@ -1,0 +1,234 @@
+/* pages/activity/cny2017/make/make.wxss */
+page{
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, #c12135 0%, #512c5e 100%);
+    overflow: hidden;
+    text-align: center;
+}
+.inner{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.make {
+    margin: 0 auto;
+    width: 718rpx;
+    height: 503rpx;
+    position: relative;
+}
+.makeTitle{
+    width: 251rpx;
+    height: 56rpx;
+    margin: 0 auto;
+}
+.avatarInfo{
+    padding: 20rpx 0 40rpx 0;
+}
+.avatarInfo .avatar{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 100%;
+    border: 2px solid #f3cf9d;
+}
+.avatarInfo .name{
+    display: block;
+    width: 100%;
+    height: auto;
+    font-size: 30rpx;
+    color: #f3cf9d;
+    text-align: center;
+}
+.makeTipTxt{
+    width: 156rpx;
+    height: 34rpx;
+    display: block;
+    margin: 0 auto 30rpx;
+}
+
+.noPointer{
+    pointer-events: none;
+}
+
+.banner {
+    width: 718rpx;
+    height: 503rpx;
+}
+.cardIcon{
+    width: 76rpx;
+    height: 76rpx;
+    position: absolute;top: 195rpx;
+}
+.cardIconLeft{
+    left: 170rpx;
+}
+.cardIconRight{
+    right: 169rpx;
+}
+.cardIconAni{
+    animation: cardIconAni 2s 0s infinite linear both;
+    -webkit-animation: cardIconAni 2s 0s infinite linear both;
+}
+@keyframes cardIconAni{
+    100%{transform: rotate(1turn)}
+}
+@-webkit-keyframes cardIconAni{
+    100%{-webkit-transform: rotate(1turn)}
+}
+
+
+.btns{font-size: 0;text-align:center;}
+.btns .btnItem{text-align: center;background: #f3cf9d;width: 154rpx;height: 154rpx;border-radius: 154rpx;display:inline-block;vertical-align: top;position: relative;margin-top: 2rpx;margin-left:110rpx;margin-right: 110rpx; 
+    transform-origin: center -90rpx;
+    /* animation: btnItemAni 2s 0s infinite linear both; */
+}
+@keyframes btnItemAni{
+    0%{transform: rotate(0deg)}
+    25%{transform: rotate(2deg)}
+    50%{transform: rotate(0deg)}
+    75%{transform: rotate(-2deg)}
+    100%{transform: rotate(0deg)}
+}
+
+.btns .line{width: 4rpx;background: #651025;height: 48rpx;position: absolute;left: 50%;margin-left: -2rpx;top: -48rpx;}
+.btns .icon{width: 62rpx;height: 64rpx;display: block;margin: 22rpx auto 10rpx;}
+.btns .name{color: #e60044;font-size: 24rpx;}
+.btns .btnOk{width: 154rpx;height: 154rpx;border-radius: 154rpx;margin: 150rpx auto 0;
+    transform-origin: center -198rpx;
+}
+.btns .btnOk .icon{margin: 20rpx auto 5rpx;}
+.btns .btnOk .line{height: 198rpx;top: -198rpx;}
+
+.list{padding: 10rpx 0 20rpx 0;}
+.list .listItem{margin: 5rpx 0; padding: 6rpx 50rpx; border: 1px solid rgba(0, 0, 0, 0);border-radius: 30rpx;display: inline-block}
+.list .arrIcon{width: 15rpx;height: 21rpx;display: none}
+.list .wishWord{margin: 0 20rpx;}
+.list .listItemOn{background: #a81c38;border: 1px solid #f3cf9d;}
+.list .listItemOn .arrIcon{display: block}
+.listItemOn .arricon1{animation:arrIconAni1 1s 0s infinite linear both }
+.listItemOn .arricon2{animation:arrIconAni2 1s 0s infinite linear both }
+
+.btnCreate{width: 292rpx; height: 81rpx;display: block;margin: 120rpx auto 0}
+
+@keyframes arrIconAni1{
+   0%{transform: translateX(0)} 
+   50%{transform: translateX(-10rpx)} 
+   100%{transform: translateX(0)} 
+}
+@keyframes arrIconAni2{
+   0%{transform: translateX(0)} 
+   50%{transform: translateX(10rpx)} 
+   100%{transform: translateX(0)} 
+}
+
+.makeTip{width: 450rpx;height: 40rpx;margin: 0 auto;}
+
+.maskInput{position: absolute;left: 50%;top: 30rpx; margin-left: -275rpx;}
+.maskInput .inputInfo{position: relative;width: 550rpx;height: 114rpx;}
+.maskInput .border{width: 550rpx;height: 114rpx;}
+.maskInput .wishPic{position: absolute;left: 0;top: 0;width: 550rpx;height: 114rpx;}
+.maskInput .input{width: 100%;height: 100%;position: absolute;left: 0;top: 0;color: #fdd171;font-size: 40rpx;}
+.maskInput .icon{width: 82rpx;height: 69rpx;}
+
+
+.timePanel{position: absolute;left: 0; top: 400rpx;text-align: center;width: 100%;}
+.timePanel .timeInfo{margin: 0 auto}
+.timePanel .timeIcon{width: 27rpx;height: 27rpx;}
+.timePanel .timeTxt{font-size: 27rpx;color: #f3cf9d; padding-left: 10rpx;font-weight: bold;text-align: left;width: 100rpx;}
+
+
+.recordMask{width: 100%;height:160%;background: rgba(0, 0, 0, 0.5);position: absolute;left: 0;top: -30%;pointer-events: none}
+.recordLines{position: absolute;left: 50%;top: 160rpx;
+    transform: translateX(-50%);margin-left: 18rpx;
+}
+.recordLines view{width: 18rpx;height: 140rpx;background: #f3cf9d;border-radius: 18rpx;margin: 0 4rpx;overflow: hidden;
+    transform-origin: center center;
+}
+.recordHot{width: 38rpx;height: 38rpx;position: absolute;left: 50%; top: -3rpx;margin-left: -73rpx;}
+.recordHot image{width: 100%;height: 100%;position: absolute;left: 0;top: 0}
+
+
+.isRecord .btnRecord{
+    background: #e60044;
+     z-index: 1; 
+}
+/* .isRecord .inner{pointer-events: none} */
+.isRecord .btnRecord .line{background: #000}
+.isRecord .btnRecord .name{color: #f3cf9d}
+.isRecord .recordLines,
+.isRecord .timePanel{z-index: 1;}
+
+.isRecord .recordLines view:nth-child(1){
+    animation: recordLineAni1 1s 0s infinite linear both;
+}
+.isRecord .recordLines view:nth-child(2){
+    animation: recordLineAni2 1s 0.1s infinite linear both;
+}
+.isRecord .recordLines view:nth-child(3){
+    animation: recordLineAni3 1s 0.2s infinite linear both;
+}
+.isRecord .recordLines view:nth-child(4){
+    animation: recordLineAni4 1s 0.3s infinite linear both;
+}
+.isRecord .recordLines view:nth-child(5){
+    animation: recordLineAni3 1s 0.4s infinite linear both;
+}
+.isRecord .recordLines view:nth-child(6){
+    animation: recordLineAni2 1s 0.5s infinite linear both;
+}
+.isRecord .recordLines view:nth-child(7){
+    animation: recordLineAni1 1s 0.6s infinite linear both;
+}
+.isRecord .recordLines view:nth-child(8){
+    animation: recordLineAni2 1s 0.7s infinite linear both;
+}
+.isRecord .recordLines view:nth-child(9){
+     animation: recordLineAni3 1s 0.8s infinite linear both; 
+}
+.isRecord .recordLines view:nth-child(10){
+    opacity: 0;
+}
+.isRecord .recordHot image:nth-child(2){
+    animation: lightAni 0.5s 0s infinite linear both; 
+}
+
+@keyframes lightAni{
+    0%{opacity: 1}
+    50%{opacity: 0}
+    100%{opacity: 1}
+}
+
+@keyframes recordLineAni1{
+    0%{height:140rpx} 
+    50%{height:20rpx} 
+    100%{height:140rpx} 
+}
+@keyframes recordLineAni2{
+    0%{height:140rpx} 
+    50%{height:50rpx} 
+    100%{height:140rpx} 
+}
+@keyframes recordLineAni3{
+    0%{height:140rpx} 
+    50%{height:80rpx} 
+    100%{height:140rpx} 
+}
+@keyframes recordLineAni4{
+    0%{height:140rpx} 
+    50%{height:100rpx} 
+    100%{height:140rpx} 
+}
+
+
+@media screen and (device-width:360px) and (max-height:530px){
+    /* .cardBack .pic{} */
+    .btnCreate{margin-top: 50rpx}
+}
+@media screen and (device-width:375px) and (min-height:720px){
+    .avatarInfo{padding-bottom: 80rpx;}
+}

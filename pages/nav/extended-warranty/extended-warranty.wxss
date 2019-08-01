@@ -1,0 +1,31 @@
+/* pages/nav/extended-warranty/extended-warranty.wxss */
+@import '../../../components/explain-box/explain-box.wxss';
+page{
+  background-color: #fff;
+}
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.container{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* 底部按钮 */
+.bottom{
+  position: fixed;
+  width: 100%;
+  padding: 30rpx 15rpx;
+  bottom:0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+}
+.bottom .btn-item{
+  padding: 0 15rpx;
+}

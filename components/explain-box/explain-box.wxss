@@ -1,0 +1,62 @@
+/* components/explain-box/explain-box.wxss */
+/* 说明框 */
+.explain-box{
+  margin-top: 150rpx;
+  padding: 0 40rpx;
+}
+.explain-box .explain-box-info{
+  position: relative;
+  padding: 40rpx;
+  border: 1rpx solid #DDDDDD;
+  border-radius: 8rpx;
+  box-shadow: 5rpx 5rpx 5rpx rgba(150, 150, 150, 0.2);
+}
+.explain-box .explain-box-info .icon{
+  position: absolute;
+  left: 50%;
+  top: -75rpx;
+  width: 150rpx;
+  height: 150rpx;
+  margin: 0 -75rpx;
+  background-color: #28B1FC;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.explain-box .explain-box-info .icon image{
+  width: 100%;
+  height: 100%;
+}
+.explain-box .explain-box-info .title{
+  margin-top: 70rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+}
+.explain-box .explain-box-info .sub-title{
+  margin-top: 20rpx;
+  color: #959595;
+}
+.explain-box .explain-box-info .content{
+  padding: 40rpx 0;
+  font-size: 32rpx;
+  line-height: 1.5;
+}
+
+/* 备注 */
+.remark{
+  color: #858585;
+}
+
+/* 服务条款 */
+.agree-service{
+  padding: 20rpx 40rpx;
+}
+.agree-service checkbox{
+  transform:scale(.7);
+}
+.agree-service text{
+  font-size: 26rpx;
+  color: #858585;
+}
+.agree-service text:nth-child(3){
+  text-decoration: underline;
+}

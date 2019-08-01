@@ -1,0 +1,20 @@
+<template name="dialogModule">
+  <view class="dialog-module" wx:if="{{dialogData.status}}">
+    <view class="musk"></view>
+    <view class="dialog-box">
+      <view class="close-btn"></view>
+      <text class="dialog-title">{{dialogData.title}}</text>
+      <text class="dialog-text {{dialogData.textLeft}}">{{dialogData.text}}</text>
+      <view class="address" wx:if="{{dialogData.address}}">
+        <input class="address-input" maxlength="20" data-id="name" bindinput="getInputVal" placeholder="收件人姓名" />
+        <input class="address-input" maxlength="11" type="number" data-id="phone" bindinput="getInputVal" placeholder="手机号码" />
+        <input class="address-input" maxlength="50" data-id="address" bindinput="getInputVal" placeholder="收件地址" />
+      </view>
+      <view class="dialog-btn-box">
+        <button wx:for="{{dialogData.dialogBtnData}}" class="{{item.type}} {{item.id}} {{item.class}}" data-type="{{item.type}}" open-type="{{item.id}}" data-id="{{item.id}}" bindtap="dialogAction">
+            <view class="text">{{item.text}}</view>
+        </button>
+      </view>
+    </view>
+  </view>
+</template>

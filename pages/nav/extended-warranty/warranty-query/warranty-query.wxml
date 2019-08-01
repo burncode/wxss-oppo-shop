@@ -1,0 +1,52 @@
+<!--pages/nav/extended-warranty/warranty-query/warranty-query.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='header'>
+    <view class='title'>真伪及保障服务查询</view>
+    <view class='phone-img'>
+      <view class='img'>
+        <image mode='widthFix' src='https://dsfs.oppo.com/archives/201710/2017102305102959edb3a94d11a.png'></image>
+      </view>
+      <view class='model flex flex-center'>
+        <text>R9m</text>
+      </view>
+    </view>
+  </view>
+  <view class='check-info'>
+    <view class='check-info-item'>
+      <view class='title'>基本信息：</view>
+      <view class='data'>
+        <view class='data-item flex'>
+          <view class='name'>手机型号:</view>
+          <view class='content flex-item'>R9m</view>
+        </view>
+        <view class='data-item flex'>
+          <view class='name'>手机IMEI号:</view>
+          <view class='content flex-item'>869854552123</view>
+        </view>
+      </view>
+    </view>
+    <view class='check-info-item'>
+      <view class='title'>保障产品信息：</view>
+      <view class='data'>
+        <view class='data-item flex'>
+          <view class='name'>保障编号:</view>
+          <view class='content flex-item'>789465123</view>
+        </view>
+        <view class='data-item flex'>
+          <view class='name'>保障类型:</view>
+          <view class='content flex-item'>碎屏保一年</view>
+        </view>
+        <view class='data-item flex'>
+          <view class='name'>保障状态:</view>
+          <view class='content flex-item'>已激活</view>
+        </view>
+        <view class='data-item flex'>
+          <view class='name'>保障期限:</view>
+          <view class='content flex-item'>2016-08-03 至 2017-08-02</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

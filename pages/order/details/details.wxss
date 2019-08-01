@@ -1,0 +1,149 @@
+/* pages/order/details/details.wxss */
+view{
+  box-sizing: border-box;
+}
+.container{
+  padding-bottom: 140rpx;
+}
+.status{
+  position: relative;
+  font-size: 30rpx;
+  padding: 30rpx;
+  color: #000;
+  background-color: #fff;
+}
+.status::after,.header::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: url('http://wximg-oppo-cn.oss-cn-hangzhou.aliyuncs.com/vl/img/9ac8df75fb3e4dbd80c4151de531a651.png');
+  background-repeat: repeat-x;
+  background-size: 40px 2px;
+}
+.header{
+  position: relative;
+  padding: 30rpx;
+  background-color: #fff;
+}
+.header .add{
+  font-size: 34rpx;
+  padding: 30rpx 0;
+  color: #008E5B;
+}
+.header .add image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right:10rpx;
+}
+.header .content{
+  padding-right: 30rpx;
+}
+.header .content .top{
+  font-size: 32rpx;
+  font-weight: 500;
+  padding-bottom: 20rpx;
+}
+.header .content .top .name{
+  margin-right: 20rpx;
+}
+.header .content .address{
+  line-height: 1.4;
+}
+.header .icon{
+  position: absolute;
+  top: 50%;
+  right: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
+  margin: -15rpx 0;
+}
+
+/* 订单详情 */
+.details{
+  position: relative;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.details .item{
+  position: relative;
+  padding: 30rpx 30rpx;
+}
+.details .item::after{
+  content:" ";
+  position:absolute;
+  left:30rpx;
+  bottom:-1px;
+  right:0;
+  height:1px;
+  border-top:1rpx solid #e5e5e5;
+  color:#d9d9d9;
+}
+.details .item:last-child::after{
+  height:0px;
+  border-top:0rpx solid #e5e5e5;
+}
+.details .item .title{
+  margin-right: 10rpx;
+}
+.details .item.input{
+  width: 100%;
+  padding:30rpx;
+}
+.details .item .radio radio{
+  transform:scale(.7);
+}
+.details .goods .goods-cover{
+  width: 200rpx;
+  height: 200rpx;
+}
+.details .goods .goods-cover image{
+  width: 100%;
+  height: 100%;
+}
+.details .goods .info{
+  position:relative;
+  -webkit-align-self:stretch;
+  align-self:stretch;
+  -webkit-flex:1;
+  flex:1;
+  overflow:hidden;
+  display:-webkit-flex;
+  display:flex;
+  -webkit-flex-direction:column;
+  flex-direction:column;
+  -webkit-justify-content:center;
+  justify-content:center;
+  margin-left:10rpx;
+}
+.details .goods .info .p{
+  margin: 6rpx 0;
+}
+.details .goods .info .name{
+  font-size: 32rpx;
+}
+.details .total-price{
+  padding: 30rpx;
+  font-size: 30rpx;
+}
+.complimentary .tag{
+  font-size: 24rpx;
+  padding: 6rpx 10rpx;
+  margin-right: 5rpx;
+  color: #008E5B;
+  border: 1rpx solid #008E5B;
+  transform:scale(.9);
+  -webkit-transform:rotate(.9); /* Safari 和 Chrome */
+}
+
+/* 底部按钮 */
+.bottom-btn{
+  position: fixed;
+  width: 100%;
+  bottom: 20rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  z-index: 9;
+}

@@ -1,0 +1,195 @@
+/**app.wxss**/
+@import 'common/style/common.wxss';
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; 
+} 
+
+/*封面图占比*/
+.coverImg{
+  position: relative;
+}
+.coverImg .cover-img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-position: 50%;
+  background-size: cover;
+}
+.coverImg .cover-img image{
+  width: 100%;
+  height: 100%;
+}
+.coverImg .holder{
+  width: 100%;
+  position: relative;
+  padding-bottom: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 分割线 */
+.cutting-line{
+  height: 20rpx;
+  background-color: #f0f0f0;
+}
+
+/* 按钮共同样式 */
+.btn{
+  width: 100%;
+  padding: 25rpx 0;
+  color: #000;
+  font-size: 30rpx;
+  border-radius: 8rpx;
+  background-color: #fff;
+  border: 1rpx solid #C8C8C8;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+  transition: all .2s linear;
+}
+.btn-green{
+  color: #fff;
+  border: 1rpx solid #008E5B;
+  background-color: #008E5B;
+}
+.btn-red{
+  color: #fff;
+  border: 1rpx solid #F96062;
+  background-color: #F96062;
+}
+.btn.disabled{
+  background-color: #dcdcdc;
+  color: #999;
+  border: 1rpx solid #dcdcdc;
+}
+button.btn{
+  line-height: normal
+}
+button.btn-green::after {
+  border: 0;
+}
+.btn.active{
+  background-color: #f2f2f2;
+  border: 1rpx solid #f2f2f2;
+}
+
+
+/* 表单样式 */
+.input-block{
+  position: relative;
+  font-size: 30rpx;
+  padding: 20rpx;
+  margin-bottom: 30rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 8rpx;
+}
+.input-block .title{
+  color: #858585;
+  margin-right: 30rpx;
+}
+.input-block .get-verification-code{
+  color: #008E5B;
+  margin-left: 30rpx;
+}
+.input-block picker{
+  position: relative;
+  height: 1.4rem;
+}
+.input-block picker .picker-text{
+  width: 100%;
+  height: 1.4rem;
+}
+.input-block textarea{
+  width: 100%;
+}
+.input-block .verify-info{
+  position: absolute;
+  top: -50rpx;
+  left: 0;
+  font-size: 26rpx;
+  color: #F96062;
+}
+
+/* 箭头向下 icon_arrow */
+.icon-arrow-down{
+  width: 30rpx;
+  height: 30rpx;
+  transform:rotate(90deg);
+  -webkit-transform:rotate(90deg);
+}
+
+/* 说明 解释 */
+.explain{
+  padding: 20rpx 30rpx;
+  color: #B5B5B5;
+  line-height: 1.4;
+}
+.explain .explain-item{
+  font-size: 26rpx;
+  margin-bottom: 10rpx;
+}
+.explain .explain-item:last-child{
+  margin-bottom: 0;
+}
+.explain .explain-item .text{
+  margin-left: 5rpx;
+  line-height: 1.4;
+}
+
+/* 购物车选择框与地址管理选择框 */
+.check{
+  width: 21px;
+}
+.check .circle{
+  /* position: absolute;
+  top: 50%; */
+  width: 20px;
+  height: 20px;
+  /* margin: -10px 0; */
+  border-radius: 50%;
+  border:1px solid #A2A2A2;
+}
+
+/* 错误提示 */
+.error {
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+.error .text{
+  min-width: 200rpx;
+  max-width: 80%;
+  padding: 25rpx 30rpx;
+  font-size: 28rpx;
+  background-color: rgba(0,0,0,.6);
+  color: #fff;
+  border: none;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+}
+
+/* 删除按钮 */
+.delete{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140rpx;
+  height: 100%;
+  background: #e93b3d;
+  color: #fff;
+  z-index: 4;
+}

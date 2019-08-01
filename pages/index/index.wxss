@@ -1,0 +1,219 @@
+/* pages/index/index.wxss */
+@import '../../components/ad-list/ad-list.wxss';
+.ad-list .holder{
+  padding-bottom: 60%;
+}
+.activity .ad-list .holder{
+  padding-bottom: 20%;
+}
+.activity{
+  position: relative;
+  margin-top: 20rpx;
+}
+view{
+  box-sizing: border-box;
+}
+/* 优惠券 */
+.coupon{
+  position: relative;
+  margin-top: 20rpx;
+  /* background-color: #fff; */
+}
+.coupon image{
+  width: 100%;
+}
+.coupon .coupon-item{
+  width: 500rpx;
+  border-right: 1px dotted #00925f;
+}
+.coupon .coupon-item .coupon-item-img{
+  width: 100rpx;
+  height: 100rpx;
+}
+.coupon .coupon-item .coupon-item-img image{
+  width: 100%;
+  height: 100%;
+}
+.coupon .coupon-item .coupon-item-info{
+  position:relative;
+  -webkit-align-self:stretch;
+  align-self:stretch;
+  -webkit-flex:1;
+  flex:1;
+  overflow:hidden;
+  display:-webkit-flex;
+  display:flex;
+  -webkit-flex-direction:column;
+  flex-direction:column;
+  -webkit-justify-content:center;
+  justify-content:center;
+  margin-left: 15rpx;
+  padding-right: 15rpx;
+  font-size: 30rpx;
+}
+.coupon .coupon-item .coupon-item-info .name{
+  width: 100%;
+  margin-bottom: 8rpx;
+  font-weight: 500;
+}
+.coupon .coupon-item .coupon-item-info .site{
+  font-size: 26rpx;
+  color: #868686;
+}
+.coupon .coupon-item .coupon-item-info .site .dot{
+  margin: 0 8rpx;
+}
+.coupon .coupon-item .coupon-item-info .site .icon{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 5rpx;
+}
+.coupon .get-coupon{
+  width: 150rpx;
+  padding: 10rpx 0;
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 26rpx;
+  border: 1px solid #00925f;
+  background-color: #00BE7B;
+  text-align: center;
+}
+/* 优惠券指示点 */
+.indicator-dots{
+  position: relative;
+  height: 40rpx;
+  padding-bottom: 15rpx;
+  text-align: center;
+}
+.indicator-dots .indicator-dots-item{
+  display: inline-block;
+  width: 25rpx;
+  height: 5rpx;
+  margin: 0 6rpx;
+  background-color: #AFAFAF;
+}
+.indicator-dots .indicator-dots-item.active{
+  background-color: #111111;
+}
+
+/* 附近门店 */
+.nearby-store{
+  margin-top: 20rpx;
+  color: #868686;
+  padding: 20rpx 30rpx 20rpx;
+  background-color: #fff;
+}
+.nearby-store .nearby-store-icon{
+  width: 80rpx;
+  height: 80rpx;
+}
+.nearby-store .nearby-store-icon .icon{
+  width: 100%;
+  height: 100%;
+}
+.nearby-store .flex-item{
+  position:relative;
+  -webkit-align-self:stretch;
+  align-self:stretch;
+  -webkit-flex:1;
+  flex:1;
+  overflow:hidden;
+  display:-webkit-flex;
+  display:flex;
+  -webkit-flex-direction:column;
+  flex-direction:column;
+  -webkit-justify-content:center;
+  justify-content:center;
+  margin-left: 15rpx;
+  padding-right: 15rpx;
+  font-size: 31rpx;
+  color:#2a2a2a;
+}
+.nearby-store .coupon-name{
+  margin-top: 15rpx;
+  color: #666;
+  font-size: 26rpx;
+}
+.nearby-store .goto-btn{
+  width: 150rpx;
+  padding: 10rpx 0;
+  border-radius: 40rpx;
+  font-size: 26rpx;
+  /* border: 1px solid #e5e5e5; */
+  border: 1px solid #05b570;
+  text-align: center;
+  background-color: #05b570;
+  color: #fff;
+}
+
+/* 导航列表 */
+.nav-list{
+  position: relative;
+  padding: 50rpx 0 30rpx;  
+  /* padding: 30rpx 0 0rpx; */
+   flex-wrap: wrap; 
+  background-color: #fff;
+}
+.nav-list .nav-item{
+  position: relative;
+  width: 33.3%;  
+  margin-bottom: 20rpx;
+  padding: 10rpx 0;   
+}
+/* .nav-list .nav-item::after{
+  content:" ";
+  position:absolute;
+  left:30rpx;
+  bottom:-1px;
+  right:0;
+  height:1px;
+  border-top:1rpx solid #e5e5e5;
+  color:#d9d9d9;
+}
+.nav-list .nav-item:last-child::after{
+  height:0px;
+  border-top:0rpx solid #e5e5e5;
+} */
+/* .nav-list .nav-item .nav-item-a{
+   padding: 10rpx; 
+} */
+.nav-list .nav-item .nav-item-a .nav-img{
+   width: 100rpx;  
+   height: 100rpx;  
+   /* width: 80rpx;  */
+   /* height: 80rpx;  */
+   margin: 0 auto; 
+}
+.nav-list .nav-item .nav-item-a .nav-img image{
+  width: 100%;
+  height: 100%;
+}
+.nav-list .nav-item .nav-item-a .nav-name{
+  margin-top: 20rpx; 
+  /* margin-left: 20rpx; */
+  color: #868686;
+}
+.nav-list .nav-item .nav-item-a .arrow{
+  position: absolute;
+  top: 50%;
+  right: 30rpx;
+  width: 30rpx;
+  height: 30rpx;
+  margin: -15rpx 0;
+}
+
+/* 多个门店 */
+.nearby-store-list{
+  margin-top: 20rpx;
+  height: 120rpx;
+}
+.nearby-store-list swiper{
+  height: 120rpx;
+}
+.nearby-store-list swiper-item{
+  height: 120rpx;
+  background-color: #fff;
+}
+.nearby-store-list .nearby-store {
+  margin-top: 0;
+}

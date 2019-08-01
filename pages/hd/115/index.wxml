@@ -1,0 +1,10 @@
+<image mode='widthFix' style='width:100%' src='http://imgfs.oppo.cn/uploads/thread/attachment/2018/02/27/15197126018555.jpg'></image>
+<image mode='widthFix' style='width:100%' src='http://imgfs.oppo.cn/uploads/thread/attachment/2018/02/27/15197115803493.jpg'></image>
+
+<view class="shop">
+  <view class="item" wx:for="{{shopList}}">
+    <button class="open-map" data-index="{{index}}" bindtap="openMap">立即前往</button>
+    <icon />
+    <text>{{item.name}}</text>
+  </view>
+</view>

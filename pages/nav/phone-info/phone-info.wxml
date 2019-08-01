@@ -1,0 +1,32 @@
+<!--pages/nav/phone-info/phone-info.wxml-->
+<import src="../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='header'>
+    <view class='title flex flex-middle flex-center'>填写手机信息</view>
+  </view>
+  <view class='form'>
+    <form bindsubmit='submit'>
+      <view class='input-block flex flex-middle'>
+        <view class='title'>手机串码</view>
+        <input class='flex-item' type='number' value='{{imei}}' name="imei" placeholder='填写串码'></input>
+        <view class='scan' bindtap='onScan'>
+          <image src='../../../images/icon/icon_scan.png'></image>
+        </view>
+        <!-- <view class='get-verification-code' bindtap='verImei'>验证</view>
+        <view class='verify-info' wx:if='{{isImeiError}}'>{{imeiError}}</view> -->
+      </view>
+      <view class='input-block flex flex-middle'>
+        <view class='title'>姓名</view>
+        <input class='flex-item' type='text' name="userName" placeholder='填写姓名'></input>
+      </view>
+      <view class='input-block flex flex-middle'>
+        <view class='title'>手机号</view>
+        <input class='flex-item' type='number' name="userPhone" placeholder='填写手机号'></input>
+      </view>
+      <view class='bottom-btn'>
+        <button class='btn btn-green' form-type="submit" hover-class='active'>下一步</button>
+      </view>
+    </form>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

@@ -1,0 +1,41 @@
+/* components/time-select-list/time-select-list.wxss */
+.time-list{
+  flex-wrap: wrap;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+}
+.time-list .time-item{
+  width: 33.3%;
+  padding: 20rpx 15rpx 0;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+}
+.time-list .time-item .time-item-a{
+  padding: 30rpx 0;
+  border: 1px solid #c8c8c8;
+  border-radius: 8rpx;
+}
+.time-list .time-item .time-item-a.active{
+  border: 1px solid #008E5B;
+  background-color: #008E5B;
+}
+.time-list .time-item .time-item-a.disable{
+  color:#fff;
+  background-color: #c8c8c8;
+}
+.time-list .time-item .time-item-a .info{
+  color: #000;
+}
+.time-list .time-item .time-item-a.disable .info{
+  color: #fff;
+}
+.time-list .time-item .time-item-a.active .info{
+  color: #fff;
+}
+.time-list .time-item .time-item-a .info .time{
+  font-size: 30rpx;
+  margin-bottom: 6rpx;
+}
+.time-list .time-item .time-item-a .info .status{
+  font-size: 26rpx;
+}

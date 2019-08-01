@@ -1,0 +1,74 @@
+/* components/shop-list/shop-list.wxss */
+/* 商城列表 */
+.shop-list{
+  position: relative;
+}
+.shop-list .shop-item{
+  margin-bottom: 20rpx;
+  padding: 30rpx 0rpx 30rpx 30rpx;
+  background-color: #fff;
+}
+/* 序号 */
+.shop-list .shop-item .seq{
+  position: relative;
+  width: 50rpx;
+  height: 50rpx;
+}
+.shop-list .shop-item .seq text{
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  bottom: 5rpx;
+  color: #fff;
+  font-size: 24rpx;
+   transform:scale(.9); 
+}
+.shop-list .shop-item .seq image{
+  width: 100%;
+  height: 100%;
+}
+/* 单选 */
+.shop-list .shop-item .checkbox{
+  position: relative;
+  width: 22px;
+  height: 22px;
+}
+.shop-list .shop-item .checkbox .circle{
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+.shop-list .shop-item .shop-info{
+  margin-left: 20rpx;
+}
+.shop-list .shop-item .shop-info .shop-info-item{
+  position: relative;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  padding-right: 50rpx;
+}
+.shop-list .shop-item .shop-info .shop-info-item:first-child{
+  margin-top: 5rpx;
+}
+.shop-list .shop-item .shop-info .shop-info-item:last-child{
+  margin-bottom: 0;
+}
+.shop-list .shop-item .shop-info .shop-info-item .icon{
+  position: absolute;
+  top: 50%;
+  right: 20rpx;
+  width: 25rpx;
+  height: 25rpx;
+  margin: -12.5rpx 0;
+}
+.shop-list .shop-item .shop-info .siteName{
+  font-size: 34rpx;
+  font-weight: 500;
+}
+.shop-list .shop-item .shop-info .address text{
+  line-height: 1.4;
+}
+.shop-list .shop-item .open-map{
+  color: #008E5B;
+  text-decoration: underline;
+}

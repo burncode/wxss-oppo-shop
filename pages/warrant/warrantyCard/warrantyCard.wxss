@@ -1,0 +1,145 @@
+.oppo-logo{
+  width: 152rpx;
+  height: 70rpx;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 75rpx;
+}
+.oppo-logo image{
+  width: 100%;
+  height: 100%;
+}
+.praise-content{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+.rank-list-box{
+  width: 700rpx;
+  background: #fff;
+  margin: 135rpx auto 0 auto;
+  padding-bottom: 20rpx;
+  border-radius: 15rpx;
+  position: relative;
+  box-shadow: 0 0 30rpx rgba(0,0,0,.3);
+}
+.rank-list-box .head-img{
+  width: 130rpx;
+  height: 130rpx;
+  background: #eee;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -70rpx;
+  border: 8rpx solid #fff;
+  overflow: hidden;
+}
+.rank-list-box .head-img image{
+  width: 100%;
+  height: 100%;
+}
+.rank-list-box .my-name{
+  font-size: 32rpx;
+  color: #777777;
+  text-align: center;
+  padding-top: 80rpx;
+  font-weight: bolder;
+}
+.warranty-title image{
+  width: 100%;
+  height: 100%;
+}
+.warranty-title{
+  width: 516rpx;
+  height: 162rpx;
+  margin: 20rpx auto 0 auto;
+  padding-bottom: 80rpx;
+}
+.warranty-content{
+  width: 600rpx;
+  margin: 0 auto;
+  padding-top: 50rpx;
+  border-top: 2px dashed #dcdbdc;
+  padding-bottom: 90rpx;
+}
+.warranty-content .sm-title{
+  font-size: 30rpx;
+  color: #00bd7a;
+  margin-bottom: 30rpx;
+}
+.warranty-content .rule-box{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 10rpx;
+}
+.warranty-content .rule-box .serial-num{
+  width: 35rpx;
+  height: 35rpx;
+  background: #46bd71;
+  text-align: center;
+  line-height: 35rpx;
+  color: #fff;
+  border-radius: 100%;
+  font-size: 26rpx;
+  margin-right: 25rpx;
+
+}
+.warranty-content .rule-box .rule-text{
+  flex:1;
+  font-size: 24rpx;
+  color: #8b8b8b;
+  line-height: 35rpx;
+}
+.enter-btn{
+  width: 595rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  margin: 37rpx auto;
+  background: #eefff5;
+  border-radius: 50rpx;
+  font-size: 36rpx;
+  color: #46bd71;
+  font-weight: bolder;
+  box-shadow: 0 0 30rpx rgba(0,0,0,.3);
+}
+.dialog-box{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background:rgba(0,0,0,.3);
+  z-index: 10;
+}
+.dialog-box .dialog-content{
+  width: 533rpx;
+  /*height: 403rpx;*/
+  background: #fff;
+  border-radius: 10rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+.dialog-box .dialog-content .close{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+}
+.dialog-box .dialog-content .dialog-text{
+  width: 392rpx;
+  margin: 0 auto;
+  text-align: center;
+  padding: 90rpx 0;
+  font-size: 28rpx;
+  color: #5b5b5b;
+}

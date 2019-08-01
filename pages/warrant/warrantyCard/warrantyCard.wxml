@@ -1,0 +1,42 @@
+<!--<view class="oppo-logo">
+  <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/oppo-logo.png"  />
+</view>
+<view class="praise-content"
+      style="background:url('http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/praise-bg.png')">
+  <view class="rank-list-box">
+    <view class="head-img">
+      <image src="{{headImage}}"  />
+    </view>
+    <view class="my-name">{{nickName}}</view>
+    <view class="warranty-title">
+      <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/warr-title.png"  />
+    </view>
+    <view class="warranty-content">
+      <view class="sm-title">延保规则</view>
+      <view class="rule-box">
+        <view class="serial-num">1</view>
+        <view class="rule-text">本次延保仅限R11s机型，同一IMEI只能享受一次延保，延保时间半年；同一IMEI重复领取延保不累积。</view>
+      </view>
+      <view class="rule-box">
+        <view class="serial-num">2</view>
+        <view class="rule-text">延保6个月的定义如下：在国家“三包”规定的一年联保截止日次日零时起，延长主机半年的保修服务。延保期内手机因主机问题导致的性能故障您可获得免费维修服务。</view>
+      </view>
+      <view class="rule-box">
+        <view class="serial-num">3</view>
+        <view class="rule-text">已获得延保的R11s购机用户凭手机及购机发票，即可在官方任意一家服务中心享受延保。</view>
+      </view>
+      <view class="rule-box">
+        <view class="serial-num">4</view>
+        <view class="rule-text">OPPO公司拥有本活动法律允许范围内的解释权。</view>
+      </view>
+    </view>
+  </view>
+  <view class="enter-btn " bindtap="enterMyWarr">查看我的口碑影响力</view>
+</view>-->
+<view class="dialog-box">
+  <view class="dialog-content">
+    <view class="dialog-text">
+      哎呀，来晚了…活动已结束！
+    </view>
+  </view>
+</view>

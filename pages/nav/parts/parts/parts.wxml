@@ -1,0 +1,29 @@
+<!--pages/nav/parts/parts/parts.wxml-->
+<import src="../../../../components/logo/logo.wxml" />
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <!-- <template is='logo' data='{{logoUrl:"../../../../images/logo/oppo_logo.png"}}'></template> -->
+  <view class='header'>
+    <image src='http://wximg-oppo-cn.oss-cn-hangzhou.aliyuncs.com/vl/img/6e8ffd7160f14857a34088bb28863051.jpg' mode='widthFix'></image>
+  </view>
+  <view class='form'>
+    <form>
+      <view class='input-block flex flex-middle'>
+        <view class='title'>机型</view>
+        <view class='picker flex-item'>
+          <picker bindchange="modelChange" value="{{modelIndex}}" range="{{model}}">
+            <view class="picker-text flex flex-middle">{{model[modelIndex]}}</view>
+          </picker>
+        </view>
+        <image class='icon-arrow-down' src="../../../../images/icon/icon_arrow.png"></image>
+      </view>
+      <!-- <view class='input-block flex flex-middle'>
+        <view class='title'>验证码</view>
+        <input class='flex-item' type='number'></input>
+        <view class='get-verification-code'>获取验证码</view>
+      </view> -->
+      <view class='btn btn-green' bindtap='onQuery'>查询</view>
+    </form>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

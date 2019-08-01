@@ -1,0 +1,141 @@
+<!--pages/order/details/details.wxml-->
+<import src="../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='status' wx:if='{{type == "view"}}'>
+    <view class='text'>订单状态：{{status[orderDetail.status]}}</view>
+  </view>
+  <view wx:if='{{type == "submit"}}' class='header' bindtap='onSelectedAddress'>
+    <view class='add flex flex-center flex-middle' wx:if='{{!address}}'>
+      <image src='../../../images/icon/icon_add_address.png'></image>
+      <view>添加地址</view>
+    </view>
+    <view class='addr' wx:if='{{address}}'>
+      <view class='content'>
+        <view class='top flex'>
+          <view class='name'>{{address.recipientName}}</view>
+          <view class='phone'>{{address.phone}}</view>
+        </view>
+        <view class='address'>{{address.province + address.city + address.area  + address.street}}</view>
+      </view>
+      <image class='icon' src='../../../images/icon/icon_arrow.png'></image>
+    </view>
+  </view>
+  <view class='details'>
+    <view class='item goods flex' wx:for='{{goods}}' wx:key='key' wx:for-item='item' wx:if='{{type == "submit"}}'>
+      <view class='goods-cover'>
+        <image src='{{item.coverImg}}'></image>
+      </view>
+      <view class='info flex-item'>
+        <view class='name p line2'>{{item.currentGoodsEntity.name}}</view>
+        <view class='spec p line1'>
+          <text style='margin-right: 10rpx;' wx:for='{{item.currentGoodsEntity.shopGoodsEntitySpecList}}' wx:key='key' wx:for-item='specItem'>{{specItem.specValue}}</text>
+        </view>
+        <view class='price flex flex-between p'>
+          <view class='left'>¥{{item.currentGoodsEntity.price}}</view>
+          <view class='right'>×{{item.goodsNum}}</view>
+        </view>
+        <!-- <view class='complimentary flex flex-middle flex-between p'>
+          <view class='left flex flex-item'>
+            <view class='tag'>赠品</view>
+            <view class='flex-item flex flex-middle line1'>运动蓝牙耳机QYT 白色</view>
+          </view>
+          <view class='right'>×1</view>
+        </view> -->
+      </view>
+    </view>
+    <view class='item goods flex' wx:for='{{goods}}' wx:key='key' wx:for-item='item' wx:if='{{type == "view"}}'>
+      <view class='goods-cover'>
+        <image src='{{item.goodsCoverImg}}'></image>
+      </view>
+      <view class='info flex-item'>
+        <view class='name p line2'>{{item.goodsName}}</view>
+        <view class='spec p line1'>
+          <text wx:for='{{item.goodsSpecs}}' wx:key='key' wx:for-item='specItem' style='margin-right: 10rpx;'>{{specItem}}</text>
+        </view>
+        <view class='price flex flex-between p'>
+          <view class='left'>¥{{item.goodsAmount}}</view>
+          <view class='right'>×{{item.goodsNum}}</view>
+        </view>
+        <!-- <view class='complimentary flex flex-middle flex-between p'>
+          <view class='left flex flex-item'>
+            <view class='tag'>赠品</view>
+            <view class='flex-item flex flex-middle line1'>运动蓝牙耳机QYT 白色</view>
+          </view>
+          <view class='right'>×1</view>
+        </view> -->
+      </view>
+    </view>
+    <view class='item postage flex flex-between'>
+      <view>{{postage != 0 ? "快递费" : "全场包邮"}}</view>
+      <view>¥{{postage}}</view>
+    </view>
+    <view class='item input flex' wx:if='{{type == "submit"}}'>
+      <view class='title flex flex-middle'>快递方式</view>
+      <radio-group class="radio-group" bindchange="deliveryWayRadioChange">
+        <label class="radio" wx:for="{{deliveryWayList}}" wx:key='key' wx:for-item='item'>
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class='item input flex flex-between' wx:if='{{type == "submit"}}'>
+      <view class='title flex flex-middle'>买家留言：</view>
+      <input class='flex-item' type='text' placeholder='选填:留言(40字内)' maxlength='40' bindinput='onBuyerMessage'></input>
+    </view>
+    <view class='item input flex' wx:if='{{type == "submit"}}'>
+      <view class='title flex flex-middle'>发票抬头</view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{invoice}}" wx:key='key' wx:for-item='item'>
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class='item input flex flex-between' wx:if='{{type == "submit" && invoiceType == "PERSON"}}'>
+      <input class='flex-item' type='text' value='{{personInvoiceTitle}}' placeholder='请输入发票抬头' bindinput='onPersonInvoiceTitle'></input>
+    </view>
+    <view class='item input flex flex-between' wx:if='{{type == "submit" && invoiceType == "COMPANY"}}'>
+      <input class='flex-item' type='text' placeholder='请输入发票抬头' bindinput='onInvoiceTitle'></input>
+    </view>
+    <view class='item input flex flex-between' wx:if='{{type == "submit" && invoiceType == "COMPANY"}}'>
+      <input class='flex-item' type='text' placeholder='请输入纳税人识别号' bindinput='onDutyNo'></input>
+    </view>
+    <view class='item postage flex' wx:if='{{type == "view"}}'>
+      <view>订单编号：</view>
+      <view class='flex-item'><text selectable='true'>{{orderDetail.orderNo}}</text></view>
+    </view>
+    <view class='item postage flex' wx:if='{{type == "view" && orderDetail.waybillNo != null}}'>
+      <view>快递方式：</view>
+      <view class='flex-item'>{{orderDetail.deliveryWayText}}</view>
+    </view>
+    <view class='item postage flex' wx:if='{{type == "view" && orderDetail.waybillNo != null}}'>
+      <view>快递单号：</view>
+      <view class='flex-item'><text selectable='true'>{{orderDetail.waybillNo}}</text></view>
+    </view>
+    <view class='item postage flex' wx:if='{{type == "view"}}'>
+      <view>留言：</view>
+      <view class='flex-item'>{{orderDetail.orderMessage == null ? '无' : orderDetail.orderMessage}}</view>
+    </view>
+    <view class='item postage flex' wx:if='{{type == "view"}}'>
+      <view>发票抬头：</view>
+      <view class='flex-item'>{{orderDetail.dutyNo == null ? '个人' : '公司'}}</view>
+    </view>
+    <view class='item postage flex' wx:if='{{type == "view"}}'>
+      <view>发票内容：</view>
+      <view class='flex-item'>{{orderDetail.invoiceTitle == null ? '' : orderDetail.invoiceTitle}}</view>
+    </view>
+    <view class='item postage flex' wx:if='{{type == "view" && orderDetail.dutyNo != null}}'>
+      <view>纳税人识别号：</view>
+      <view class='flex-item'>{{orderDetail.dutyNo == null ? '无' : orderDetail.dutyNo}}</view>
+    </view>
+    <view class='total-price flex flex-right'>总价:¥{{totalPrice}}</view>
+  </view>
+  <view class='bottom-btn' bindtap='submit' wx:if='{{type == "submit"}}'>
+    <view class='btn btn-red'>提交订单</view>
+  </view>
+  <view class='bottom-btn' data-orderid='{{orderDetail.id}}' bindtap='pay' wx:if='{{type == "view" && orderDetail.status == "UNPAY"}}'>
+    <view class='btn btn-red'>支付</view>
+  </view>
+  <view class='bottom-btn' data-orderid='{{orderDetail.id}}' bindtap='onReturns' wx:if='{{orderDetail.status == "PAID"}}'>
+    <view class='btn'>退换货</view>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

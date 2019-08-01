@@ -1,0 +1,70 @@
+<!--pages/activity/cny2017/home/home.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container' catchtouchmove = "true">
+    <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/bg.jpg' class='banner' mode='aspectFill'></image>
+    <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/icon_a.png' class='iconAni1'></image>
+    <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/icon_b.png' class='iconAni2'></image>
+    <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/icon_c.png' class='iconAni3'></image>
+    <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/icon_c.png' class='iconAni4'></image>
+    <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/icon_c.png' class='iconAni5'></image>
+    <view class='inner'>
+        <view class='rule'>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/rule.png' class='icon'></image>
+        </view>
+        <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/logo.png' class='logo'></image>
+        <view class='btnRule'>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/rule_txt.png?v=2' class='txt' catchtap='goRule'></image>
+        </view>
+        <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/slogan.png' class='slogan'></image>
+        <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/sub_title.png' class='subTitle'></image>
+        <view class='radioBox loadingActive'>
+            <view class='radioIcon'>
+                <view class='icons'>
+                    <view class='iconItem iconItem1 loadingItem1'></view>
+                    <view class='iconItem iconItem2 loadingItem1'></view>
+                    <view class='iconItem iconItem3 loadingItem2'></view>
+                    <view class='iconItem iconItem4 loadingItem2'></view>
+                </view>
+                <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/radio.png' class='radio'></image>
+            </view>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/dog.png' class='dog'></image>
+        </view>
+        <!-- <text class="startTips">本版本仅供内内测，奖品均无效</text> -->
+        <!-- <navigator url='../make/make' hover-class='none'> -->
+        <view class='homeBtns'>
+            <form report-submit = "true" bindsubmit='btnBookTap'>
+                <button class='btnBook' formType="submit" hover-class='none'>
+                    <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/btn_join.png' class='btnJoin'></image>
+                </button>
+            </form>
+            <!-- </navigator> -->
+            <view>
+                <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/btn_rank_txt.png' class='btnRank' catchtap='goRank'></image>
+            </view>
+        </view>
+        <view class='agree flex flex-center flex-middle'>
+            <view class='pic' bindtap='agreeChange'>
+                <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/agree_icon.png' class='agreeIcon' wx:if = "{{isAgree}}"></image>
+            </view>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/agree_txt.png?v=1' class='agreeTxt'  bindtap='agreeChange'></image>
+        </view>
+    </view>
+
+
+    <view class="loading {{loadingShow?'loadingActive':''}}" wx:if = "{{loadingShow}}" animation = "{{loadingAni}}">
+        <view class='box'>
+            <view class='icons'>
+                <view class='iconItem iconItem1 loadingItem1'></view>
+                <view class='iconItem iconItem2 loadingItem1'></view>
+                <view class='iconItem iconItem3 loadingItem2'></view>
+                <view class='iconItem iconItem4 loadingItem2'></view>
+            </view>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/radio.png' class='icon'></image>
+            <text class='num'>{{loadingPer}}%</text>
+        </view>
+    </view>
+</view>
+<!-- 引入图片预加载组件 -->
+<import src="../../../../components/img-loader/img-loader.wxml"/>
+<template is="img-loader" data="{{ imgLoadList }}"></template>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template> 

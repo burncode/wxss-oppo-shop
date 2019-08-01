@@ -1,0 +1,14 @@
+/* pages/my/address/add/add.wxss */
+page{
+  background-color: #fff;
+}
+.form-item{
+  padding: 30rpx 30rpx 0;
+}
+.form-item .title{
+  padding-bottom: 30rpx;
+}
+.form-item .title text{
+  color: red;
+  margin-right:10rpx;
+}

@@ -1,0 +1,40 @@
+/* pages/nav/shop/shop.wxss */
+@import '../../../components/shop-list/shop-list.wxss';
+.header{
+  padding: 30rpx;
+  background-color: #fff;
+}
+.header .title{
+  color: #858585;
+  padding: 20rpx 0;
+}
+
+/* 商城 */
+.shop{
+  position: relative;
+}
+.shop .title{
+  padding: 30rpx;
+}
+.shop-list .shop-item:last-child{
+  margin-bottom: 0rpx;
+}
+
+
+/* 没有更多的内容 */
+.nothing{
+  position: relative;
+  font-size: 30rpx;
+  padding: 10rpx 30rpx 30rpx;
+  color: #777;
+}
+.nothing-shop{
+  position: relative;
+  padding: 100rpx 30rpx;
+  font-size: 50rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #393939;
+}
+
+

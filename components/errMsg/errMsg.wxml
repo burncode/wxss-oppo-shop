@@ -1,0 +1,5 @@
+<template name="errMsg">
+  <view class='error flex flex-middle flex-center' wx:if="{{errMsg}}">
+    <view class='text'>{{errMsg}}</view>
+  </view>
+</template>

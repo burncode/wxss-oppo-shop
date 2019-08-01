@@ -1,0 +1,16 @@
+<!--components/price-list/price-list.wxml-->
+<template name="priceList">
+  <view class='price'>
+    <view class='title'>{{title}}</view>
+    <view class='price-list flex'>
+      <view class='price-item' wx:for="{{priceList}}" wx:key="key" wx:for-item="item">
+        <view class='price-item-a'>
+          <view class='info'>
+            <view class='total-num flex flex-center'>{{item.totalNum}}</view>
+            <view class='real-price flex flex-center'>售价{{item.realPrice}}元</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

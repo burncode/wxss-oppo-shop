@@ -1,0 +1,41 @@
+<!--pages/nav/extended-warranty/warranty-detail/warranty-detail.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='block flex'>
+    <view class='title'>订单状态</view>
+    <view class='content'>{{status[orderDetail.status]}}</view>
+  </view>
+  <view class='block flex'>
+    <view class='title'>下单时间</view>
+    <view class='content'>{{orderDetail.date}}</view>
+  </view>
+  <view class='block flex'>
+    <view class='title'>手机串码</view>
+    <view class='content'>{{orderDetail.imei}}</view>
+  </view>
+  <view class='block flex'>
+    <view class='title'>手机号</view>
+    <view class='content'>{{orderDetail.userPhone}}</view>
+  </view> 
+  <view class='block flex'>
+    <view class='title'>类型</view>
+    <view class='content'>{{orderDetail.warrantyName}}</view>
+  </view>
+  <view class='block flex' wx:if='{{orderDetail.refundAuditStatus != null}}'>
+    <view class='title'>审核状态</view>
+    <view class='content'>{{auditStatus[orderDetail.refundAuditStatus]}}</view>
+  </view>
+  <view class='block flex' wx:if='{{orderDetail.auditRemark != null}}'>
+    <view class='title'>审核备注</view>
+    <view class='content'>{{orderDetail.auditRemark}}</view>
+  </view>
+  <view class='block flex' wx:if='{{orderDetail.status == "PAID"}}'>
+    <view class='title'>操作</view>
+    <navigator url='../refund/refund?orderId={{orderDetail.orderId}}' hover-class='none' class='content refund'>申请退款</navigator> 
+    <!-- <view class='content refund' bindtap='onRefund'>申请退款</view> -->
+  </view>
+  <view class='bottom-btn' data-orderid='{{orderId}}' bindtap='pay' wx:if='{{orderDetail.status == "UNPAY"}}'>
+    <view class='btn btn-red'>支付</view>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

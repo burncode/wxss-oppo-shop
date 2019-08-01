@@ -1,0 +1,193 @@
+page {
+    font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+    font-size: 28rpx;
+    line-height: 1.2;
+    background-color: #f5f5f5;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+image.icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+/*弹性布局*/
+
+.flex {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-item {
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.flex-item-1 {
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.flex-item-2 {
+    -webkit-flex: 2;
+    flex: 2;
+}
+
+.flex-row {
+    -webkit-flex-flow: row;
+    flex-flow: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+.flex-column {
+    -webkit-flex-flow: column;
+    flex-flow: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.flex-left {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.flex-right {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+.flex-center {
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.flex-between {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.flex-around {
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+.flex-top {
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+
+.flex-middle {
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.flex-bottom {
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+
+.flex-baseline {
+    -webkit-align-items: baseline;
+    align-items: baseline;
+}
+
+.flex-stretch {
+    -webkit-align-items: stretch;
+    align-items: stretch;
+}
+
+.flex-content-center {
+    -webkit-align-content: center;
+    align-content: center;
+}
+
+/* 1行超出截断 */
+
+.line1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 2行超出截断 */
+
+.line2, .line3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* 3行超出截断 */
+
+.line3 {
+    -webkit-line-clamp: 3;
+}
+
+/*文本位置*/
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/*icon更多*/
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    right: 20rpx;
+    display: inline-block;
+    width: 30rpx;
+    height: 30rpx;
+    margin: -15rpx 0;
+}
+
+/*颜色*/
+
+.red {
+    color: #e54847;
+}
+
+.blue {
+    color: #1cb5ff;
+}
+
+.orange {
+    color: #f60;
+}
+

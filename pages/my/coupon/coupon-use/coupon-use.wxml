@@ -1,0 +1,24 @@
+<!--pages/my/coupon/coupon-use/coupon-use.wxml-->
+<!--pages/my/coupon/coupon.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='content'>
+    <view class='title'>请将此出示给店面工作人员</view>
+    <view class='qr-code' wx:if='{{couponCreatedWay == "SYSTEM"}}'>
+      <view class='qr-code-img'>
+        <image mode="scaleToFill" src="{{imagePath}}"></image>
+      </view>
+    </view>
+    <view class='bar-code' style='{{couponCreatedWay == "SYSTEM" ? "" : "margin-top:30rpx" }}'>
+      <view class='bar-code-num'>{{couponCode}}</view>
+    </view>
+    <view class='close-btn'>
+      <view class='btn' bindtap='onClose'>关闭</view>
+    </view>
+  </view>
+</view>
+<view class="canvas-box">
+  <canvas  hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas"/>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>
+

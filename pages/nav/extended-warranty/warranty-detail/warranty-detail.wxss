@@ -1,0 +1,31 @@
+/* pages/nav/extended-warranty/warranty-detail/warranty-detail.wxss */
+page{
+  background-color: #fff;
+}
+.container{
+  padding: 30rpx;
+}
+.container .block{
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}
+.container .block .title{
+  color:#888888;
+  width:160rpx;
+}
+.container .refund{
+  text-decoration: underline;
+  color: #008E5B;
+}
+.bottom-btn{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120rpx;
+  padding: 0 30rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 9;
+}

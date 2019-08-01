@@ -1,0 +1,11 @@
+<!--pages/nav/tel-recharge/tel-recharge.wxml-->
+<import src="../../../components/tel-input/tel-input.wxml" />
+<import src="../../../components/price-list/price-list.wxml" />
+<import src="../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='header'>
+    <template is="telInput"></template>
+  </view>
+  <template is="priceList" data='{{title:"充话费",priceList:priceList}}'></template>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

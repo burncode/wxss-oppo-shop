@@ -1,0 +1,8 @@
+<!--components/logo/logo.wxml-->
+<template name="logo">
+  <view class='logo'>
+    <view class='logo-img'>
+      <image src='{{logoUrl}}' mode='widthFix'></image>
+    </view>
+  </view>  
+</template>

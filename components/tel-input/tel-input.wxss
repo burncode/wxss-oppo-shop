@@ -1,0 +1,21 @@
+/* components/tel-input/tel-input.wxss */
+.tel{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #ECECEC;
+}
+.tel .tel-input{
+  padding-right: 60rpx;
+}
+.tel .tel-input input{
+  height: 100rpx;
+  font-size: 65rpx;
+}
+.tel .tel-input .tel-type{
+  color: #8A8A8A;
+}
+.tel .clear{
+  position: absolute;
+  top: 50%;
+  right: 30rpx;
+  margin: -12px 0;
+}

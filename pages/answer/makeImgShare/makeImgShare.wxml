@@ -1,0 +1,16 @@
+<view class="pic-share-box">
+    <image class="answer-bg" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/answer-bg.png"
+           mode="aspectFill"/>
+    <image class="loading" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/loading.png" mode="widthFix" wx:if="{{loadShow}}" />
+    <div class="share-content">
+        <canvas canvas-id="shareBox" class="share-box" style="height:{{canvas_height}}px;width: {{canvas_width}}px"></canvas>
+    </div>
+    <cover-view class="cover-option">
+        <cover-view class="save-btn" bindtap="savePic">
+            <cover-image class="save-img" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/option-btn-bg.png" />
+            <cover-view class="save-text">
+                保存卡片
+            </cover-view>
+        </cover-view>
+    </cover-view>
+</view>

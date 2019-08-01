@@ -1,0 +1,515 @@
+@import "../template/answerDialog/answerDialog.wxss";
+page {
+    font-family: 'SimHei';
+}
+.answer-page{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.answer-page .answer-bg{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+    height:100%;
+
+}
+.answer-page .answer-main-title{
+  width: 400rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 170rpx;
+  top: 100rpx;
+}
+.answer-page .answer-box{
+  width: 685rpx;
+  height: 782rpx;
+  position: absolute;
+  left: 34rpx;
+  top: 323rpx;
+  background: #fff;
+  border-radius: 15rpx;
+}
+.loading{
+    width: 100rpx;
+    height:100rpx;
+    position: absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    animation:loading 2s linear infinite;
+    -webkit-animation:loading 2s linear infinite;
+}
+@keyframes loading {
+    from {
+        transform:translate(-50%,-50%) rotate(0);
+        -webkit-transform:translate(-50%,-50%) rotate(0);
+    }
+    to {
+        transform:translate(-50%,-50%) rotate(360deg);
+        -webkit-transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+@-webkit-keyframes loading {
+    from {
+        transform:translate(-50%,-50%) rotate(0);
+        -webkit-transform:translate(-50%,-50%) rotate(0);
+    }
+
+    to {
+        transform:translate(-50%,-50%) rotate(360deg);
+        -webkit-transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
+/*倒计时框*/
+.progress_box{
+  position: relative;
+  width:70px;
+  height: 70px;
+/*// 这里的宽高是必须大于等于canvas圆环的直径 否则绘制到盒子外面就看不见了
+// 一开始设置 width:440rpx; height:440rpx; 发现 在360X640分辨率的设备，下绘制的圆环跑盒子外去了
+// 小程序使用rpx单位适配 ，但是canvas绘制的是px单位的。所以只能用px单位绘制的圆环在盒子内显示*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 100%;
+  margin: -35px auto 0 auto;
+}
+.progress_bg{
+  position: absolute;
+    width:70px;
+  height: 70px;
+}
+.progress_canvas{
+  width:70px;
+  height: 70px;
+}
+.progress_text{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+    border:none
+}
+.progress_info{
+  font-size: 50rpx;
+}
+.progress_info{
+  font-weight: bold;
+  font-family: helvetica;
+  text-align:center;
+  /*background: -webkit-linear-gradient(top, #ee7435 , #dc3065);     !* 背景色渐变 *!*/
+  /*-webkit-background-clip: text;         !* 规定背景的划分区域 *!*/
+  /*-webkit-text-fill-color: transparent;  !* 防止字体颜色覆盖 *!*/
+    color: #dc3065;
+    border:none
+}
+
+/*题目容器*/
+.questions-box{
+  width: 600rpx;
+  height: 650rpx;
+  margin: 0 auto;
+}
+.questions-box .question-title{
+  width: 100%;
+  height: 130rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 40rpx;
+  margin: 10rpx 0;
+}
+.questions-box .options-box{
+  width: 100%;
+  height: 500rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.questions-box .options-box .option-item.active{
+  border: 1px solid #fff;
+}
+.questions-box .options-box .option-item{
+  width: 100%;
+  height: 100rpx;
+  position: relative;
+  border-radius: 50rpx;
+  border: 1px solid #d7d7d7;
+}
+.questions-box .options-box .option-item.active .option-text{
+  color: #fff;
+}
+.questions-box .options-box .option-item .option-text{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100%;
+  width: 500rpx;
+  margin: 0 auto;
+  align-items: center;
+  font-size: 32rpx;
+  color: #3a3a3a;
+}
+.questions-box .options-box .option-item.active .option-btn-bg{
+  display: block;
+}
+.questions-box .options-box .option-item .option-btn-bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+/*抽奖容器*/
+.lottery-box{
+
+}
+.box{
+ margin:50rpx auto 0 auto;
+ height: 492rpx;
+ width: 492rpx;
+ /*border:1px solid #ddd;*/
+ position: relative;
+ /*box-sizing: border-box;*/
+}
+.boxsub{
+ width: 160rpx;
+ height: 160rpx;
+ /*border: 1px solid #f00;*/
+ box-sizing: border-box;
+ position: absolute;
+ background: #f9f9f9;
+ border-radius: 12rpx;
+}
+.boxsub .icon{
+    width: 160rpx;
+    height:110rpx;
+}
+.boxcontent{
+ text-align: center;
+ font-size: 20rpx;
+ color: #666666;
+    height:50rpx;
+
+}
+.lucky{
+ width: 160rpx;
+ height:160rpx;
+ background: -webkit-linear-gradient(left, #ee7435 , #dc3065);     /* 背景色渐变 */
+ border-radius: 12rpx;
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ right: 0;
+ top: 0rpx;
+ margin: auto;
+ line-height: 160rpx;
+}
+
+.lucky:active{
+ opacity: 0.7;
+}
+.taplucky{
+ display: block;
+ text-align: center;
+ font-size: 32rpx;
+ line-height: 160rpx;
+ height: 160rpx;
+ color: #fff;
+}
+.luck{
+ opacity: 0.5;
+    background: -webkit-linear-gradient(left, #ee7435, #dc3065); /* 背景色渐变 */
+}
+
+
+.appointment-input-box .input-code .get-code.disable{
+    background: #b0b0b0;
+}
+.appointment-input-box .input-code .get-code{
+    width:185rpx;
+    height:88rpx;
+    color: #fff;
+    font-size: 28rpx;
+    background: -webkit-linear-gradient(left, #ee7435, #dc3065); /* 背景色渐变 */
+    border-radius: 10rpx;
+    line-height:88rpx;
+    margin-left: 15rpx;
+    padding: 0;
+}
+.appointment-input-box .input-code .code{
+    width:277rpx;
+    height: 84rpx;
+    border:1px solid #e5e5e5;
+    border-radius: 10rpx;
+    padding:0 30rpx;
+    text-align: left;
+    font-size: 28rpx;
+    color: #7e7e7e;
+}
+.appointment-input-box .errorStyle{
+    border:1px solid #e60012 !important;
+}
+.appointment-input-box .input-code{
+    width:480rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.appointment-input-box{
+    width:480rpx;
+    margin: 0 auto;
+}
+.appointment-input-box .phone-num{
+    width:418rpx;
+    height: 84rpx;
+    border:1px solid #e5e5e5;
+    border-radius: 10rpx;
+    padding:0 30rpx;
+    text-align: left;
+    font-size: 28rpx;
+    color: #7e7e7e;
+    margin-bottom: 16rpx;
+}
+.appointment-error-text{
+    height:65rpx;
+    color: #ff0000;
+    font-size:28rpx;
+    line-height:65rpx;
+    text-align: left;
+}
+.appointment-confirm{
+    width:260rpx;
+    height:84rpx;
+    background: -webkit-linear-gradient(left, #ee7435, #dc3065); /* 背景色渐变 */
+    margin: 0 auto;
+    border-radius: 100rpx;
+    color: #fff;
+    line-height:84rpx;
+}
+/* 发送验证码按钮隐藏，并展示倒数60s提示 */
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+
+.friend-help-box{
+    width: 660rpx;
+    position: absolute;
+    top: 160rpx;
+    left:45rpx;
+    background: #fff;
+    border-radius: 12rpx;
+    padding:0;
+    text-align: center;
+    /*height: 900rpx;*/
+}
+.friend-help-box .friend-help-icon{
+    width: 310rpx;
+    margin-bottom: 50rpx;
+}
+.friend-help-box.end .friend-help-icon{
+    width: 250rpx;
+}
+.friend-help-box.help .friend-help-icon{
+    width: 250rpx;
+}
+.no-right-box{
+    margin-top: 170rpx;
+}
+.right-box{
+    margin-top: 120rpx;
+}
+.friend-help-box.end{
+    width: 660rpx;
+    position: absolute;
+    top: 160rpx;
+    left:45rpx;
+    background: #fff;
+    border-radius: 12rpx;
+    text-align: center;
+}
+.friend-help-box.help{
+    width: 660rpx;
+    position: absolute;
+    top: 160rpx;
+    left:45rpx;
+    background: #fff;
+    border-radius: 12rpx;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+}
+.no-help-text{
+    display: block;
+    width:500rpx;
+    font-size: 36rpx;
+    font-family: 'SimHei';
+    color: #262626;
+    margin: 0 auto;
+    font-weight:bold
+}
+.help-btn-group{
+    margin-bottom: 90rpx;
+    margin-top: 110rpx;
+    margin-left: auto;
+    margin-right: auto;
+    width: 563rpx;
+    display: flex;
+    justify-content: center;
+}
+.right-box .help-btn-group{
+    margin-top: 100rpx;
+}
+.help-btn-group .common{
+    text-align:center;
+    background: -webkit-linear-gradient(left, #ee7435 , #dc3065);     /* 背景色渐变 */
+    border-radius:50rpx;
+    font-size: 32rpx;
+    color: #fff;
+    height: 84rpx;
+    line-height: 84rpx;
+}.help-btn-group .normal{
+    text-align:center;
+    background:#fff;     /* 背景色渐变 */
+    border-radius:50rpx;
+    font-size: 32rpx;
+    color: #fff;
+    height: 84rpx;
+    line-height: 84rpx;
+     background: -webkit-linear-gradient(right, #ee7435, #dc3065);
+     background: -o-linear-gradient(right, #ee7435, #dc3065);
+     background: linear-gradient(to left, #ee7435, #dc3065);     /* 背景色渐变 */
+     -webkit-background-clip: text;         /* 规定背景的划分区域 */
+     -webkit-text-fill-color: transparent;  /* 防止字体颜色覆盖 */
+}
+.help-btn-group .share{
+    width: 325rpx;
+}
+.help-btn-group .goOnAnswer{
+    width: 265rpx;
+}
+.help-btn-group .lottery{
+    width: 245rpx;
+}
+ .help-title{
+     display: block;
+     width:550rpx;
+     font-size: 40rpx;
+     font-weight: bold;
+     font-family: 'SimHei';
+     color: #262626;
+     margin: 0 auto;
+     margin-bottom: 50rpx;
+ }
+ .option-text{
+     width: 510rpx;
+     font-size: 28rpx;
+     display: block;
+     text-align: left;
+     margin: 0 auto;
+    margin-bottom: 15rpx;
+ }
+ .help-text{
+     margin-top: 100rpx;
+     display: block;
+     font-size: 30rpx;
+     color: #5f5f5f;
+ }
+ .btn-bg{
+     background: #fff;
+     text-align:center;
+     border-radius:50rpx;
+     font-size: 32rpx;
+     color: #fff;
+     height: 84rpx;
+     line-height: 84rpx;
+     margin: 0 20rpx;
+ }
+ .btn-bg.normal{
+     background: url(data:image/png;base64,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);
+     background-size: 100% 100%;
+ }
+ .btn-bg.normal.share{
+     background: url(data:image/png;base64,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);
+     background-size: 100% 100%;
+ }
+.tips{
+    position: absolute;
+    left:50%;
+    bottom:35rpx;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 24rpx;
+    color: #5e5d5d;
+    width: 100%;
+}
+
+ /*活动结束*/
+.activity-end{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index: 99999;
+}
+.activity-end .musk{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.31);
+}
+.activity-end .end-box{
+    width:380rpx;
+    height:250rpx;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    border-radius: 15rpx;
+}
+.activity-end .end-box .end-text{
+    font-family: "Microsoft YaHei";
+    color: #fff;
+    font-size: 30rpx;
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-weight: lighter;
+    margin-top: 60rpx;
+    line-height:40rpx;
+}
+.activity-end .end-box .count-num{
+    font-family: "Microsoft YaHei";
+    color: #fff;
+    font-size: 30rpx;
+    width: 100%;
+    text-align: center;
+    display: block;
+}

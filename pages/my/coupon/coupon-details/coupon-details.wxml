@@ -1,0 +1,55 @@
+<!--pages/my/coupon/coupon-details/coupon-details.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='header'>
+    <view class='coupon-details'>
+      <view class='content'>
+        <button class='top-right share' wx:if='{{couponType === "shops"}}' open-type='share'>分享给好友</button>
+        <view class='top-right' wx:if='{{couponType === "personal" && couponDetails.coupon.usedDescription != null}}' bindtap='onExplain'>使用说明</view>
+        <view class='name'>{{couponDetails.coupon.name}}</view>
+        <view class='time'>有效期{{couponDetails.coupon.startTime}}至{{couponDetails.coupon.endTime}}</view>
+      </view>
+      <view class='coupon-btn'>
+        <view wx:if="{{couponDetails.coupon.canTaken}}" class='btn' bindtap='getCoupon'>立即领取</view>
+        <navigator wx:else class='btn' url='../coupon-use/coupon-use?code={{couponDetails.code}}&couponCreatedWay={{couponDetails.coupon.couponCreatedWay}}'>领取码</navigator>
+      </view>
+      <view class='get-coupon-num'>{{couponDetails.coupon.takenCount}}人已领取</view>
+    </view>
+  </view>
+  <view class='shop-list' style='display:none'>
+    <view class='title'>
+      <text>您可前往以下门店出示领取码获得优惠券</text>
+    </view>
+    <view class='list'>
+      <view class='item flex' wx:for="{{couponDetails.stores}}" wx:key="key" wx:for-item="item" 
+        data-latitude = "{{item.lat}}"
+        data-longitude = "{{item.lng}}"
+        data-name = "{{item.name}}"
+        data-city = "{{item.city}}"
+        data-area = "{{item.area}}"
+        data-street = "{{item.street}}"
+        bindtap='openMap'>
+        <view class='left flex flex-item flex-middle'>
+          <view class='shop-icon'>
+            <image src='../../../../images/icon/icon_home_coupon.png'></image>
+          </view>
+          <view class='info flex-item line2'>{{item.name}}</view>
+        </view>
+        <view class='right flex flex-middle flex-center'>
+          <view class='goto-btn'>立即前往</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='modal' wx:if="{{modal}}">
+  <view class='modal-content'>
+    <scroll-view scroll-y='true'>
+      <view class='remark'>{{couponDetails.coupon.usedDescription}}</view>
+    </scroll-view>
+    <view class='modal-btn flex flex-middle flex-center'>
+      <view class='btn-1' bindtap='onExplain'>我知道了</view>
+    </view>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

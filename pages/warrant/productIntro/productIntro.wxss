@@ -1,0 +1,90 @@
+page{
+  background: #fff;
+}
+.product-content{}
+.product-content .phone-pic-1{
+  width: 750rpx;
+  height: 931rpx;
+}
+.product-content .phone-pic-2{
+  width: 750rpx;
+  height: 1094rpx;
+}
+.product-content .phone-pic-3{
+  width: 750rpx;
+  height: 1025rpx;
+}
+.product-content .phone-pic-4{
+  width: 750rpx;
+  height: 1495rpx;
+}
+.product-content .phone-pic-5{
+  width: 750rpx;
+  height: 1667rpx;
+}
+.product-content .phone-pic-6{
+  width: 750rpx;
+  height: 1822rpx;
+}
+.product-content .phone-pic-7{
+  width: 750rpx;
+  height: 1535rpx;
+}
+.product-content .product-video video{
+  width: 100%;
+  height: 100%;
+}
+.product-content .product-video{
+  width: 750rpx;
+  height: 482rpx;
+}
+.shop-list{
+  width: 700rpx;
+  margin: 0 auto;
+}
+.shop-list .shop-item{
+  width: 660rpx;
+  padding: 35rpx 20rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #cfd3d8;
+}
+.shop-list .shop-item .shop-location{
+  width: 29rpx;
+  height: 38rpx;
+  margin-right: 20rpx;
+}
+.shop-list .shop-item .shop-name{
+  width: 415rpx;
+  font-size: 28rpx;
+  color: #565656;
+}
+.shop-list .shop-item .enter{
+  width: 200rpx;
+  height: 60rpx;
+  border: 1px solid #46bd71;
+  border-radius: 50rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #46bd71;
+}
+.no-shop{
+  font-size: 28rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  width: 100%;
+  color: #565656;
+  text-align: center;
+}
+.get-location{
+  width: 200rpx;
+  height: 60rpx;
+  border: 1px solid #46bd71;
+  border-radius: 50rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #46bd71;
+  margin: 40rpx auto;
+}

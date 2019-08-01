@@ -1,0 +1,41 @@
+<!--pages/shop/shop.wxml-->
+<import src="../../components/ad-list/ad-list.wxml" />
+<import src="../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='header' wx:if='{{imgUrls.length != 0}}'>
+    <template is="adList" data="{{imgUrls:imgUrls,indicatorDots:flase,indicatorColor:'#808080',indicatorActiveColor:'#666',autoplay:true,interval:3000,duration:500}}"></template>
+  </view>
+  <view class='proclamation' wx:if="{{proclamationTitle !== null}}">
+    <navigator class='proclamation-a flex flex-middle line1' url='../proclamation/index/index' hover-class='none'>
+      <view class='circle'></view>
+      <view class='title'>公告：</view>
+      <view class='content flex-item line1'>{{proclamationTitle}}</view>
+    </navigator>
+  </view>
+  <view class='goods'>
+    <!-- <view class='goods-header'>
+      <view class='title flex flex-center line1'>官方推荐</view>
+      <view class='subtitle flex flex-center line1'>OPPO精心打造的产品</view>
+    </view> -->
+    <view class='goods-list flex'>
+      <view class='goods-item' wx:for='{{goods}}' wx:key='key' wx:for-item='item'>
+        <navigator class='goods-item-a' url='../goods-details/goods-details?id={{item.id}}' hover-class='none'>
+          <view class='coverImg'>
+            <view class='cover-img'>
+              <image move='widthFix' src='{{item.coverImg}}'></image>
+            </view>
+            <view class="holder"></view>
+          </view>
+          <view class='goods-info'>
+            <view class='goods-name line1 flex flex-center'>{{item.name}}</view>
+            <view class='goods-price line1 flex flex-center'>¥{{item.shopGoodsEntityList.length != 0 ? item.shopGoodsEntityList[0].price : item.price}}</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <navigator class='cart flex flex-middle flex-center' url='../cart/cart' hover-class='none'>
+    <image src='../../images/icon/icon_cart.png'></image>
+  </navigator>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

@@ -1,0 +1,61 @@
+<!--pages/nav/reserve/reserve-list/reserve-list.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<import src="../../../../components/nothing/nothing.wxml" />
+<view class='container'>
+  <view class='list' wx:if='{{!nothing}}'>
+    <view class='item' wx:for='{{reserveList}}' wx:key='key' wx:for-item='item'>
+      <view class='block flex'>
+        <view class='title'>预约号</view>
+        <view class='info flex-item'>{{item.reserve_id}}</view>
+      </view>
+    <view class='block flex'>
+      <view class='title'>预约人</view>
+      <view class='info flex-item'>{{item.name}}</view>
+    </view>
+    <view class='block flex'>
+      <view class='title'>手机号</view>
+      <view class='info flex-item'>{{item.mobile}}</view>
+    </view>
+      <view class='block flex'>
+        <view class='title'>服务中心</view>
+        <view class='info flex-item'>{{item.service_name}}</view>
+      </view>
+      <view class='block flex'>
+        <view class='title'>故障描述</view>
+        <view class='info flex-item'>{{item.problem_category_name}}</view>
+      </view>
+      <view class='block flex'>
+        <view class='title'>预约时间</view>
+        <view class='info flex-item'>{{item.time}}</view>
+      </view>
+      <view class='block flex'>
+        <view class='title'>预约状态</view>
+        <view class='info flex-item'>{{item.formstatusText}}</view>
+      </view>
+      <view class='block flex' wx:if="{{item.formstatus == 0}}">
+        <view class='title'>预约操作</view>
+        <view class='info cancel' data-reserveid="{{item.reserve_id}}" bindtap='cancelService'>取消预约</view>
+      </view>
+    </view>
+  </view>
+  <template is='nothing' data='{{nothing:nothing,iconPath:"../../../../images/icon/icon_service.png",nothingText:"暂没有预约记录"}}'></template>
+
+  <view class='explain'>
+    <view class='explain-item flex'>
+      <view class='text'>温馨提示</view>
+    </view>
+    <view class='explain-item flex'>
+      <view class='seq'>1.</view>
+      <view class='text'>凭预约的手机号码在OPPO服务中心使用预约服务</view>
+    </view>
+    <view class='explain-item flex'>
+      <view class='seq'>2.</view>
+      <view class='text'>请您带手机有效期的购买凭证保修卡,准时到达预约的服务中心</view>
+    </view>
+    <view class='explain-item flex'>
+      <view class='seq'>3.</view>
+      <view class='text'>为了节省您的时间,请您提前做好手机重要资源的备份</view>
+    </view>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

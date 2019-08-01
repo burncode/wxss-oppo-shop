@@ -1,0 +1,68 @@
+<!--pages/activity/cny2017/gift/gift.wxml-->
+<view class='container'>
+    <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/bg.jpg' class='banner' mode='aspectFill'></image>
+    <view class='inner' wx:if = "{{!isHide}}">
+        <view wx:if = "{{!hasGift}}" class='showUI'>
+            <view class='topInfo'>
+                <view class='info'>
+                    <view class='pic flex flex-center flex-middle'>
+                        <view><image class='gift' src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/gift.png'></image></view>
+                        <view style='padding-left:30rpx;'>
+                            <image class='title' src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/gift_title.png'></image>
+                            <text class='address' wx:if = "{{prizeCount > 1}}">以及{{awname}}</text>
+                        </view>
+                    </view>
+                    <view class='code flex flex-center flex-middle'>
+                        <view><image class='codePic' src='{{codePath}}'></image></view>
+                        <view style='padding-left:30rpx;'>
+                            <text>请到活动门店</text>
+                            <text>出示此二维码领取礼品</text> 
+                            <navigator url='../rule/rule' hover-class='none'>
+                                <text class='btnRule'>了解详情</text>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='shopList' bindtap='resetShop'>
+                <scroll-view scroll-y style='height:{{scrollHeight}}px;overflow:hidden;'>
+                    <image class='title' src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/gift_txt.png'></image>
+                    <block wx:if = "{{shopList.length > 0}}">
+                        <view class='listItem flex' wx:for = "{{shopList}}" wx:key = "id">
+                            <view class='txt flex flex-item'>
+                                <view class='flex-middle'>
+                                    <text>{{item.name}}</text>
+                                    <text>地址：{{item.street}}</text>
+                                </view>
+                            </view>
+                            <view class='action flex flex-middle'>
+                                <image bindtap='showMap' data-name = "{{item.name}}" data-latitude = "{{item.lat}}" data-longitude = "{{item.lng}}" src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/gift_btn.png' class='btnGo'></image>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <block wx:if = "{{showResetShhop}}">
+                            <view class='noShop'>暂时查询不到附近门店, 请点击刷新</view>
+                            <image src='../../../../images/activity/cny2017/refresh.png' class='resetShop'></image>
+                        </block>
+                    </block>
+                </scroll-view>
+            </view>
+        </view>
+        <view wx:else class='giftUI'>
+            <view class='info'>
+                <image class='pic' src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/gift_icon.png'></image>
+                <text wx:if = "{{prizeCount > 1}}">以及{{awname}}</text>
+            </view>
+            <button open-type='share' plain = "true" hover-class = "none">
+                <image class='btnShare' src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/btn_friend.png'></image>
+            </button>
+            
+        </view>
+    </view>
+    
+    <navigator url='../home/home?needLoading=1' hover-class='none' open-type='redirect' delta = "5">
+        <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/btn_home.png' style = "position: absolute;left: 20rpx;top: 20rpx;width: 97rpx;height: 44rpx;"></image>
+    </navigator>
+    
+</view>

@@ -1,0 +1,14 @@
+<!--components/time-select-list/time-select-list.wxml-->
+<template name="timeSelectList">
+  <view class='time-list flex'>
+    <view class='time-item' wx:for="{{list}}" wx:key="key" wx:for-item="item" wx:for-index="idx" data-index='{{idx}}' data-type='{{type}}' data-date='{{item.date}}' data-time='{{item.time}}' data-status='{{item.status}}' bindtap='onTimeSelected'>
+      <view class='time-item-a {{currentIndex == idx ? "active" : ""}}'>
+        <view class='info'>
+          <view class='time flex flex-center' wx:if='{{type == "date"}}'>{{item.date}}</view>
+          <view class='time flex flex-center' wx:if='{{type == "time"}}'>{{item.hour}}</view>
+          <view class='status flex flex-center'>{{item.statusDes}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

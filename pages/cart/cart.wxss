@@ -1,0 +1,125 @@
+/* pages/cart/cart.wxss */
+@import '../../components/nothing/nothing.wxss';
+.goods-list{
+  position: relative;
+  padding-bottom: 120rpx;
+}
+.goods-list .goods-item{
+  position: relative;
+  height: 240rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  transition: -webkit-transform 0.3s ease;
+  overflow: hidden;
+}
+.goods-list .goods-item .content{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  transition:left 0.2s ease-in-out;
+  z-index: 9;
+}
+.goods-list .goods-item .goods-info{
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+}
+.goods-list .goods-item .goods-info .goods-cover{
+  width: 200rpx;
+  height: 200rpx;
+}
+.goods-list .goods-item .goods-info .goods-cover image{
+  width: 100%;
+  height: 100%;
+}
+.goods-list .goods-item .goods-info .info{
+  position:relative;
+  -webkit-align-self:stretch;
+  align-self:stretch;
+  -webkit-flex:1;
+  flex:1;
+  overflow:hidden;
+  display:-webkit-flex;
+  display:flex;
+  -webkit-flex-direction:column;
+  flex-direction:column;
+  -webkit-justify-content:center;
+  justify-content:center;
+  margin-left:10rpx;
+  width: 200rpx;
+  height: 100%;
+}
+.goods-list .goods-item .goods-info .info .p{
+  position: relative;
+  margin: 6rpx 0;
+}
+.goods-list .goods-item .goods-info .info .name{
+  font-size: 30rpx;
+}
+.goods-list .goods-item .goods-info .info .p .right{
+  color: #858585;
+}
+.goods-list .goods-item .goods-info .info .complimentary .tag{
+  font-size: 24rpx;
+  padding: 6rpx 10rpx;
+  margin-right: 5rpx;
+  color: #008E5B;
+  border: 1rpx solid #008E5B;
+  transform:scale(.9);
+  -webkit-transform:rotate(.9); /* Safari 和 Chrome */
+}
+
+.bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120rpx;
+  padding: 0 30rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-top: 1rpx solid #e5e5e5;
+  z-index: 10;
+}
+.bottom .check-all .text{
+  font-size: 30rpx;
+}
+.bottom .total .price{
+  margin-right: 20rpx;
+  font-size: 30rpx;
+}
+.bottom .total .btn{
+  width: 180rpx;
+  height: 70rpx;
+  padding: 0;
+}
+
+.check{
+  padding-right: 20rpx;
+}
+
+
+.counter-box{
+  position: relative;
+}
+.counter-box .counter-btn{
+  width: 60rpx;
+  height: 60rpx;
+  padding: 5rpx;
+  box-sizing: border-box;
+  background-color: #EAEAEA;
+}
+.counter-box .counter-btn image{
+  width: 100%;
+  height: 100%;
+}
+.counter-box input{
+  width: 60rpx;
+  height: 60rpx;
+  text-align: center;
+  background-color: #F3F3F3;
+  min-height: 50rpx;
+}

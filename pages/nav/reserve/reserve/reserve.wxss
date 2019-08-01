@@ -1,0 +1,110 @@
+/* pages/nav/reserve/reserve/reserve.wxss */
+@import '../../../../components/shop-list/shop-list.wxss';
+@import '../../../../components/time-select-list/time-select-list.wxss';
+.header{
+  padding: 30rpx 30rpx 20rpx;
+  background-color: #fff;
+}
+
+/* 头部流程按钮 */
+.header .top{
+  position: relative;
+  height: 70rpx;
+}
+.reserve-step {
+  height: 70rpx;
+}
+.reserve-step .reserve-step-item .circle{
+  position: absolute;
+  width: 70rpx;
+  height: 70rpx;
+  font-size: 32rpx;
+  color: #BABABA;
+  background-color: #E5E5E5;
+  border-radius: 50%;
+  z-index: 9
+}
+.reserve-step .reserve-step-item .circle.active{
+  color: #fff;
+  background-color: #008E5B;
+}
+.dashed{
+  position:absolute;
+  left:0;
+  top:50%;
+  right:0;
+  height:1px;
+  border-top:1px dashed #DBDBDB;
+  color:#DBDBDB;
+  z-index: 8;
+}
+
+/* 预约步骤填选内容 */
+.reserve{
+  position: relative;
+}
+.reserve .reserve-item{
+  padding-bottom: 20rpx;
+}
+.reserve .reserve-item.step2{
+  padding-bottom: 40rpx;
+}
+/* 第一步 */
+.reserve .select{
+  padding: 20rpx 30rpx;
+  background-color:#fff;
+}
+.reserve .select .title{
+  padding: 20rpx 0;
+  color: #858585;
+}
+.reserve .shop{
+  position: relative;
+}
+.reserve .shop .title{
+  padding: 30rpx;
+}
+.shop-list .shop-item .shop-info .shop-info-item:first-child{
+  margin-top: 0rpx;
+}
+/* 第二步 */
+.reserve .day,.reserve .hour{
+  background-color: #fff;
+}
+.reserve .day .title,.reserve .hour .title{
+  padding: 20rpx 30rpx;
+  color: #858585;
+}
+/* 第三步 */
+.reserve .form{
+  padding: 30rpx;
+  background-color: #fff;
+}
+.reserve .form .form-item .title{
+  padding-bottom: 30rpx;
+}
+.reserve .form .form-item .title text{
+  color: red;
+  margin-right: 10rpx;
+}
+
+/* 底部按钮 */
+.bottom-btn{
+  width: 100%;
+  padding: 30rpx 15rpx;
+  box-sizing: border-box;
+}
+.bottom-btn .btn{
+  margin: 0 15rpx 20rpx;
+  box-sizing: border-box;
+}
+
+/* 没有更多的内容 */
+.nothing-shop{
+  position: relative;
+  padding: 100rpx 30rpx;
+  font-size: 50rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #393939;
+}

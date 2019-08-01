@@ -1,0 +1,169 @@
+/* pages/activity/cny2017/home/home.wxss */
+page{
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/** loading */
+.loading{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-133deg, #333474 0%, #d2243a 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.loading .box{position: absolute;text-align: center;top: 50%;left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+}
+.loading .box .icon{width: 118rpx;height: 88rpx;display: block;margin: 0 auto 10rpx;}
+.loading .box .num{font-size: 22rpx;color: #f3cf9d;}
+.icons{position: absolute;right: 10rpx;top: 10rpx;}
+.icons .iconItem{position: absolute;left: 0;top: 0;background-size: 100% 100%;}
+.loadingItem1{background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAABVCAYAAAA7QqZyAAAE70lEQVRogcXafcieUxzA8c9zsxeiMSYM85LJMI3UtiZ7vGXJ69Yaygx5S20SmUxG7A9/0MwIhVAz8c/8IYZJ09oIY/lnSpKF2aywtWbzx3lu7ud+rpdzvdzXvnXV81znd879ve/rus75Xeecvn3rF2uYM7ApNrjVQ5EkTsZaTImt0KTgAXgFo7AktlKTggtw/sDfF+CymEpNCY7FI13nnkBfXsWmBBfjkK5zkzA7r2ITgifgxpSyx3BgVuUmBG/AsJSyU3FzVuUmBC/PKX8YB6UVNiE4Lqd8LO5OK+y14EiMiYh7QOgfh9BrwTswIiJuNO5PKsh8goQvcA1uE7qFQ/EjfsBX+AYb8Qt+xx7hfpqIm3B7hFybBViGLbGCo7ECl3SdHz9wXJpQZzeGF5Dq5GAswl2dJ9Mu8XCsSpDLo6xcm1txSueJNMFFmFrxw8owDI92nkgSPEy4H/YXc3B2+58kwZmGjptN0sLjnf90E53t9pDLMY1kwXXY0KhOMktIf0iWNSiSxjRMSRNcoavD3A98gQ1pgruxvEGZbn7CLOzJGoufx86IxmbjTryNbdXdbEK/MJxmJgtb8XpEg/3Cl5mFIzFBGINfxbfC+BzDTuHBmIzN7ZN9OS/uE/F1TsM7cIz0X3vkQDuTBo7xOEpIPP7Cd/gYK/Frd+W8bGYj1mB6RswoXIs3Usp3Yf3AUZiYfPDpiJhbynx4DDGCq3TcEylMx0mVbRKIEdyLpTkxfXLezsoSm/K/jD9yYuYWaC+a2Ab/FLqNLI5XPMHNpcg3XiZc7ixqv8xFBDcLD0wWV+GI8jpDKXrP5HU5I4SpjtooKrgGX+bE1HqZyzx1eb/i2Ti3RLuJlBFcKSQSWdT2K5YR3CVkL1lcJyQJlSnbsS4Xkto0DhcSiMqUFdwivBZkMa9k24OoMjTlPSwX4sQK7aOa4JdCt5PVduVfserg/lxOeeUEoqrgO8J8YRrjcFGVD6gquAfP5MRU6hPryN9eEtKxNK4WJkNLUYfgH0JCm8ZIoeMuRV0Z8FLsyygv/VJVl+BmvJ9R3n4nLkyd7xBP5ZSXeljqFPxC9ozY9eLWTAZRRbAl9HEv4Hv8JkyBpDFaWHMpRN7URxLDhEWa+4TVyiLMk59kDKKoYL/wdjehYL02Fwvrx1mjzyBiL/EIIXv5UHm59uc9WbRCHkfjU8wXsccggtmYERucJ9je53JeFaMEHooNzBI8Dp8IknUzVeRsWJrgGKwWJHtFf0xQkuABwtz0abXqDOX0mKAkwQclrwXXzbExQd2CZypwAzdBt+By1RelY/k7JqhT8Er/b/5qgiFLDkl0Ci7skUga38YEtQUnDxxNsjYmqC04t4ciSWwWmTC0hPF1Zk91hvJmbGBL6Fpiti/VxV5hq2gULc3fezErV//RUjwrrsI+HTs6YmjJfo+om5UKbthoCeu2TbAd9xSt1BIWlZtgvhIbNVr4uX6XIbyI18pUbAl7AHvJRzK2gObRGmggb5GwLJ8Ls/1ZKwKZtIQ9KqvrMupgnZD47qjSSHssXix7+qwobwqz/NurNtQW/Ez+sn8MO4X7bY64TUG5dOaD9yo4b9LFezgLz1Yy6qJT8B9hrXeh+G+/D+8KmfgMYZarVtJ2Ho0RtiZfgXMM3ou/VRiuPsBbwkPWM/K2RhFmwI4QJpC2yZ7Rr51/ASn3wkG68Uu+AAAAAElFTkSuQmCC);}
+.loadingItem2{background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACc0lEQVRYhb3YW4hNURyA8d8whjBSLrk0iMQIRRmUWzSJFB5cHpRbXhQvSMolUR68iRehXF7wKJEkuUUeEUWRhhhRckmMy8Pep07HGWvvbe/z1eqcs9dlf2udtdZe/13XcXqbAL0xEZMwFiPQhEb0RU98w2d8Qhse4z6u4k3oBiXqq1zrg1bMwWyMQ9dAOz1iMWiO68Nv3MVxnMb3JDKDsBhLMBcNgZsnpQ7T47QHW3Gus8JdMBX7sVQ0/F9zEqmkCWdjmcZqBepxL07l9MQwDMVIjKr47Cs7y+I25uFjeUZdgglcjQGYgPFowSxRz9NwDQuUzaMuWUzwLm7sEFaJRnG+ip4GmItd5ReyylTjCo6lrLNdtFpzk2nARjzBlpR1u2FHXjIz8RBHMCZjGysx+H9k6rAP1zE6Yxsl6kX7WyaZBpzCzoz1q7GoZJWGrqJtfXlOEiVaSN+zvQWIQH/0TyMzS9nML4CmpDK9cEK++1Il/ZI2vln0XCqS7klkGqXfzDKRRGYD+hUtgm9JZFYXrhHxISTTLDr/1oLXIZnWQH6eBEdmSk00osjiR5K/qRa8JLyahtdABB4RlulTAxG4QVgmFLzlxUXCMp9qIHIPzwnLtBXv4mjpS0jmccEir3Cm9CMkc7dYF7ulCOIuiN4kFMFtnCy/EJJ5ipsFiHzBGvxMIwMHchb5jbV4VpmRROayeB/Iie04Xy0j6bFznf9f5r+wCQc7K5BUph0L8TajSLsoUDv8r0JpTvsPMA13UtTpEEUVE3EpVDht6PECM7ACt3S+7F+LRmE81ks4omnDW7HAuTgNxGQMEb0MeC96K/HXSknCH/zNaeuokd6zAAAAAElFTkSuQmCC)}
+.icons .iconItem1{width: 12rpx;height: 24rpx;}
+.icons .iconItem2{width: 8rpx;height: 16rpx;}
+.icons .iconItem3{width: 10rpx;height: 11rpx;}
+.icons .iconItem4{width: 6rpx;height: 8rpx;}
+
+.loadingActive .iconItem1{
+    animation: loadingIconAni 2s 0s infinite linear both;
+    -webkit-animation: loadingIconAni 3s 0s infinite linear both;
+}
+.loadingActive .iconItem2{
+    animation: loadingIconAni 2s 1s infinite linear both;
+    -webkit-animation: loadingIconAni 3s 1s infinite linear both;
+}
+.loadingActive .iconItem3{
+    animation: loadingIconAni 2s 0.6s infinite linear both;
+    -webkit-animation: loadingIconAni 2s 0.6s infinite linear both;
+}
+.loadingActive .iconItem4{
+    animation: loadingIconAni 2s 1.3s infinite linear both;
+    -webkit-animation: loadingIconAni 2s 1.3s infinite linear both;
+}
+
+@keyframes loadingIconAni{
+    0%{transform: translate(0,0) rotate(0deg);opacity: 1}
+    100%{transform: translate(140rpx,-200rpx) rotate(160deg);opacity: 0}
+}
+@-webkit-keyframes loadingIconAni{
+    0%{-webkit-transform: translate(0,0) rotate(0deg);opacity: 1}
+    100%{-webkit-transform: translate(140rpx,-200rpx) rotate(160deg);opacity: 0}
+}
+
+
+.banner{width: 100%;height: 100%;}
+
+.inner{width: 100%; height: 100%; position: absolute; left: 0; top: 0;text-align: center}
+.logo{position: absolute;right: 90rpx;top: 0;width:184rpx;height: 85rpx; }
+.rule{position: absolute;right: 0;top: 20rpx}
+/* .rule .txt{width: 162rpx;height: 43rpx;position: relative} */
+.rule .icon{width: 114rpx;height: 136rpx;position: absolute;right: 20rpx;top: -8rpx}
+
+.btnRule{position: absolute;left: 0;top: 85rpx;}
+.btnRule image{width: 162rpx;height: 43rpx;}
+
+.slogan{width: 542rpx;height: 130rpx;margin: 130rpx auto 20rpx;position: relative}
+.subTitle{width: 286rpx;height: 55rpx;margin: 0 auto 10rpx;}
+.radioBox{width: 472rpx;margin: 0 auto;position: relative;transform: scale(0.9)}
+.radioBox .dog{width: 435rpx;height: 257rpx;position: absolute;left: 50%;margin-left: -218rpx;top: 0;}
+.radioBox .radioIcon{padding-top: 230rpx;}
+.radioBox .radio{width: 472rpx;height: 354rpx;position: relative;}
+.radioBox .icons{top: 300rpx;right: 30rpx;}
+.radioBox .iconItem1{width: 36rpx;height: 72rpx;}
+.radioBox .iconItem2{width: 24rpx;height: 48rpx;}
+.radioBox .iconItem3{width: 30rpx;height: 33rpx;}
+.radioBox .iconItem4{width: 18rpx;height: 24rpx;}
+
+.btnBook{width: 250rpx;height: 71rpx;}
+.btnRank{width: 90rpx;height: 36rpx;}
+.btnJoin{width: 250rpx;height: 71rpx;}
+
+button{padding: 0;background: none;border: 0;display: inline-block;height: auto;border-radius: 0;line-height: 0}
+button::after{content: '';border: 0;}
+button[plain]{border: 0}
+
+.homeBtns{padding: 30rpx 0}
+.homeBtns form,
+.homeBtns .btnRank{
+    margin: 0 20rpx;
+}
+.homeBtns .btnRank{ margin-top: 20rpx;}
+
+
+/* .agree{padding-top: 10rpx;} */
+.agree .pic{background: #fff;width: 22rpx;height: 22rpx;border: 1px solid #db8872;}
+.agree .agreeIcon{width: 18rpx;height: 16rpx;display: block;margin: 4rpx 0 0 3rpx;}
+.agree .agreeTxt{width: 419rpx;height: 26rpx;margin-left: 10rpx;}
+
+@keyframes pulse{
+    0%{-webkit-transform:scale(1)}
+    50%{-webkit-transform:scale(1.1)}
+    100%{-webkit-transform:scale(1)}
+}
+@-webkit-keyframes pulse{
+    0%{-webkit-transform:scale(1)}
+    50%{-webkit-transform:scale(1.1)}
+    100%{-webkit-transform:scale(1)}
+}
+.startTips{
+  position: absolute;
+  top:930rpx;
+  left: 0;
+  width: 100%;
+  height: auto;
+  font-size: 20rpx;
+  text-align: center;
+  color: #fff;
+}
+
+
+.iconAni1{position: absolute;left: 20rpx;top: 80rpx;width: 150rpx;height: 150rpx;
+    animation: iconYHaAni1 2s 0s infinite linear both;
+}
+.iconAni2{position: absolute;left: 340rpx;top: 120rpx;width: 132rpx;height: 132rpx;
+    animation: iconYHaAni1 3s 0.5s infinite linear both;
+}
+.iconAni3{position: absolute;left: 500rpx;top: 250rpx;width: 115rpx;height: 114rpx;
+    animation: iconYHaAni1 2.2s 1s infinite linear both;
+}
+.iconAni4{position: absolute;left: 260rpx;top: 60rpx;width: 115rpx;height: 114rpx;
+    animation: iconYHaAni1 2.5s 0.8s infinite linear both;
+}
+.iconAni5{position: absolute;left: 600rpx;top: 170rpx;width: 160rpx;height: 160rpx;
+    animation: iconYHaAni1 1.8s 1.5s infinite linear both;
+}
+
+@keyframes iconYHaAni1{
+    0%{transform: translateY(500rpx) scale(0);opacity: 0}
+    50%{transform: translateY(0) scale(0.2);opacity: 1}
+    90%{transform: translateY(0) scale(1);opacity: 1}
+    100%{transform: translateY(0) scale(1.1);opacity:0}
+}
+
+
+
+@media screen and (device-width:375px) and (min-height:720px){
+    .slogan{margin: 140rpx 0 30rpx 0;}
+    .radioBox{margin: 60rpx auto}
+    .homeBtns{padding: 50rpx 0}
+}
+@media screen and (device-width:412px) and (min-height:726px){
+    .slogan{margin: 120rpx 0 20rpx 0;}
+    .radioBox{margin: 50rpx auto}
+    .homeBtns{padding: 40rpx 0}
+} 
+
+
+@media screen and (device-width:360px) and (max-height:530px){
+    .slogan{margin: 70rpx 0 5rpx 0;position: relative;top:55rpx;}
+    .subTitle{position: relative;top:55rpx;}
+    .startTips{top:830rpx;}
+    .radioBox {transform: scale(0.8,0.8);}
+}

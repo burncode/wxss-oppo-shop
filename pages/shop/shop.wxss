@@ -1,0 +1,96 @@
+/* pages/shop/shop.wxss */
+@import '../../components/ad-list/ad-list.wxss';
+page{
+  background-color: #fff;
+}
+
+/* 轮播图 */
+.ad-list .holder{
+  padding-bottom: 60%;
+}
+
+/* 公告 */
+.proclamation{
+  width: 100%;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+}
+.proclamation .circle{
+  width: 8rpx;
+  height: 8rpx;
+  border-radius:50%;
+  background-color: #F56A00;
+  margin-right: 10rpx; 
+}
+.proclamation .title{
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.proclamation .content{
+  font-size: 28rpx;
+  color: #666;
+  margin-left: 10rpx;
+}
+/* 商品列表 */
+.goods{
+  position: relative;
+}
+.goods .goods-header{
+  position: relative;
+  padding: 40rpx 30rpx;
+}
+.goods .goods-header .title{
+  font-size: 34rpx;
+  font-weight: 500;
+}
+.goods .goods-header .subtitle{
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #666;
+}
+.goods .goods-list{
+  position: relative;
+  flex-wrap: wrap;
+  padding-bottom: 40rpx;
+}
+.goods .goods-list .goods-item{
+  width: 50%;
+  margin-bottom: 8rpx;
+  box-sizing: border-box;
+}
+.goods .goods-list .goods-item:nth-child(odd){
+  padding-right: 4rpx;
+}
+.goods .goods-list .goods-item:nth-child(even){
+  padding-left: 4rpx;
+}
+.goods .goods-list .goods-item .goods-item-a{
+  padding: 70rpx 10rpx 60rpx;
+  background-color: #FAFAFA;
+}
+.goods .goods-list .goods-item .goods-item-a .goods-info{
+  margin-top: 20rpx;
+}
+.goods .goods-list .goods-item .goods-item-a .goods-info .goods-name{
+  font-size: 28rpx;
+  padding: 10rpx 10rpx;
+}
+.goods .goods-list .goods-item .goods-item-a .goods-info .goods-price{
+  font-size: 26rpx;
+}
+
+/* 购物车按钮 */
+.cart{
+  position: fixed;
+  bottom: 20rpx;
+  right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: #969696;
+}
+.cart image{
+  width: 50rpx;
+  height: 50rpx;
+}

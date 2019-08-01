@@ -1,0 +1,18 @@
+<image src="https://dsfs.oppo.com/act/upload/image/20171219/1513678675978687.jpg" mode="widthFix" />
+<image src="https://dsfs.oppo.com/act/upload/image/20171219/1513678680344355.jpg" mode="widthFix" />
+<image src="https://dsfs.oppo.com/act/upload/image/20171219/1513678684205484.jpg" mode="widthFix" />
+<image src="https://dsfs.oppo.com/act/upload/image/20171219/1513678692763694.jpg" mode="widthFix" />
+<image src="https://dsfs.oppo.com/act/upload/image/20171219/1513678697482526.jpg" mode="widthFix" />
+<image src="https://dsfs.oppo.com/act/upload/image/20171219/1513678701963602.jpg" mode="widthFix" />
+<image src="https://dsfs.oppo.com/act/upload/image/20171219/1513678706662160.jpg" mode="widthFix" />
+<image src="https://dsfs.oppo.com/act/upload/image/20171219/1513679921927507.jpg" mode="widthFix" />
+
+<view class="shop">
+  <view class="item" wx:for="{{shopList}}">
+    <button class="open-map" data-index="{{index}}" bindtap="openMap">立即前往</button>
+    <icon />
+    <text>{{item.name}}</text>
+  </view>
+</view>
+
+<button id="gotoshop" bindtap="gotoShop" wx:if="{{shopList.length}}">前往附近门店</button>

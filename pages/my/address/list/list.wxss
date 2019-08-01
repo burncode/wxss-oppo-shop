@@ -1,0 +1,86 @@
+/* pages/my/address/list/list.wxss */
+@import '../../../../components/nothing/nothing.wxss';
+view{
+  box-sizing: border-box;
+}
+.container{
+  padding-bottom: 140rpx;
+}
+.list{
+  position: relative;
+}
+.list .item{
+  position: relative;
+  height: 180rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  transition: -webkit-transform 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.list .item .content{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0 30rpx;
+  transition: left 0.2s ease-in-out;
+  background-color: #fff;
+  z-index: 9;
+}
+.list .item.showDelete{
+  transform: translateX(-120rpx); 
+  -webkit-transform: translateX(-120rpx);
+}
+.list .item.hideDelete{
+  transform: translateX(0rpx); 
+  -webkit-transform: translateX(0rpx);
+}
+.list .item .info{
+  position:relative;
+  -webkit-align-self:stretch;
+  align-self:stretch;
+  -webkit-flex:1;
+  flex:1;
+  overflow:hidden;
+  display:-webkit-flex;
+  display:flex;
+  -webkit-flex-direction:column;
+  flex-direction:column;
+  -webkit-justify-content:center;
+  justify-content:center;
+  margin-left: 30rpx;
+}
+.list .item .info .top{
+  font-size: 30rpx;
+  font-weight: 500;
+  padding-bottom: 20rpx;
+}
+.list .item .info .top .name{
+  margin-right: 20rpx;
+}
+.list .item .info .address{
+  line-height: 1.4;
+}
+.list .item .delete{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140rpx;
+  height: 100%;
+  background: #e93b3d;
+  color: #fff;
+  z-index: 4;
+}
+
+.bottom-btn{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120rpx;
+  padding: 0 30rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 9;
+}

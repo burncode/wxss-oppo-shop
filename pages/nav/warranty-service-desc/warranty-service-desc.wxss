@@ -1,0 +1,22 @@
+/* pages/nav/warranty-service-desc/warranty-service-desc.wxss */
+page{
+  background-color: #fff;
+}
+.title{
+  padding: 30rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.block{
+  padding: 0rpx 30rpx;
+  margin-bottom: 20rpx;
+}
+.block .tit{
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.block .content{
+  line-height: 1.4;
+  color: #333;
+}

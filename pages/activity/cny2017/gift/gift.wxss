@@ -1,0 +1,124 @@
+/* pages/activity/cny2017/gift/gift.wxss */
+page{
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+button{padding: 0;background: none;border: 0;display: inline-block;height: auto;border-radius: 0;line-height: 0}
+button::after{content: '';border: 0;}
+button[plain]{border: 0}
+
+.banner{width: 100%;height: 100%;}
+.inner{width: 100%; height: 100%; position: absolute; left: 0; top: 0;text-align: center}
+
+/**
+    showUI
+*/
+.showUI{ color: #f3cf9d;}
+.showUI text{font-size: 28rpx;display: block;text-align: left}
+.showUI .topInfo{height: 795rpx;font-size: 0;} 
+.showUI .info {
+    background-image: linear-gradient(0deg, #c5263d 0%, #cd2a45 100%);
+    text-align: center;
+    width: 676rpx;
+    height: 760rpx;
+    margin: 0 auto;
+    border-radius: 20rpx;
+    margin-top: 17rpx;
+    display: inline-block;
+}
+/* .showUI .info .tip{
+    font-size: 30rpx;
+    padding: 20rpx 0;
+    display: block;
+} */
+.showUI .pic{padding: 50rpx 0 30rpx 0}
+.showUI .gift{width: 185rpx;height: 459rpx;}
+.showUI .title{width: 329rpx;height: 94rpx;}
+.showUI .code{border-top: 1px solid #c0263d;padding-top: 30rpx;}
+.showUI .codePic{width: 165rpx;height: 161rpx;border: 4px solid #fff;border-radius: 4rpx;background: #fff}
+.showUI .address{padding-top: 10rpx;}
+
+
+/**
+    showUI list
+*/
+.shopList{
+    background-image: linear-gradient(0deg, #c5263d 0%, #cd2a45 100%);
+    width: 676rpx;
+    margin: 0 auto;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    overflow: hidden;
+}
+.shopList .title{width: 194rpx;height: 27rpx; margin-top: 20rpx;}
+.listItem {
+    padding: 20rpx;
+    color: #000;
+    border-bottom: 1px solid #a31d31;
+}
+.listItem .txt{
+    text-align: left;
+    padding-right: 20rpx;
+    color: #f3cf9d;
+}
+.listItem .txt text {
+    display: inline-flex;
+    display: -webkit-inline-flex;
+}
+
+.listItem .btn {
+    width: 200rpx;
+}
+.listItem .btnGo{width: 200rpx;height: 54rpx;}
+
+
+.resetShop{width: 42rpx;height: 38rpx; margin-top: 30rpx; animation: shopAni 3s 0s infinite linear both;}
+
+@keyframes shopAni{
+    100%{transform: rotate(1turn)}
+}
+
+/**
+    giftUI
+*/
+.giftUI{position: absolute;left: 0;width: 100%;top: 50%;
+    transform: translateY(-50%);
+}
+.giftUI .info{
+    text-align: center;
+    padding-top: 30rpx;
+    background-image: linear-gradient(0deg, #c5263d 0%, #cd2a45 100%);
+    width: 570rpx;
+    height: 760rpx;
+    margin: 0 auto;
+    border-radius: 20rpx;
+}
+.giftUI text{
+    font-size: 30rpx;
+    color: #f3cf9d;
+}
+
+.giftUI .btnShare{width: 406rpx;height: 80rpx; margin-top: 80rpx;}
+
+.giftUI .pic{
+    width: 338rpx;
+    height: 565rpx;
+    margin: 30rpx auto;
+    display: block;
+}
+
+.noShop{
+    color: #f3cf9d;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+}
+
+.btnRule{
+    padding-top: 10rpx;
+    text-decoration: underline;
+}

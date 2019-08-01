@@ -1,0 +1,33 @@
+/* components/price-list/price-list.wxss */
+.price{
+  position: relative;
+}
+.price .title{
+  padding: 20rpx 30rpx;
+}
+.price-list{
+  flex-wrap: wrap;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+}
+.price-list .price-item{
+  width: 33.3%;
+  padding: 0 15rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+}
+.price-list .price-item .price-item-a{
+  padding: 30rpx 0;
+  border: 1px solid #169A73;
+  border-radius: 8rpx;
+}
+.price-list .price-item .price-item-a .info{
+  color: #169A73;
+}
+.price-list .price-item .price-item-a .info .total-num{
+  font-size: 30rpx;
+  margin-bottom: 6rpx;
+}
+.price-list .price-item .price-item-a .info .real-price{
+  font-size: 26rpx;
+}

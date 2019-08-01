@@ -1,0 +1,37 @@
+/* pages/nav/extended-warranty/warranty-query/warranty-query.wxss */
+page{
+  background-color: #fff;
+}
+.container{
+  padding: 30rpx;
+}
+.header{
+  padding-bottom: 30rpx;
+} 
+.header .title{
+  font-size:40rpx;
+  font-weight:600;
+}
+.header .phone-img{
+  padding: 30rpx;
+}
+.check-info{
+  position: relative;
+}
+.check-info .check-info-item .title{
+  font-size: 30rpx;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+}
+.check-info .check-info-item .data{
+  padding: 10px;
+  margin-bottom: 20rpx;
+  background-color: #f7f7f7;
+}
+.check-info .check-info-item .data .name{
+  width: 180rpx;
+  margin-bottom: 20rpx;
+}
+.check-info .check-info-item .data .data-item:last-child .name{
+  margin-bottom: 0rpx;
+}

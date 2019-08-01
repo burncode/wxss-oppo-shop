@@ -1,0 +1,147 @@
+<import src="../template/answerDialog/answerDialog.wxml"/>
+<template is="dialogModule" data="{{dialogData}}"></template>
+<view class="answer-page">
+    <image class="answer-bg" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/answer-bg.png"
+           mode="aspectFill"/>
+    <image class="answer-main-title" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/main-title.png"
+           mode="widthFix"/>
+    <image class="loading" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/loading.png" mode="widthFix" wx:if="{{loadShow}}" />
+    <view class="answer-box" wx:if="{{questionStatus}}">
+        <!-- 倒计时容器 -->
+        <view class='progress_box'>
+            <canvas class="progress_bg" canvas-id="canvasProgressbg"></canvas>
+            <canvas class="progress_canvas" canvas-id="canvasProgress"></canvas>
+            <view class="progress_text">
+                <text class='progress_info'>{{progress_txt}}</text>
+            </view>
+        </view>
+        <!-- 题目容器 -->
+        <view class="questions-box">
+            <view class="question-title">{{questionNow.index}}.{{questionNow.question.title}}</view>
+            <view class="options-box">
+                <view class="option-item {{optionId==0 ? 'active' : ' '}}" bindtap="selectOption"
+                      data-index="0">
+                    <image class="option-btn-bg"
+                           src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/option-btn-bg.png"
+                           mode="widthFix"/>
+                    <view class="option-text">A. {{questionNow.question.optionA}}</view>
+                </view>
+                <view class="option-item {{optionId==1 ? 'active' : ' '}}" bindtap="selectOption"
+                      data-index="1">
+                    <image class="option-btn-bg"
+                           src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/option-btn-bg.png"
+                           mode="widthFix"/>
+                    <view class="option-text">B. {{questionNow.question.optionB}}</view>
+                </view>
+                <view class="option-item {{optionId==2 ? 'active' : ' '}}" bindtap="selectOption"
+                      data-index="2">
+                    <image class="option-btn-bg"
+                           src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/option-btn-bg.png"
+                           mode="widthFix"/>
+                    <view class="option-text">C. {{questionNow.question.optionC}}</view>
+                </view>
+                <view class="option-item {{optionId==3 ? 'active' : ' '}}" bindtap="selectOption"
+                      data-index="3">
+                    <image class="option-btn-bg"
+                           src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/option-btn-bg.png"
+                           mode="widthFix"/>
+                    <view class="option-text">D. {{questionNow.question.optionD}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 抽奖 -->
+    <view class="lottery-box dialog-module" wx:if="{{lottery.status}}">
+        <view class="musk"></view>
+        <view class="dialog-box">
+            <view class="dialog-title">{{lottery.title}}</view>
+            <view class="box">
+                <view class="boxsub {{luckynum==index?'luck':''}}" wx:for='{{lottery.lotteryData}}'
+                      style="{{index>=0&&index<3?'top:0;left:'+index*166+'rpx;':(index>=3&&index<5?'right:0;top:'+((index-2)*166)+'rpx;':(index>=5&&index<7?'bottom:0;right:'+(index-4)*166+'rpx;':(index>=7&&index<8?'left:0;bottom:'+(index-6)*166+'rpx;':'')))}}  {{index=='11'?'left:0;':''}} "
+                      wx:key=''>
+                    <image class="icon" src="{{item.icon}}" mode="widthFix" />
+                    <view class='boxcontent'>
+                        {{item.name}}
+                    </view>
+                </view>
+                <view class="lucky" catchtap="luckyTap" wx:if="{{lottery.luckyTapStatus}}">
+                    <text class="taplucky">抽奖</text>
+                </view>
+                <view class="lucky" wx:if="{{!lottery.luckyTapStatus}}">
+                    <text class="taplucky">抽奖</text>
+                </view>
+            </view>
+            <view class="tips">答对4题可以抽奖，6题全部答对有机会抽手机。</view>
+        </view>
+    </view>
+    <!--预定-->
+    <view class="appointment-box dialog-module" wx:if="{{appointment.status}}">
+        <view class="musk"></view>
+        <view class="dialog-box">
+            <view class="dialog-title">{{appointment.title}}</view>
+            <view class="dialog-text">{{appointment.text}}</view>
+            <view class="appointment-input-box">
+                <form bindsubmit="appointment">
+                    <input type="number" name="phoneNum" maxlength="11" focus="true" cursor-spacing='150' class="phone-num {{appointment.errorPhone}}"
+                           bindblur="checkPhoneReg" bindinput="checkPhoneBlur" placeholder="请输入手机号码"/>
+                    <view class="input-code">
+                        <input type="number" name="code" maxlength="6" cursor-spacing='100' class="code {{appointment.errorCode}}"
+                               bindblur="checkCodeReg" bindinput="checkCodeBlur" placeholder="短信验证码"/>
+                        <button type="button" class="get-code {{is_show?'show':'hide'}}" bindtap="clickVerify">获取验证码
+                        </button>
+                        <button type="button" class="get-code disable {{is_show?'hide':'show'}}">{{last_time}}秒后重发
+                        </button>
+                    </view>
+                    <view class="appointment-error-text">{{appointment.errorText}}</view>
+                    <button form-type="submit" wx:if="{{submitAble}}" class="appointment-confirm">提交</button>
+                    <button wx:if="{{!submitAble}}" class="appointment-confirm">提交</button>
+                </form>
+            </view>
+        </view>
+    </view>
+    <!--//好友帮答状态-->
+    <view class="dialog-module" wx:if="{{friendHelp.status}}">
+        <view class="musk"></view>
+        <view class="friend-help-box {{friendHelp.type}}">
+            <view class="no-right-box" wx:if="{{friendHelp.noRight}}">
+                <image class="friend-help-icon" src="{{friendHelp.icon}}" mode="widthFix"/>
+                <text class="no-help-text">{{friendHelp.text}}</text>
+                <view class="help-btn-group">
+                    <view class="btn-bg {{item.id}} {{item.type}}" wx:for="{{friendHelp.friendBtnGroup}}">
+                        <button class="{{item.type}} {{item.id}} {{item.class}}" type="{{item.type}}" open-type="{{item.id}}" data-tip="{{item.tip}}" id="{{item.id}}" bindtap="helpEnter">
+                            {{item.title}}
+                        </button>
+                    </view>
+                </view>
+            </view>
+            <view class="right-box" wx:if="{{friendHelp.right}}">
+                <image class="friend-help-icon" src="{{friendHelp.icon}}" mode="widthFix"/>
+                <text class="help-title">{{friendHelp.title}}</text>
+                <text class="option-text">回答错误题目：{{friendHelp.option.title}}</text>
+                <text class="option-text">正确答案：{{friendHelp.option.solution}}</text>
+                <text class="help-text">{{friendHelp.text}}</text>
+                <view class="help-btn-group">
+                    <view class="btn-bg {{item.type}} {{item.id}}" wx:for="{{friendHelp.friendBtnGroup}}">
+                        <button class="{{item.type}} {{item.id}} {{item.class}}" type="{{item.type}}" open-type="{{item.id}}" data-tip="{{item.tip}}" id="{{item.id}}" bindtap="helpEnter">
+                            {{item.title}}
+                        </button>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+
+    </view>
+    <!--活动结束-->
+    <view class="activity-end" wx:if="{{showActivityEnd}}">
+        <view class="musk"></view>
+        <view class="end-box" wx:if="{{errorMsg==='活动未开始'}}">
+            <text class="end-text">{{errorMsg}}\n开始时间：\n2018/3/31 20:00</text>
+        </view>
+        <view class="end-box" wx:if="{{errorMsg==='活动已结束'}}">
+            <text class="end-text">{{errorMsg}}，\n正在跳往 R15 活动页...</text>
+            <view class="count-num">{{hrefCountNum}}s</view>
+        </view>
+    </view>
+
+</view>

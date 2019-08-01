@@ -1,0 +1,11 @@
+<!--components/nothing/nothing.wxml-->
+<template name="nothing">
+  <view class='nothing' wx:if='{{nothing}}'>
+    <view class='icon-path'>
+      <image class='icon' src='{{iconPath}}'></image>
+    </view>
+    <view class='nothing-text flex flex-middle flex-center'>
+      <text>{{nothingText}}</text>
+    </view>
+  </view>
+</template>

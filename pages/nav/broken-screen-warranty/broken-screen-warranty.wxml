@@ -1,0 +1,15 @@
+<!--pages/nav/broken-screen-warranty/broken-screen-warranty.wxml-->
+<import src="../../../components/explain-box/explain-box.wxml" />
+<import src="../../../components/nothing/nothing.wxml" />
+<import src="../../../components/errMsg/errMsg.wxml" />
+<view class='container' style='display:none'>
+  <template is='explainBox' data='{{title:"碎屏保",subTitle:"一年/免费更换屏幕",content:"碎屏无惧，换屏无忧。自服务生效之日零时起一年内，手机因意外堕落、碰撞、挤压造成的屏幕组件破碎、产生裂纹，您可免费更换一次原装屏幕组件。",iconUrl:"../../../images/nav/icon_nav_6.png"}}'></template>
+  <view class='bottom flex'>
+    <view class='btn-item flex-item'>
+      <view class='btn-item-a btn btn-green'>领取优惠券</view>
+    </view>
+  </view>
+</view>
+<template is='nothing' data='{{iconPath:"../../../images/icon/icon_kfz.png",nothingText:"该功能暂未开放,敬请期待"}}'></template>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>
+

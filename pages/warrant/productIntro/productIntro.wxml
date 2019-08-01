@@ -1,0 +1,23 @@
+<view class="product-content">
+  <view class="product-video">
+    <video poster="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/video-cover.png"
+           src="http://ugcyd.qq.com/flv/124/88/w0566sda2tr.p712.1.mp4?sdtfrom=v1010&guid=a6f4cf2f08616d8aa992d2b330226e59&vkey=1CCFE1784A9D3173CB8A0AB849DDF9250CA496531D56DD5ABC03DE009D5574A3150FA68082F0EED13763687758F0C7CB6E88626C5973C1B087077139126635339E475A4E88FD7692A22E5BEAA63A6E91FD1CBE84CB369052A162724AEBE6564C8D0D0E9C938EC8F7E0B9214E158CA9CD1BC2E05A3EA6EA09">
+    
+    </video>
+  </view>
+  <image class="phone-pic-1" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/phone-pic-1.jpg"  />
+  <image class="phone-pic-2" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/phone-pic-2.jpg"  />
+  <image class="phone-pic-3" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/phone-pic-3.jpg"  />
+  <image class="phone-pic-4" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/phone-pic-4.jpg"  />
+  <image class="phone-pic-5" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/phone-pic-5.jpg"  />
+  <image class="phone-pic-6" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/phone-pic-6.jpg"  />
+  <image class="phone-pic-7" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/phone-pic-7.jpg"  />
+  <view class="shop-list" wx:if="{{getLocationFail==false}}">
+    <view class="shop-item" wx:if="{{noRes==false}}" wx:for="{{shopList}}">
+      <image class="shop-location" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/shop-location.png"  />
+      <view class="shop-name">{{item.name}}</view>
+      <view class="enter" data-lat="{{item.lat}}" data-lng="{{item.lng}}" data-name="{{item.name}}" data-address="{{item.street}}" bindtap="openMap">立即前往</view>
+    </view>
+  </view>
+  <view class="get-location" wx:if="{{getLocationFail==true}}" bindtap="openSetting">获取附近门店</view>
+</view>

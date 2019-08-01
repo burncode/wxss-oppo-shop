@@ -1,0 +1,33 @@
+<!--pages/my/member/credits/credits.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='bg1'></view>
+<view class='bg2'></view>
+<view class='container'>
+  <view class='top' style='background:{{linearGradient[type]}}'>
+    <view class='title'>
+      <view class='amount flex flex-center'>
+        {{amount}}
+      </view>
+      <view class='desc flex flex-center'>{{title}}</view>
+    </view>
+  </view>
+  <view class='list' wx:if='{{rows != null}}'>
+    <view class='item' wx:for="{{rows}}" wx:for-item="row" wx:key='key'>
+      <view class='item-a'>
+        <view class='header flex flex-between'>
+          <text class="month">{{row.month}}</text>
+          <text class="count">获取：+ {{row[add]}} | 消耗：{{row[sub]}}</text>
+        </view>
+        <view class='content flex flex-middle' wx:for="{{row[record]}}" wx:for-item="record" class="record flex flex-middle">
+          <view class='left flex-item'>
+            <view class='des'>{{record[des]}}</view>
+            <view class='createTime'>{{record.createTime}}</view>
+          </view>
+          <view class='amount'>{{record.recordType == "add" || record.recordType == "ADD" ? "+" : "-"}}{{record.amount}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{rows.length == 0}}' class='nothing flex flex-center flex-middle'>暂无明细</view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

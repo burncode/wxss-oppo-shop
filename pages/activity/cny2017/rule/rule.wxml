@@ -1,0 +1,19 @@
+<!--pages/activity/cny2017/rule/rule.wxml-->
+<view class='container' catchtouchmove = "true">
+    <view class='rule'>
+        <scroll-view id='scroll' scroll-y = 'true' style='height:90%' bindscroll = "scroll">
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/rule_title.png' class='title' id="first"></image>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/rule_1.png?v=1' class='pic' mode='widthFix'></image>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/rule_2.png?v=1' class='pic' mode='widthFix'></image>
+            <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/rule_3.png?v=1' class='pic' mode='widthFix'></image>
+            <view class="phone" bindtap='takePhone'></view>
+        </scroll-view>
+        <!-- <view class='scrollBar'>
+            <view class='bar' style='top:{{barTop}}px;height:{{barHt}}px'></view>
+        </view>  -->
+        <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/rule_btn_back.png' class='btnBack' bindtap='goBack'></image>
+    </view>
+    <navigator url='../home/home' hover-class='none' open-type='navigateBack' delta = "5">
+        <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/btn_home.png' style = "position: absolute;left: 20rpx;top: 20rpx;width: 97rpx;height: 44rpx;"></image>
+    </navigator>
+</view>

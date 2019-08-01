@@ -1,0 +1,73 @@
+<!--pages/index/index.wxml-->
+<import src="../../components/errMsg/errMsg.wxml" />
+<import src="../../components/ad-list/ad-list.wxml" />
+<view class='container'>
+  <!-- 顶部轮播图 -->
+  <template is="adList" data="{{imgUrls:imgs,indicatorDots:true,indicatorColor:'#808080',indicatorActiveColor:'#666',autoplay:true,interval:3000,duration:500}}"></template>
+  <!-- 活动轮播图 -->
+  <view class='activity' wx:if='{{activity.length != 0}}'>
+    <template is="adList" data="{{imgUrls:activity,indicatorDots:flase,indicatorColor:'#808080',indicatorActiveColor:'#666',autoplay:true,interval:3000,duration:500}}"></template>
+  </view>
+  <!-- 附近门店(一个) -->
+  <view class='nearby-store flex flex-middle' wx:if='{{nearbyStore.length == 1}}' 
+    data-code='{{nearbyStore[0].code}}' 
+    data-couponName='{{nearbyStore[0].couponName}}' 
+    data-lng='{{nearbyStore[0].lng}}' 
+    data-lat='{{nearbyStore[0].lat}}' 
+    data-name='{{nearbyStore[0].name}}' 
+    data-street='{{nearbyStore[0].street}}' 
+    data-province='{{nearbyStore[0].province}}' 
+    data-city='{{nearbyStore[0].city}}' 
+    data-area='{{nearbyStore[0].area}}' 
+    data-phone='{{nearbyStore[0].phone}}' catchtap='onStore'>
+    <view class='nearby-store-icon'>
+      <image class='icon' src='../../images/icon/icon_home_coupon.png'></image>
+    </view>
+    <view class='flex-item'>
+      <view class='nearby-store-text flex line2'>{{nearbyStore[0].name}}</view>
+      <view class='coupon-name line1' wx:if='{{nearbyStore[0].couponName != null}}'>{{nearbyStore[0].couponName}}</view>
+    </view>
+    <view class='goto-btn' style='{{nearbyStore[0].couponName != null ? "" : "border: 1px solid #e5e5e5; background-color: #fff;color:#666"}}'>{{nearbyStore[0].couponName != null ? "立即领取" : "立即前往"}}</view>
+  </view>  
+  <!-- 附近门店(多个)  -->
+   <view class='nearby-store-list' wx:if='{{nearbyStore.length > 1}}'>
+    <swiper>
+        <block>
+          <swiper-item wx:for='{{nearbyStore}}' wx:key="key" wx:for-item='item'>
+            <view class='nearby-store flex flex-middle' data-code='{{item.code}}' data-couponName='{{item.couponName}}' data-lng='{{item.lng}}' data-lat='{{item.lat}}' data-name='{{item.name}}' data-street='{{item.street}}' 
+            data-province='{{item.province}}' 
+            data-city='{{item.city}}' 
+            data-area='{{item.area}}' 
+            data-phone='{{item.phone}}'catchtap='onStore'>
+              <view class='nearby-store-icon'>
+                <image class='icon' src='../../images/icon/icon_home_coupon.png'></image>
+              </view>
+              <view class='flex-item'>
+                <view class='nearby-store-text flex line1'><text class='line1'>{{item.name}}</text></view>
+                <view class='coupon-name line1' wx:if='{{item.couponName != null}}'>{{item.couponName}}</view>
+              </view>
+              <view class='goto-btn' style='{{item.couponName != null ? "" : "border: 1px solid #e5e5e5; background-color: #fff;color:#666"}}'>{{item.couponName != null ? "立即领取" : "立即前往"}}</view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view> 
+  <view class='cutting-line'></view>
+  <view class='nav-list flex'>
+    <view class='nav-item' wx:for="{{navList}}" wx:key="key" wx:for-item="item">
+      <view wx:if='{{item.gotoRecharge == 1 }}' bindtap='gotoRecharge' class='nav-item-a' hover-class='none'>
+        <view class='nav-img'>
+          <image class='icon'src='{{item.coverImg}}'></image>
+        </view>
+        <view class='nav-name line1 flex flex-item flex-center'>{{item.name}}</view>
+      </view>
+      <navigator wx:else url='{{item.url}}' class='nav-item-a' hover-class='none'>
+        <view class='nav-img'>
+          <image class='icon'src='{{item.coverImg}}'></image>
+        </view>
+        <view class='nav-name line1 flex flex-item flex-center'>{{item.name}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

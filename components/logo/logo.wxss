@@ -1,0 +1,13 @@
+/* components/logo/logo.wxss */
+/* oppo logo */
+.logo{
+  position: relative;
+  padding: 160rpx 0;
+}
+.logo .logo-img{
+  width: 400rpx;
+  margin: 0 auto;
+}
+.logo .logo-img image{
+  width: 100%;
+}

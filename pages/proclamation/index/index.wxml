@@ -1,0 +1,7 @@
+<!--pages/proclamation/index/index.wxml-->
+<import src="../../../components/errMsg/errMsg.wxml" />
+<import src="../../../wxParse/wxParse.wxml"/>
+<view class='container'>
+  <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

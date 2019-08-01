@@ -1,0 +1,22 @@
+<!--pages/login/login.wxml-->
+<import src="../../components/logo/logo.wxml" />
+<import src="../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <template is='logo' data='{{logoUrl:"../../images/logo/logo.svg"}}'></template>
+  <view class='form'>
+    <form bindsubmit='submit'>
+      <view class='input-block flex flex-middle'>
+        <view class='title'>手机号</view>
+        <input class='flex-item' type='number' placeholder='请输入手机号' bindinput="getMobile"></input>
+        <view class='get-verification-code' bindtap='sendSMS'>获取验证码</view>
+      </view>
+      <view class='input-block flex flex-middle'>
+        <view class='title'>验证码</view>
+        <input class='flex-item' type='number' name="verifyCode"></input>
+      </view>
+      <button class='btn btn-green' form-type="submit">登录</button>
+    </form>
+  </view>
+  <view class='explain'>若您输入的手机号未注册OPPO账号,系统会为您自动注册OPPO账号</view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

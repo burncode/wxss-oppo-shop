@@ -1,0 +1,46 @@
+<!--pages/nav/shop/shop.wxml-->
+<import src="../../../components/shop-list/shop-list.wxml" />
+<import src="../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='header city-select'>
+    <view class='title'>请选择查询的城市</view>
+    <view class='select'>
+      <view class='input-block flex flex-middle'>
+        <view class='picker flex-item'>
+          <picker bindchange="provinceChange" value="{{provinceIndex}}" range="{{province}}">
+            <view class="picker-text flex flex-middle">{{province[provinceIndex]}}</view>
+          </picker>
+        </view>
+        <image class='icon-arrow-down' src="../../../images/icon/icon_arrow.png"></image>
+      </view>
+      <view class='input-block flex flex-middle'>
+        <view class='picker flex-item'>
+          <picker bindchange="cityChange" value="{{cityIndex}}" range="{{city}}">
+            <view class="picker-text flex flex-middle">{{city[cityIndex]}}</view>
+          </picker>
+        </view>
+        <image class='icon-arrow-down' src="../../../images/icon/icon_arrow.png"></image>
+      </view>
+      <!-- <view class='input-block flex flex-middle'>
+        <view class='picker flex-item'>
+          <picker bindchange="shopTypeChange" value="{{shopTypeIndex}}" range="{{shopType}}">
+            <view class="picker-text flex flex-middle">{{shopType[shopTypeIndex]}}</view>
+          </picker>
+        </view>
+        <image class='icon-arrow-down' src="../../../images/icon/icon_arrow.png"></image>
+      </view> -->
+    </view>
+  </view>
+  <view class='shop' wx:if='{{!nothingShop}}'>
+    <view class='title'>客服中心({{shop.length}})</view>
+    <template is='shopList' data='{{shopList:shop,arrowPath:"../../../images/icon/icon_arrow.png",type:"shop"}}'></template>
+    <view class='flex flex-center nothing' wx:if='{{shop.length == 0}}'>暂无客服中心店</view>
+  </view>
+  <view class='shop' wx:if='{{!nothingShop}}'>
+    <view class='title'>授权服务站({{authorize_shop.length}})</view>
+    <template is='shopList' data='{{shopList:authorize_shop,arrowPath:"../../../images/icon/icon_arrow.png",type:"shop"}}'></template>
+    <view class='flex flex-center nothing' wx:if='{{authorize_shop.length == 0}}'>暂无授权服务站</view>
+  </view>
+  <view class='nothing-shop' wx:if='{{nothingShop}}'>对不起,找不到对应的客户中心信息,请重新搜索</view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

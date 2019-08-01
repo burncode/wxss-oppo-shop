@@ -1,0 +1,50 @@
+<!--pages/my/coupon/coupon.wxml-->
+<import src="../../../components/errMsg/errMsg.wxml" />
+<import src="../../../components/coupon-list/coupon-list.wxml" />
+<import src="../../../components/nothing/nothing.wxml" />
+<view class='container'>
+   <!-- <view class='coupon'> 
+     <view class='item'>
+      <view class='content flex' style='width:{{couponWidth}}px;height:{{couponHeight}}px'>
+        <view class='coupon-icon' style='width:{{couponHeight}}px;height:{{couponHeight}}px'>
+          <image  src='../../../images/coupon/warranty_icon.png' mode='widthFix'></image>
+        </view>
+        <view class='info flex-item'>
+          <view class='price'>
+            <text>60</text>元
+          </view>
+          <view class='desc line1'>R11 巴萨限量版延保券</view>
+        </view>
+      </view>
+      <image class='bg' src='../../../images/coupon/warranty_bg.png' mode='widthFix'></image>
+    </view>
+    <view class='item'>
+      <view class='content flex flex-middle' style='width:{{couponWidth}}px;height:{{couponHeight}}px'>
+        <view class='coupon-icon' style='width:{{couponHeight}}px;height:{{couponHeight}}px'>
+          <image  src='../../../images/coupon/screen_icon.png' mode='widthFix'></image>
+        </view>
+        <view class='info flex-item'>
+          <view class='price'>
+            <text>30</text>元
+          </view>
+          <view class='desc line1'>R11 巴萨限量版碎屏优惠券</view>
+        </view>
+      </view>
+      <image class='bg' src='../../../images/coupon/screen_bg.png' mode='widthFix'></image>
+    </view> 
+   </view>  -->
+  <view class='coupon-nav flex'>
+    <view class='flex-item' data-index='0' data-status="UNUSED" bindtap='onNav'>
+      <text class='{{currentNavInd == 0 ? "active" : ""}}'>未使用</text>
+    </view>
+    <view class='flex-item' data-index='1' data-status="USED" bindtap='onNav'>
+      <text class='{{currentNavInd == 1 ? "active" : ""}}'>已使用</text>
+    </view>
+    <view class='flex-item' data-index='2' data-status="OVERDUE" bindtap='onNav'>
+      <text class='{{currentNavInd == 2 ? "active" : ""}}'>已过期</text>
+    </view>
+  </view> 
+  <template is='couponList' data='{{type:"personal",couponList:couponList,couponStatus:myCouponParam.status}}'></template>
+  <template is='nothing' data='{{nothing:nothing,iconPath:"../../../images/icon/icon_coupon_nothing.png",nothingText:"暂无优惠券"}}'></template>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

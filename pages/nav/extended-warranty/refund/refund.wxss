@@ -1,0 +1,19 @@
+/* pages/nav/extended-warranty/refund/refund.wxss */
+page{
+  background-color: #fff;
+}
+.container{
+  margin-top: 30rpx;
+  padding:30rpx;
+}
+.container .block .title text{
+  color: red;
+}
+.container .block input{
+  font-size: 30rpx;
+  padding: 20rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 8rpx;
+}

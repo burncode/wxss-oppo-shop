@@ -1,0 +1,18 @@
+/* pages/login/login.wxss */
+@import "../../components/logo/logo.wxss";
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.container{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* 表单 */
+.form{
+  padding: 0 30rpx;
+}

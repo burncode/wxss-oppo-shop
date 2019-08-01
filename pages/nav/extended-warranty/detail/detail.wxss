@@ -1,0 +1,37 @@
+/* pages/nav/extended-warranty/detail/detail.wxss */
+page{
+  background-color: #fff;
+}
+.header{
+  padding: 0 30rpx;
+}
+.header .content{
+  padding: 50rpx 0;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.header .content text{
+  font-size: 40rpx;
+  font-weight: 600;
+  margin-left: 10rpx;
+}
+
+.main{
+  padding: 50rpx 30rpx;
+}
+.main .item {
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}
+.main .item .title{
+  color: #888888;
+  width: 180rpx;
+}
+
+.bottom-btn{
+  position: fixed;
+  left: 0;
+  bottom: 30rpx;
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}

@@ -1,0 +1,22 @@
+<!--pages/my/member/privilege-detail/privilege-detail.wxml-->
+<view class='container'>
+  <view class='header'>
+    <view class='content flex flex-middle flex-between'>
+      <view class='title'>
+        <view class='main-title'>{{privilege[currentId].name}}</view>
+        <view class='sub-title'>会员专享</view>
+      </view>
+      <view class='icon-privlege' style='{{privilege[currentId].iconPosition}}'></view>
+    </view>
+  </view>
+  <view class='privilege'>
+    <view class='block'>
+      <view class='name'>权益名称</view>
+      <view class='content'>{{privilege[currentId].name}}</view>
+    </view>
+    <view class='block'>
+      <view class='name'>使用方式说明</view>
+      <view class='content'>{{privilege[currentId].desc}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,64 @@
+<!--pages/my/member/privilege/privilege.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='bg-color' style='background-image:{{linearGradient[type]}}'></view>
+<view class='bg-color2' style='background: linear-gradient(0deg,#f5f5f5,hsla(0,0%,96%,0)) 50%/cover;'></view> 
+<view class='container'>
+  <swiper bindchange='swiperChange' style='height:{{(windowWidth*0.8)/1.5842696629213484 + (100/scale)}}px' current='{{current}}'>
+    <block>
+      <swiper-item>
+        <view class='top'>
+          <view class='card'>
+            <text>有效期至：{{gradeChangeTime}}</text>
+            <image src="{{card['commoncard']}}" mode='widthFix' />
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+    <block>
+      <swiper-item>
+        <view class='top'>
+          <view class='card'>
+            <text>有效期至：{{gradeChangeTime}}</text>
+            <image src="{{card['silvercard']}}" mode='widthFix' />
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+    <block>
+      <swiper-item>
+        <view class='top'>
+          <view class='card'>
+            <text>有效期至：{{gradeChangeTime}}</text>
+            <image src="{{card['goldcard']}}" mode='widthFix' />
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+    <block>
+      <swiper-item>
+        <view class='top'>
+          <view class='card'>
+            <text>有效期至：{{gradeChangeTime}}</text>
+            <image src="{{card['diamondcard']}}" mode='widthFix' />
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='count flex'>
+    <navigator class='count-item flex flex-item flex-center' url='../credits/credits?action=0&type={{type}}' hover-class='none'>成长值：{{amount}}</navigator>
+    <view class='count-item flex flex-item flex-center'></view>
+  </view>
+  <view class='nav'>
+    <view class='nav-list'>
+      <navigator class='nav-item flex flex-middle' wx:for='{{nav[type]}}' wx:key='key' wx:for-item='item' url='../privilege-detail/privilege-detail?id={{item.id}}'>
+        <view class='left flex flex-item flex-middle'>
+          <image class='icon' src='{{item.iconPath}}'></image>
+          <view class='name'>{{item.name}}</view>
+        </view>
+        <image class='arrow' src='../../../../images/icon/icon_arrow.png'></image>
+      </navigator>
+    </view>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

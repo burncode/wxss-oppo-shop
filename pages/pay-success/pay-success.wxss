@@ -1,0 +1,21 @@
+/* pages/pay-success/pay-success.wxss */
+page{
+  background-color: #fff;
+}
+.top icon{
+  margin: 100rpx auto;
+}
+.content .des,.content .price{
+  font-size: 40rpx;
+  padding-bottom: 15rpx;
+}
+.content .price{
+  font-size: 60rpx;
+}
+.bottom-btn{
+  margin-top: 60rpx;
+}
+.bottom-btn .btn{
+  width: 400rpx;
+  margin: 0 auto;
+}

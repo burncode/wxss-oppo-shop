@@ -1,0 +1,79 @@
+<!--<view class="guize-btn" bindtap="showGuize">活动规则</view>
+<view class="auth-content">
+  <view class="auth-title">
+    <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/auth-title.png"  />
+  </view>
+  <view class="auth-form">
+    <form bindsubmit="authSub">
+      <view class="auth-sub-list">
+        <view class="auth-sub-point">IMEI码</view>
+        <input type="number" name="imei" placeholder="可填写" placeholder-class="auth-sub-point-po" maxlength="20"
+               value="{{imei}}"  />
+        <view class="scan-btn" bindtap="scanCode">
+          <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/scan-btn.png"  />
+        </view>
+      </view>
+      <view class="auth-sub-list">
+        <view class="auth-sub-point">姓名</view>
+        <input type="text" name="name" value="{{name}}" placeholder="请填写真实姓名" placeholder-class="auth-sub-point-po"
+               maxlength="20"  />
+      </view>
+      <view class="auth-sub-list">
+        <view class="auth-sub-point">手机号码</view>
+        <input type="number" name="phone" value="{{phone}}" placeholder="请填写手机号码" placeholder-class="auth-sub-point-po"
+               maxlength="11"  />
+      </view>
+      <view class="clause-box">
+        <view wx:if="{{clause==true}}" data-clause="{{true}}" class="radio-btn" bindtap="checkClasuse">
+          <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/radio-on.png"  />
+        </view>
+        <view wx:else="{{clause==false}}" data-clause="{{false}}" class="radio-btn" bindtap="checkClasuse">
+          <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/radio-off.png"  />
+        </view>
+        <view class="clause-text" bindtap="tiaokuan">购买保险服务表示您已同意《OPPO保障服务条款》</view>
+      </view>
+      <button formType="submit" class="auth-sub-btn">
+        <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/auth-submit-btn.png"  />
+      </button>
+    </form>
+  </view>
+</view>
+<view class="dialog-box" wx:if="{{errTips || errMsg}}">
+  <view class="dialog-content">
+    <view class="close" bindtap="closeDialog">
+      <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/close.png"  />
+    </view>
+    <view class="dialog-text" wx:if="{{tiaokuan==false&&errMsg=='网络异常，请重试'}}">{{errMsg}}</view>
+    <view class="dialog-text" wx:if="{{tiaokuan==false&&errMsg==imeiUsed}}">已经领取过了，不要贪心哦~去看看我的口碑吧</view>
+    <view class="dialog-text" wx:if="{{tiaokuan==false&&errMsg!=imeiUsed&&errMsg!='网络异常，请重试'&&getUserInfo==true&&!errTips}}">
+    IMEI号有误或不在参与活动范围内，详情请咨询店内导购
+    </view>
+    <view class="dialog-text" wx:if="{{tiaokuan==false&&errMsg!=imeiUsed&&errMsg!='网络异常，请重试'&&getUserInfo==false}}">{{errMsg}}</view>
+    <view class="dialog-text" wx:if="{{tiaokuan==false&&errTips&&!errMsg}}">{{errTips}}</view>
+    <view class="enterIntro" wx:if="{{tiaokuan==false&&errMsg!=imeiUsed&&errMsg!='网络异常，请重试'&&getUserInfo==true&&!errTips}}"
+          bindtap="enterIntro">了解R11s</view>
+    <view class="enterMyArr" wx:if="{{tiaokuan==false&&errMsg==imeiUsed}}" bindtap="enterMyArr">查看我的口碑</view>
+    <view class="dialog-image" wx:if="{{tiaokuan==true}}">
+      <image class="guize-pic" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/tiaokuan.png"
+             mode="widthFix"  />
+    </view>
+  </view>
+</view>
+<view class="dialog-box" wx:if="{{guize}}">
+  <view class="dialog-content">
+    <view class="close" bindtap="closeDialog">
+      <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/close.png"  />
+    </view>
+    <view class="dialog-image">
+      <image class="guize-pic" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/guize.png"
+             mode="widthFix"  />
+    </view>
+  </view>
+</view>-->
+<view class="dialog-box">
+  <view class="dialog-content">
+    <view class="dialog-text">
+      哎呀，来晚了…活动已结束！
+    </view>
+  </view>
+</view>

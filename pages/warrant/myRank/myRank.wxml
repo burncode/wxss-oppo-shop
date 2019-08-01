@@ -1,0 +1,49 @@
+<!--<view class="oppo-logo">
+  <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/oppo-logo.png"  />
+</view>
+<view class="guize-btn" bindtap="showGuize">活动规则</view>
+<view class="praise-content"
+      style="background:url('http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/praise-bg.png')">
+  <view class="rank-list-box">
+    <view class="head-img">
+      <image src="{{headImage}}"  />
+    </view>
+    <view class="my-name">{{nickName}}</view>
+    <view class="rank-total" wx:if="{{rankInfo!=false}}">{{rankInfo.rankTotal}}</view>
+    <view class="rank-total" wx:if="{{rankInfo==false}}">暂无排名</view>
+    <view class="rank-info" wx:if="{{rankInfo!=false}}">在{{rankInfo.month}}月{{rankInfo.day}}日R11s用户中排名第{{rankInfo.rankNum}}</view>
+    <view class="rank-title">
+      <view class="rank-1">排名</view>
+      <view class="rank-2">微信名</view>
+      <view class="rank-3">分数</view>
+    </view>
+    <scroll-view scroll-y="true" wx:if="{{rankList.length!=0}}">
+      <view class="rank-list-item" wx:for="{{rankList}}">
+        <view class="rank-num {{item.fontStyle}}">{{index+1}}</view>
+        <image class="rank-head-img" src="{{item.headImage}}"  />
+        <view class="rank-name">{{item.nickName}}</view>
+        <view class="rank-votes">{{item.votes}}</view>
+      </view>
+    </scroll-view>
+    <view class="no-rank" wx:if="{{rankList.length==0 }}">还没有排名哦</view>
+  </view>
+  <view class="enter-btn" bindtap="enterMyarr">回到我的口碑页</view>
+</view>
+<view class="dialog-box" wx:if="{{guize}}">
+  <view class="dialog-content">
+    <view class="close" bindtap="closeDialog">
+      <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/close.png"  />
+    </view>
+    <view class="dialog-image">
+      <image class="guize-pic" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoYanBao/guize.png"
+             mode="widthFix"  />
+    </view>
+  </view>
+</view>-->
+<view class="dialog-box">
+  <view class="dialog-content">
+    <view class="dialog-text">
+      哎呀，来晚了…活动已结束！
+    </view>
+  </view>
+</view>

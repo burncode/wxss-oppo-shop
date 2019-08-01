@@ -1,0 +1,33 @@
+<!--pages/nav/repair/repair-query/repair-query.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='repair'>
+    <view class='title flex flex-center'>维修进度查询</view>
+    <view class='info flex flex-center'>{{desc}}</view>
+    <view class='record-box'>
+      <view class='record-li' wx:for='{{record}}' wx:key='key' wx:for-item='item'>
+        <view class='content flex flex-top'>
+          <view class='formstatus'>
+            <view>【{{item.formstatus}}】</view>
+            <view class='createtime'>{{item.createtime}}</view>
+          </view>
+          <view class='statusdesc flex-item'>{{item.statusdesc}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='bottom-btn flex'>
+      <view class='item flex-item'>
+        <view class='btn' data-phone='4001666888' bindtap='makePhoneCall'>4001-666-888</view>
+      </view>
+    </view>
+  </view>
+  <view class='explain'>
+    <view class='explain-item flex'>
+      <view class='text'>温馨提示</view>
+    </view>
+    <view class='explain-item flex'>
+      <view class='text'>维修进度查询:为用户提供30天内最近的一次OPPO官方客服中心手机送修查询</view>
+    </view>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

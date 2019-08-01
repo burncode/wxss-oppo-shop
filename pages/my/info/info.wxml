@@ -1,0 +1,23 @@
+<!--pages/my/info/info.wxml-->
+<import src="../../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='header flex flex-middle'>
+    <view class='headUrl'>
+      <image src='{{userInfo.avatarUrl}}'></image>
+    </view>
+    <view class='user-info flex-item'>
+      <view class='name'>{{userInfo.nickName}}</view>
+      <view class='member'>OPPO 普卡会员</view>
+    </view>
+    <view class='btn'>退出</view>
+  </view>
+  <view class='nav-list'>
+    <view class='nav-item'>
+      <view class='title'>联系客服</view>
+    </view>
+    <view class='nav-item'>
+      <view class='title'>关于 OPPO</view>
+    </view>
+  </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

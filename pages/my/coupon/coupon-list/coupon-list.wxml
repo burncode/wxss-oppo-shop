@@ -1,0 +1,63 @@
+<!--pages/my/coupon/coupon-list/coupon-list.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<import src="../../../../components/coupon-list/coupon-list.wxml" />
+<view class='container'>
+  <view class='header shops'>
+    <view class='top flex'>
+      <view class='shops-coverimg'>
+        <image src='../../../../images/logo/shop_logo.jpg'></image>
+      </view>
+      <view class='info'>
+        <view class='shops-name'>{{ storeDetails.name }}</view>
+        <view class='control-no' wx:if='{{storeDetails.code != null || storeDetails.code != ""}}'>编号:{{ storeDetails.code}}</view>
+      </view>
+    </view>
+    <view class='bottom flex'>
+      <view class='location flex-item flex flex-middle'>
+        <image src='../../../../images/icon/icon_address.png'></image>
+        <view class='flex-item'>{{ storeDetails.city !== 'null' && storeDetails.city !== null ? storeDetails.city : "" + storeDetails.area !== 'null' && storeDetails.area !== null ? storeDetails.area : "" + storeDetails.street }}</view>
+      </view>
+      <view class='flex flex-middle'>
+        <view class='icon' 
+          data-latitude = "{{storeDetails.lat}}"
+          data-longitude = "{{storeDetails.lng}}"
+          data-name = "{{storeDetails.name}}"
+          data-city = "{{storeDetails.city}}"
+          data-area = "{{storeDetails.area}}"
+          data-street = "{{storeDetails.street}}"
+          bindtap='openMap'>
+          <image src='../../../../images/icon/icon_location.png'></image>
+        </view>
+        <view class='cutting-line' wx:if='{{storeDetails.phone != null}}'></view>
+        <view class='icon' wx:if='{{storeDetails.phone != null}}' bindtap='onMakePhoneCall' data-phone='{{storeDetails.phone}}'>
+          <image src='../../../../images/icon/icon_phone.png'></image>
+        </view>
+      </view>      
+    </view>
+  </view>
+  <template is='couponList' data='{{type:"shops",couponList:couponList}}'></template>
+  <view class='coupon-nothing' wx:if="{{couponNothing}}">暂无优惠券</view>
+  <!-- <view class='coupon-explain' wx:if="{{!couponNothing}}">
+    <view class='title'>领取及使用规则</view>
+    <view class='remark'>1.真诚服务，保障加倍。在国家“三包”规定的一年联保截止日次日零时起，延长主机半年/一年的保修服务。延保期内手机因主机问题导致的性能故障您可获得免费维修服务</view>
+    <view class='remark'>2.真诚服务，保障加倍。</view>
+  </view> -->
+  <view class='shop-list' wx:if="{{shopList.length >= 1}}">
+    <view class='title'>附近门店推荐</view>
+    <view class='list'>
+      <view class='shop-item flex' wx:for="{{shopList}}" wx:key='key' wx:for-item='item' wx:if="{{shopCurrentIndex !== index }}" data-index="{{index}}" data-code="{{item.code}}" bindtap='onShop'>
+        <view class='shops-coverimg'>
+          <image src='../../../../images/logo/shop_logo.jpg'></image>
+        </view>
+        <view class='info'>
+          <view class='shops-name'>{{ item.name }}</view>
+          <view class='address'>{{ item.city + item.area + item.street }}</view>
+        </view>
+      </view>
+    </view>
+  </view> 
+  <!-- <view class='map'>
+    <map id="map" longitude="{{shopList[shopCurrentIndex].lng}}" latitude="{{shopList[shopCurrentIndex].lat}}" scale="12" markers="{{markers}}" show-location="true" bindmarkertap="gotoShops"></map>
+  </view> -->
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>

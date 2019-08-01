@@ -1,0 +1,30 @@
+<view class="activity-page" wx:if="{{!showActivityEnd}}">
+    <image class="talk-top" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/times.png" mode="widthFix" />
+    <image class="talk-1 {{show_1}}" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/talk-1.png" mode="widthFix" />
+    <image class="talk-2 {{show_2}}" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/talk-2.png" mode="widthFix" />
+    <image class="talk-3 {{show_3}}" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/talk-3.png" mode="widthFix" />
+    <image class="talk-4 {{show_4}}" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/talk-4.png" mode="widthFix" />
+    <image class="talk-bottom" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/talk-bottom.jpg" mode="widthFix" />
+    <view class="enter-btn" bindtap="enterActivity" wx:if="{{enterShow}}">马上开始！</view>
+    <view class="activity-exp" bindtap="openActivityExp" bindtap="showExp" wx:if="{{enterShow}}">活动规则</view>
+    <view class="activity-exp-box" wx:if="{{expStatus}}">
+        <view class="musk"></view>
+        <view class="exp">
+            <image class="exp-img" src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/act_exp.png" mode="widthFix"/>
+            <view class="close-btn" bindtap="closeExp">
+                <image src="http://opponplusgroup.oss-cn-hangzhou.aliyuncs.com/oppoAnswer/close-btn.png" />
+            </view>
+        </view>
+    </view>
+</view>
+<!--活动结束-->
+<view class="activity-end" wx:if="{{showActivityEnd}}">
+    <view class="musk"></view>
+    <view class="end-box" wx:if="{{errorMsg==='活动未开始'}}">
+        <text class="end-text">{{errorMsg}}\n开始时间：\n2018/3/31 20:00</text>
+    </view>
+    <view class="end-box" wx:if="{{errorMsg==='活动已结束'}}">
+        <text class="end-text">{{errorMsg}}，\n正在跳往 R15 活动页...</text>
+        <view class="count-num">{{hrefCountNum}}s</view>
+    </view>
+</view>

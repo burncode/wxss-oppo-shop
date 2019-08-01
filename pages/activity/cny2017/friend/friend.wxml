@@ -1,0 +1,74 @@
+<!--pages/activity/cny2017/friend/friend.wxml-->
+<import src="../../../../components/errMsg/errMsg.wxml" />
+<view class='container' catchtouchmove="true">
+    <image src='https://oppowx.beats-digital.com/activity/cny2017/logo.png' class='logo'></image>
+    <view class='avatarInfo'>
+        <image src='{{avatarTemp}}' class='avatar'></image>
+        <view class='avatarTxt'>{{greetings}}</view>
+    </view>
+    <!-- <view class='title' wx:if = "{{!isOpen}}">{{nickName}}给您准备了个大红包</view> -->
+    <view class="card {{isOpen?'openAni':'noOpenAni'}} {{isSelf?'isSelf':''}}" catchtap='openCard' wx:if = '{{!isHide}}'>
+        <view class='cardBack'>
+            <image src='https://oppowx.beats-digital.com/activity/cny2017/card_back.png' class='back'></image>
+            <image src='{{shareImg}}' class='pic'></image>
+            <image src='https://oppowx.beats-digital.com/activity/cny2017/shadow.png' class='shadow'></image>
+        </view>
+        <view class='cardFront'>
+            <block wx:if='{{!isSelf}}'>
+                <view class='cardTop'>
+                    <view class='btnOpen'>
+                        <image src='https://oppowx.beats-digital.com/activity/cny2017/kai.png'></image>
+                    </view>
+                </view>
+                <image src='https://oppowx.beats-digital.com/activity/cny2017/hand.png' class='hand'></image>
+            </block>
+            
+        </view>
+        <view class='openView'>
+            <view class='sound'>
+                <view class='item'></view>
+                <view class='item'></view>
+                <view class='btnSound' catchtap='playSound' wx:if = "{{!isPlaySound}}">
+                    <image src='https://oppowx.beats-digital.com/activity/cny2017/btn_arrow.png' class='btnArrow'></image>
+                </view>
+                <view class='btnSound' catchtap='stopSound' wx:else>
+                    <image src='https://oppowx.beats-digital.com/activity/cny2017/btn_arrow_off.png' class='btnArrow'></image>
+                </view>
+            </view>
+            <view class='giftList'>
+                <image src='https://oppowx.beats-digital.com/activity/cny2017/line.png' class='line'></image>
+                <view class='listInfo'>
+                    <scroll-view scroll-y = "true" style='height:100%' scroll-with-animation = "true" scroll-into-view = "{{toView}}">
+                        <view id='item{{index}}' class='listItem' wx:for = "{{msgList}}" wx:key = "">
+                            {{item}}
+                        </view>
+                    </scroll-view>
+                </view>
+                <image src='https://oppowx.beats-digital.com/activity/cny2017/line.png' class='line'></image>
+            </view>
+            <view class='btns'>
+                <image src='https://oppowx.beats-digital.com/activity/cny2017/btn_index.png' bindtap='goIndex'></image>
+                <image src='https://oppowx.beats-digital.com/activity/cny2017/btn_me.png' bindtap='goToMyGift'></image>
+            </view>
+        </view>
+        
+    </view>
+    <navigator url='../home/home' hover-class='none' open-type='redirect'>
+        <image src='https://oppowx.beats-digital.com/activity/cny2017/btn_home.png' style = "position: absolute;left: 20rpx;top: 20rpx;width: 97rpx;height: 44rpx;"></image>
+    </navigator>
+</view>
+
+
+<view class="loading {{loadingShow?'loadingActive':''}}" wx:if = "{{loadingShow}}" animation = "{{loadingAni}}">
+    <view class='box'>
+        <view class='icons'>
+            <view class='iconItem iconItem1 loadingItem1'></view>
+            <view class='iconItem iconItem2 loadingItem1'></view>
+            <view class='iconItem iconItem3 loadingItem2'></view>
+            <view class='iconItem iconItem4 loadingItem2'></view>
+        </view>
+        <image src='http://img.cdn.be-xx.com/oppo_wxapp/activity/cny2017/radio.png' class='icon'></image>
+        <text class='num'>{{loadingPer}}%</text>
+    </view>
+</view>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template> 

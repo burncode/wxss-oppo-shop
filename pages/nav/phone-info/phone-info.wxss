@@ -1,0 +1,34 @@
+/* pages/nav/phone-info/phone-info.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.header{
+  padding: 100rpx 0;
+  font-size: 50rpx;
+  font-weight: 500;
+}
+
+.form{
+  padding: 0 30rpx;
+}
+.input-block .title{
+  width: 130rpx;
+}
+.scan{
+  width: 40rpx;
+  height: 40rpx;
+}
+.scan image{
+  width: 100%;
+  height: 100%;
+}
+.bottom-btn{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 30rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}

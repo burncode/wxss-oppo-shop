@@ -1,0 +1,321 @@
+.oppo-logo{
+  width: 152rpx;
+  height: 70rpx;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 75rpx;
+}
+.oppo-logo image{
+  width: 100%;
+  height: 100%;
+}
+page{
+  background: #ededed;
+}
+.warrant-content{
+  overflow: hidden;
+}
+.warrant-content .star-pic{
+  width: 100%;
+  height: 320rpx;
+}
+.warrant-content .star-pic image{
+  width: 100%;
+  height: 100%;
+}
+.warrant-content .warrant-info .my-info .head-pic image{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background: #eee;
+}
+.warrant-content .warrant-info .my-info .head-pic{
+  width: 106rpx;
+  height: 106rpx;
+  border: 2px solid #fbfdfc;
+  border-radius: 100%;
+  overflow: hidden;
+  padding: 5rpx;
+  margin: 0 auto;
+}
+.warrant-content .warrant-info .my-info .my-name{
+  font-size: 22rpx;
+  color: #696969;
+}
+.warrant-content .warrant-info .my-info{
+  width: 203rpx;
+  margin-top: 40rpx;
+  margin-left: 20rpx;
+  text-align: center;
+  float: left;
+}
+.warrant-content .warrant-info{
+  width: 680rpx;
+  height: 670rpx;
+  margin: -10rpx auto 0 auto;
+  overflow: hidden;
+}
+.my-comment{
+  width: 418rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 45rpx;
+  min-height: 170rpx;
+  justify-content: space-between;
+}
+.my-comment .po-icon-l{
+  width: 25rpx;
+  height: 25rpx;
+}
+.my-comment .po-icon-r{
+  width: 25rpx;
+  height: 25rpx;
+  float: right;
+}
+.my-comment .comment-detail{
+  width: 360rpx;
+  color: #909090;
+  font-size: 26rpx;
+  margin: 0 auto; 
+  /*word-break: break-all;*/
+  max-height: 120rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.my-rank-score{
+  width: 610rpx;
+  margin: 120rpx auto 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.my-score,.my-rank{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.my-score image{
+  width: 42rpx;
+  height: 48rpx;
+}
+.my-rank image{
+  width: 48rpx;
+  height: 48rpx;
+}
+.my-score .text,.my-rank .text{
+  margin: 20rpx 0; 
+  color: #787878;
+  font-size: 26rpx;
+}
+.my-rank .tips{
+  color: #888888;
+  font-size: 16rpx;
+}
+.my-rank .rank-num{
+  color: #46bd71;
+  font-size: 54rpx;
+}
+.my-score .score-num{
+  font-size: 54rpx;
+  color: #f3af33;
+}
+.intro-box{
+  width: 650rpx;
+  margin: 30rpx auto 0 auto;
+}
+.intro-box .title{
+  font-size: 24rpx;
+  color: #46bd71;
+  font-weight: bolder;
+  margin-bottom: 20rpx;
+}
+.intro-box .intro-item{
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15rpx;
+}
+.intro-box .share-btn{
+  width: 280rpx;
+  height: 90rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #ffffff;
+  background: #46bd71;
+  border-radius: 50rpx;
+  line-height: 90rpx;
+  margin: 30rpx auto;
+  box-shadow: 0 10rpx 20rpx rgba(70,189,113,.5)
+}
+.intro-box .intro-item .item-index{
+  width: 30rpx;
+  height: 30rpx;
+  background: #ffca13;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 30rpx;
+  margin-right: 10rpx;
+  border-radius: 100%;
+}
+.intro-box .intro-item .text{
+  font-size: 22rpx;
+  color: #858585;
+  flex: 1;
+}
+.vote-list{
+  width: 600rpx;
+  margin: 30rpx auto 0 auto;
+}
+.vote-list .vote-item{
+  margin-bottom: 16rpx;
+  font-size: 24rpx;
+  color: #858585;
+  text-align: center;
+}
+.location-btn{
+  width: 260rpx;
+  height: 90rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #ffffff;
+  background: #46bd71;
+  border-radius: 50rpx;
+  line-height: 90rpx;
+  margin: 30rpx auto;
+  box-shadow: 0 10rpx 20rpx rgba(70,189,113,.5)
+}
+.intro-box .share-btn.short-btn{
+  width: 360rpx !important;
+}
+.btn-box{
+  display: flex;
+  justify-content: space-between;
+}
+.dialog-box.high-index{
+  z-index: 20;
+}
+.dialog-box{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background:rgba(0,0,0,.3);
+  z-index: 10;
+}
+.dialog-box .dialog-content{
+  width: 595rpx;
+  padding:36rpx 0;
+  /*height: 403rpx;*/
+  background: #fff;
+  border-radius: 10rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+.dialog-box .dialog-content .close{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+}
+.dialog-box .dialog-content .close image{
+  width: 100%;
+  height: 100%;
+}
+.dialog-box .dialog-content .dialog-image image{
+  width: 100%;
+}
+.dialog-box .dialog-content .dialog-image{
+  width: 450rpx;
+  height: 550rpx;
+  overflow-y: scroll;
+  margin: 40rpx auto;
+  text-align: center;
+  font-size: 28rpx;
+  color: #5b5b5b;
+}
+.dialog-box .dialog-content .dialog-text{
+  width: 392rpx;
+  margin: 0 auto;
+  text-align: center;
+  padding: 90rpx 0;
+  font-size: 28rpx;
+  color: #5b5b5b;
+}
+.sub-item .sub-textarea{
+  width: 380rpx;
+  height: 102rpx;
+  border: none;
+  background: #f0f0f0;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  padding-left: 10rpx;
+}
+.sub-btn{
+  width: 450rpx;
+  height: 90rpx;
+  background: #46bd71;
+  text-align: center;
+  line-height: 90rpx;
+  margin: 40rpx auto 80rpx auto;
+  border-radius: 50rpx;
+  font-size: 36rpx;
+  color: #fff;
+  font-weight: bolder;
+  box-shadow: 1rpx 10rpx 40rpx rgba(0,0,0,.2);
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+.sub-item .sub-input{
+  width: 380rpx;
+  height: 62rpx;
+  border: none;
+  background: #f0f0f0;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  padding-left: 10rpx;
+}
+.sub-item .point{
+  color: #feac16;
+  font-size: 24rpx;
+  margin: 0 10rpx;
+}
+.sub-item .name{
+  width: 108rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #4f4f4f;
+}
+.sub-item.textarea-item{
+  align-items: flex-start;
+}
+.sub-item{
+  width: 505rpx;
+  margin: 28rpx auto 0 auto;
+  display: flex;
+  align-items: center;
+}
+.guize-btn{
+  width: 150rpx;
+  height:50rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  z-index: 9;
+  right: 0;
+  top: 300rpx;
+  background: #41a96f;
+  line-height: 50rpx;
+  border-radius:  50rpx 0 0 50rpx ;
+}

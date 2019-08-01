@@ -1,0 +1,143 @@
+/* pages/activity/cny2017/result/result.wxss */
+page{
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, #c12135 0%, #512c5e 100%);
+    overflow: hidden;
+    text-align: center;
+}
+/* 
+.result{
+    width: 718rpx;
+    height: 561rpx;
+    margin: 100rpx auto 0;
+}
+.result image{width: 100%;height: 100%;}
+.reset{text-align: center;background: #f3cf9d;width: 154rpx;height: 154rpx;border-radius: 154rpx;position: relative;font-size: 0;margin: -12rpx auto 0;
+    transform-origin: center -90rpx;
+}
+.reset .line{width: 4rpx;background: #651025;height: 90rpx;position: absolute;left: 50%;margin-left: -2rpx;top: -90rpx;}
+.reset .icon{width: 59rpx;height: 61rpx;display: inline-block;margin: 20rpx auto 5rpx;}
+.reset .name{color: #e60044;font-size: 24rpx;display: block;}
+
+
+
+canvas{
+    margin: 0 auto;
+    text-align: left;
+}
+
+button{padding: 0;background: none;border: 0;display: inline-block;height: auto;border-radius: 0;line-height: 0}
+button::after{content: '';border: 0;}
+button[plain]{border: 0}
+.tip{width: 253rpx; height: 34rpx; margin: 80rpx auto}
+.btns{font-size: 0;text-align: center;}
+.btns button{margin: 0 40rpx 0 0;
+} 
+.btns image{width: 292rpx; height: 81rpx;
+} 
+
+
+@keyframes btnItemAni{
+    0%{transform: rotate(0deg)}
+    25%{transform: rotate(2deg)}
+    50%{transform: rotate(0deg)}
+    75%{transform: rotate(-2deg)}
+    100%{transform: rotate(0deg)}
+}
+
+@keyframes pulse{
+    0%{-webkit-transform:scale(1)}
+    50%{-webkit-transform:scale(1.04)}
+    100%{-webkit-transform:scale(1)}
+}
+@-webkit-keyframes pulse{
+    0%{-webkit-transform:scale(1)}
+    50%{-webkit-transform:scale(1.04)}
+    100%{-webkit-transform:scale(1)}
+} */
+
+canvas{
+    margin: 0 auto;
+    text-align: left;
+}
+
+button{padding: 0;background: none;border: 0;display: inline-block;height: auto;border-radius: 0;line-height: 0}
+button::after{content: '';border: 0;}
+button[plain]{border: 0}
+
+.avatarInfo{
+    padding: 8% 0 0 0;
+}
+.avatarInfo .avatar{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 100%;
+    border: 2px solid #f3cf9d;
+}
+
+.resultCard{
+    width: 706rpx;
+    height: 625rpx;
+    position: absolute;
+    left: 50%;
+    margin-left: -353rpx;
+    bottom: 0;
+}
+.cardFront{
+    background-image: linear-gradient(0deg, #b81e30 0%, #cb3e4e 100%);width: 100%;height: 100%;position: relative;
+    overflow: hidden;
+    border-radius: 10rpx;
+    box-shadow: 5rpx 28rpx 10rpx rgba(100, 5, 17, 0.5);
+}
+.cardFront .title{width: 550rpx;height: 74rpx;margin: 126rpx 0 114rpx 0}
+.cardFront .btns image{width: 292rpx;height: 80rpx;margin: 0 25rpx;}
+.cardFront .downTip{padding-top: 130rpx;}
+.cardFront .downTip text{font-size: 28rpx;color: #f3cf9d;padding-left: 12rpx;}
+.cardFront .downTip .iconDown{width: 29rpx;height: 29rpx;}
+.cardBack{position: absolute;left: 0;top: -230rpx;width: 100%;}
+.cardBack image{width: 100%;position: absolute;left: 0;top: 0}
+.cardBack .back{height: 238rpx;}
+.cardBack .pic{height: 495rpx;top: -120rpx;
+    transform: rotate(-10deg) scale(0.9)
+}
+.cardBack .shadow{height: 209rpx;top: 170rpx;}
+
+
+
+.btnBack{
+    height: 42rpx;
+    line-height: 42rpx;
+    border-top-left-radius: 40rpx;
+    border-bottom-left-radius: 40rpx;
+    background: #f3cf9d;
+    position: absolute;
+    right: 0;
+    top: 20rpx;
+    font-size: 25rpx;
+    color: #e60044;
+    text-align: center;
+    padding: 0 30rpx 0 50rpx;
+    font-weight: bold;
+}
+
+
+@media screen and (device-width:375px) and (min-height:720px){
+    .resultCard{height: 800rpx}
+}
+
+
+@media screen and (device-width:360px) and (max-height:530px){
+    .resultCard {height: 580rpx}
+    .cardFront .title{margin: 100rpx 0 90rpx 0;}
+}
+
+/** 安卓 18:9 */
+@media screen and (width:360px) and (min-height:600px), screen and (width:412px) and (min-height:680px), screen and (width:393px) {
+    .avatarInfo {
+       padding-top: 150rpx;
+    }
+}

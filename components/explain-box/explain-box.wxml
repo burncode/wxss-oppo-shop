@@ -1,0 +1,22 @@
+<!--components/explain-box/explain-box.wxml-->
+<template name="explainBox">
+  <view class='explain-box'>
+    <view class='explain-box-info'>
+      <view class='icon'>
+        <image src='{{iconUrl}}'></image>
+      </view>
+      <view class='title flex flex-center'>{{title}}</view>
+      <view class='sub-title flex flex-center'>{{subTitle}}</view>
+      <view class='content'>{{content}}</view>
+      <view class='remark'>{{remark}}</view>
+    </view>
+  </view>
+  <view class='agree-service flex flex-middle'>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox flex flex-middle">
+        <checkbox value="{{checked}}" checked="{{checked}}" /> 
+        <text>购买保修服务表示您已同意《</text><text catchtap='gotoWarrantyServiceDesc'>OPPO保障服务条款</text><text>》</text> 
+      </label>
+    </checkbox-group>
+  </view> 
+</template>

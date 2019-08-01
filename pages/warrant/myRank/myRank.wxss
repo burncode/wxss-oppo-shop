@@ -1,0 +1,219 @@
+.oppo-logo{
+  width: 152rpx;
+  height: 70rpx;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 75rpx;
+}
+.oppo-logo image{
+  width: 100%;
+  height: 100%;
+}
+.praise-content{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+.rank-list-box{
+  width: 700rpx;
+  height: 890rpx;
+  background: #fff;
+  margin: 135rpx auto 0 auto;
+  padding-bottom: 20rpx;
+  border-radius: 15rpx;
+  position: relative;
+  box-shadow: 0 0 30rpx rgba(0,0,0,.3);
+}
+.rank-list-box scroll-view{
+  height: 540rpx;
+}
+.rank-list-box .head-img{
+  width: 130rpx;
+  height: 130rpx;
+  background: #eee;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -70rpx;
+  border: 8rpx solid #fff;
+  overflow: hidden;
+}
+.rank-list-box .head-img image{
+  width: 100%;
+  height: 100%;
+}
+.rank-list-box .my-name{
+  font-size: 32rpx;
+  color: #777777;
+  text-align: center;
+  padding-top: 80rpx;
+}
+.rank-list-box .rank-total{
+  font-size: 46.81rpx;
+  color: #00bd7a;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.rank-list-box .rank-list-item{
+  width: 647rpx;
+  margin: 0 auto;
+  height: 95rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-top: 3rpx solid #e3e3e3;
+}
+.rank-list-box .rank-list-item .rank-num.secStyle{
+  color: #e57937;
+}
+.rank-list-box .rank-list-item .rank-num.firStyle{
+  color: #db544c;
+}
+.rank-list-box .rank-list-item .rank-num{
+  width: 100rpx;
+  margin-left: 14rpx;
+  text-align: left;
+  font-size: 39rpx;
+  font-style: italic;
+  color: #ebb244;
+}
+.rank-list-box .rank-list-item .rank-head-img{
+  width: 63rpx;
+  height: 63rpx;
+  border: 2px solid #e8ab3d;
+  border-radius: 100%;
+  margin-right: 14rpx;
+}
+.rank-list-box .rank-list-item .rank-name{
+  width: 250rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 31rpx;
+  color: #777777;
+}
+.rank-list-box .rank-list-item .rank-votes{
+  width: 190rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 31rpx;
+  color: #777777;
+  text-align: right;
+}
+.enter-btn{
+  width: 595rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  margin: 37rpx auto;
+  background: #eefff5;
+  border-radius: 50rpx;
+  font-size: 36rpx;
+  color: #46bd71;
+  font-weight: bolder;
+  box-shadow: 0 0 30rpx rgba(0,0,0,.3);
+}
+.rank-info{
+  color: #676767;
+  font-size: 22rpx;
+  background: #e9e9e9;
+  padding: 10rpx 0;
+  text-align: center;
+  margin: 0 auto;
+  width: 415rpx;
+  border-radius: 100rpx;
+}
+.no-rank{
+  color: #676767;
+  font-size: 26rpx;
+  text-align: center;
+  margin-top: 250rpx;
+}
+.rank-title{
+  display: flex;
+  margin: 60rpx auto 20rpx auto;
+  color: #626262;
+  font-size: 26rpx;
+  width: 635rpx;
+}
+.rank-title .rank-1{
+  width: 187rpx;
+}
+.rank-title .rank-2{
+  width: 350rpx;
+}
+.rank-title .rank-3{
+  flex:1;
+  text-align: right;
+}
+.guize-btn{
+  width: 150rpx;
+  height:50rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: 40rpx;
+  background: #41a96f;
+  line-height: 50rpx;
+  border-radius: 0 50rpx 50rpx 0;
+}
+.dialog-box{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background:rgba(0,0,0,.3);
+  z-index: 10;
+}
+.dialog-box .dialog-content{
+  width: 595rpx;
+  padding:36rpx 0;
+  /*height: 403rpx;*/
+  background: #fff;
+  border-radius: 10rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+.dialog-box .dialog-content .close{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+}
+.dialog-box .dialog-content .close image{
+  width: 100%;
+  height: 100%;
+}
+.dialog-box .dialog-content .dialog-image image{
+  width: 100%;
+}
+.dialog-box .dialog-content .dialog-image{
+  width: 450rpx;
+  height: 550rpx;
+  overflow-y: scroll;
+  margin: 40rpx auto;
+  text-align: center;
+  font-size: 28rpx;
+  color: #5b5b5b;
+}
+.dialog-box .dialog-content .dialog-text{
+  width: 392rpx;
+  margin: 0 auto;
+  text-align: center;
+  padding: 90rpx 0;
+  font-size: 28rpx;
+  color: #5b5b5b;
+}

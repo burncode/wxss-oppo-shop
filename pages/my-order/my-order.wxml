@@ -1,0 +1,78 @@
+<!--pages/my-order/my-order.wxml-->
+<import src="../../components/nothing/nothing.wxml" />
+<import src="../../components/errMsg/errMsg.wxml" />
+<view class='container'>
+  <view class='nav flex'>
+    <view class='item flex flex-item flex-center' data-index='0' data-status='' bindtap='onNav'><text class='flex flex-middle {{navCurrentIndex == 0 ? "active" : ""}}'>全部</text></view>
+    <view class='item flex flex-item flex-center' data-index='1' data-status='UNPAY' bindtap='onNav'><text class='flex flex-middle {{navCurrentIndex == 1 ? "active" : ""}}'>待付款</text></view>
+    <view class='item flex flex-item flex-center' data-index='2' data-status='PAID' bindtap='onNav'><text class='flex flex-middle  {{navCurrentIndex == 2 ? "active" : ""}}'>待收货</text></view>
+    <view class='item flex flex-item flex-center' data-index='3' data-status='RECEIVED' bindtap='onNav'><text class='flex flex-middle {{navCurrentIndex == 3 ? "active" : ""}}'>已完成</text></view>
+  </view>
+  <view class='order-list' wx:if='{{!nothing}}'>
+    <navigator class='order-item' 
+        wx:for='{{orderList}}' 
+        wx:key='key' 
+        wx:for-item='item' 
+        url='{{item.bizType == "WARRANTY_EXTENSION" ? "../nav/extended-warranty/warranty-detail/warranty-detail?id=" + item.id : "../order/details/details?id=" + item.id + "&type=view"}}'
+        hover-class='none'>
+      <view class='top flex flex-between'>
+        <view class='top-item flex'>
+          <view class='tit'>状态：</view>
+          <view class='status'>{{status[item.status]}}</view>
+        </view>
+        <view class='top-item flex flex-middle'>
+          <view class='tit'>时间：</view>
+          <view class='time flex flex-middle'>{{item.date}}</view>
+        </view>
+      </view>
+      <view class='order-item-a warranty flex' wx:if='{{item.bizType == "WARRANTY_EXTENSION"}}'>
+        <view class='cover-img'>
+          <image src='../../images/nav/icon_nav_5.png'></image>
+        </view>
+        <view class='order-info flex-item'>
+          <view class='name line1'>{{item.productName}}</view>
+          <view class='price'>¥{{item.totalAmount}}</view>
+        </view>
+      </view>
+      <view class='order-item-a shop' wx:if='{{item.bizType == "SHOP"}}' url='../order/details/details?id={{item.id}}&type=view' hover-class='none'>
+        <view class='content flex' wx:for='{{item.shopOrderGoodsList}}' wx:key='key' wx:for-item='shopItem'>
+          <view class='cover-img'>
+            <image src='{{shopItem.goodsCoverImg}}'></image>
+          </view>
+          <view class='order-info flex-item'>
+            <!-- <view class='name line1'>{{shopItem.goodsName}}</view>
+            <view class='price'>¥{{shopItem.goodsAmount}}</view> -->
+            <view class='name p line1'>{{shopItem.goodsName}}</view>
+            <view class='spec p line1'>
+              <text style='margin-right: 10rpx;' wx:for='{{shopItem.goodsSpecs}}' wx:key='key' wx:for-item='specItem'>{{specItem}}</text>
+            </view>
+            <view class='price flex flex-between p'>
+              <view class='left'>¥{{shopItem.goodsAmount}}</view>
+              <view class='right'>×{{shopItem.goodsNum}}</view>
+            </view>
+            <!-- <view class='complimentary flex flex-middle flex-between p'>
+              <view class='left flex flex-item'>
+                <view class='tag'>赠品</view>
+                <view class='flex-item flex flex-middle line1'>运动蓝牙耳机QYT 白色</view>
+              </view>
+              <view class='right'>×1</view>
+            </view> -->
+          </view>
+        </view>
+      </view>
+      <view class='bottom flex flex-between'>
+        <view class='bottom-item flex flex-middle'>
+          <view class='tit'>总价：</view>
+          <view class='amount'>¥{{item.totalAmount}}</view>
+        </view>
+        <view class='bottom-item flex'>
+          <view class='btn del' data-id="{{item.id}}" wx:if='{{item.status == "CLOSED"}}' catchtap='ondeleteOrder'>删除</view>
+          <view class='btn pay' data-id="{{item.id}}" wx:if='{{item.status == "UNPAY"}}'>去支付</view>
+          <view class='btn pay confirm' data-id="{{item.id}}" wx:if='{{item.waybillNo != null && item.status == "DELIVERED"}}' catchtap='onConfirm'>确认收货</view>
+        </view> 
+      </view>
+    </navigator>
+  </view>
+</view>
+<template is='nothing' data='{{nothing:nothing,iconPath:"../../images/icon/icon_order_1.png",nothingText:"暂无任何订单"}}'></template>
+<template is='errMsg' data='{{errMsg:errMsg}}'></template>
